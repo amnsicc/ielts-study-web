@@ -1,0 +1,80 @@
+[
+  {
+    "id": "reading:1",
+    "version": "2026-10-28",
+    "label": "A",
+    "title": "A Class Visit to an Earth Science Centre",
+    "start": 1,
+    "end": 20,
+    "targetGroupIds": [
+      "word:1",
+      "word:2",
+      "word:3",
+      "word:4",
+      "word:5",
+      "word:6",
+      "word:7",
+      "word:8",
+      "word:9",
+      "word:10",
+      "word:11",
+      "word:12",
+      "word:13",
+      "word:14",
+      "word:15",
+      "word:16",
+      "word:17",
+      "word:18",
+      "word:19",
+      "word:20"
+    ],
+    "extraTargets": [],
+    "paragraphs": [
+      "Our class visited a small Earth science centre near the sea. Our guide, Anna, welcomed us and invited us to ask questions. Nobody seemed afraid of giving a wrong answer. The friendly `atmosphere` helped us relax.",
+      "Before going inside, we stopped at a large window. We could see the `horizon`, where the sea seemed to meet the sky. Anna showed us a map with the centre's `longitude` and `latitude`. These two numbers helped us find its position. Its `altitude` was also marked: it stood twenty metres above sea level.",
+      "The map showed where we were on Earth. A model in the next room helped us look beneath its surface. Anna pointed to the `crust`, its thin outer layer, and the `mantle` below it. The crust and the hard upper part of the mantle together form the `lithosphere`. Blue areas on another model represented the `hydrosphere`: all the water on Earth, including water in rivers, seas and ice.",
+      "Some rusty nails beside the models showed how water and air could change everyday objects. We learned that iron can react with `oxygen` to form an `oxide`. Anna used this example to explain that chemical reactions can join substances together or break them apart. She then showed us a short film in which scientists split water to get `hydrogen`. Water was also part of the next example, which showed how plants use it, sunlight and `carbon dioxide` to grow.",
+      "As well as explaining how nature works, the centre showed what happens when it threatens people's lives. One room told the story of a town hit by a flood. The `disaster` had destroyed houses and roads. Its effects were `catastrophic`: many families lost both their homes and their farms. An old newspaper called it 'a `calamity` for the whole town'. Photos showed neighbours helping one another rebuild.",
+      "Our own visit had only one `mishap`: I dropped my notebook in a puddle. A few pages got wet, but my notes were still readable. Before we left, Anna explained why a path outside was closed. Loose rocks could `endanger` visitors. The centre would not `jeopardise` anyone's safety for a better view. Keeping people safe was at the `core` of its work."
+    ]
+  },
+  {
+    "id": "reading:2",
+    "version": "2026-10-28",
+    "label": "B",
+    "title": "A Rainy Weekend at Grandad's Farm",
+    "start": 21,
+    "end": 40,
+    "targetGroupIds": [
+      "word:21",
+      "word:22",
+      "word:23",
+      "word:24",
+      "word:25",
+      "word:26",
+      "word:27",
+      "word:28",
+      "word:29",
+      "word:30",
+      "word:31",
+      "word:32",
+      "word:33",
+      "word:34",
+      "word:35",
+      "word:36",
+      "word:37",
+      "word:38",
+      "word:39",
+      "word:40"
+    ],
+    "extraTargets": [],
+    "paragraphs": [
+      "I had planned to help Grandad in his `greenhouse`, where he grew tomatoes under glass. But just as we reached the door, a sudden `gust` blew a bucket across the yard. The gentle `breeze` we had enjoyed at breakfast was gone. Grandad checked the weather report and decided that the plants could wait.",
+      "Indoors, the television showed farms damaged by violent weather. Grandad called such storms `destructive` because they could ruin months of hard work in a single night. The presenter also mentioned `El Niño`. She explained that this weather `phenomenon` began with warmer water in part of the Pacific Ocean and could affect weather far away.",
+      "That was something Grandad understood from experience. He had worked on farms in several countries when he was young. During the summer `monsoon` in India, the seasonal winds brought weeks of rain. In another year, a `typhoon` forced him to stay indoors in the Philippines. He showed me a photograph of a fallen tree outside his room.",
+      "I asked whether a `hurricane` was a different kind of storm. Grandad explained that hurricanes and typhoons were the same type of powerful tropical storm, named differently in different regions. A `tornado`, however, had a much narrower, spinning column of air reaching down to the ground. He drew its shape on an envelope. Looking at the pictures, I was glad we only had a `gale` outside, although even that strong wind made the windows shake.",
+      "With no chance of working outdoors, Grandad suggested looking through his old stone collection. I picked up a smooth `pebble` from a beach. He placed a `magnet` near a different sample, and it pulled the sample towards it. The dark piece was iron `ore`, rock from which people could obtain iron. That started a conversation about what rocks were made of. Grandad showed me a clear piece of `quartz`, a `mineral` found in many rocks. We could even see small pieces of it in a block of `granite`.",
+      "Beside the collection was a white `marble` bowl that he had bought on his travels. It held a photograph taken near a `volcano`. I asked if he had seen it `erupt`. 'Fortunately, no,' he said. 'The ground was quiet while I was there.' By then the wind outside was quieter too. We made some tea and agreed to check the tomatoes in the morning."
+    ]
+  }
+]

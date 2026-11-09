@@ -1,0 +1,807 @@
+[
+  {
+    "id": "word:1",
+    "number": 1,
+    "word": "atmosphere",
+    "senses": [
+      {
+        "id": "sense:1:0",
+        "pos": "n.",
+        "text": "气氛",
+        "grade": 0,
+        "primary": true
+      },
+      {
+        "id": "sense:1:1",
+        "pos": "n.",
+        "text": "大气层",
+        "grade": 0,
+        "primary": true
+      },
+      {
+        "id": "sense:1:2",
+        "pos": "n.",
+        "text": "空气",
+        "grade": 0,
+        "primary": false
+      }
+    ]
+  },
+  {
+    "id": "word:2",
+    "number": 2,
+    "word": "hydrosphere",
+    "senses": [
+      {
+        "id": "sense:2:0",
+        "pos": "n.",
+        "text": "【地】水圈",
+        "grade": 2,
+        "primary": true
+      },
+      {
+        "id": "sense:2:1",
+        "pos": "n.",
+        "text": "水界",
+        "grade": 2,
+        "primary": false
+      }
+    ]
+  },
+  {
+    "id": "word:3",
+    "number": 3,
+    "word": "lithosphere",
+    "senses": [
+      {
+        "id": "sense:3:0",
+        "pos": "n.",
+        "text": "岩石圈",
+        "grade": 2,
+        "primary": true
+      }
+    ]
+  },
+  {
+    "id": "word:4",
+    "number": 4,
+    "word": "oxygen",
+    "senses": [
+      {
+        "id": "sense:4:0",
+        "pos": "n.",
+        "text": "氧气",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:4:1",
+        "pos": "n.",
+        "text": "氧",
+        "grade": 1,
+        "primary": false
+      }
+    ]
+  },
+  {
+    "id": "word:5",
+    "number": 5,
+    "word": "oxide",
+    "senses": [
+      {
+        "id": "sense:5:0",
+        "pos": "n.",
+        "text": "氧化物",
+        "grade": 2,
+        "primary": true
+      }
+    ]
+  },
+  {
+    "id": "word:6",
+    "number": 6,
+    "word": "carbon dioxide",
+    "senses": [
+      {
+        "id": "sense:6:0",
+        "pos": "n.",
+        "text": "二氧化碳",
+        "grade": 1,
+        "primary": true
+      }
+    ]
+  },
+  {
+    "id": "word:7",
+    "number": 7,
+    "word": "hydrogen",
+    "senses": [
+      {
+        "id": "sense:7:0",
+        "pos": "n.",
+        "text": "氢",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:7:1",
+        "pos": "n.",
+        "text": "氢气",
+        "grade": 1,
+        "primary": false
+      }
+    ]
+  },
+  {
+    "id": "word:8",
+    "number": 8,
+    "word": "core",
+    "senses": [
+      {
+        "id": "sense:8:0",
+        "pos": "n.",
+        "text": "核心",
+        "grade": 0,
+        "primary": true
+      },
+      {
+        "id": "sense:8:1",
+        "pos": "n.",
+        "text": "中心部分",
+        "grade": 0,
+        "primary": false
+      },
+      {
+        "id": "sense:8:3",
+        "pos": "adj.",
+        "text": "核心的",
+        "grade": 0,
+        "primary": false
+      },
+      {
+        "id": "sense:8:4",
+        "pos": "adj.",
+        "text": "最重要的",
+        "grade": 0,
+        "primary": false
+      }
+    ]
+  },
+  {
+    "id": "word:9",
+    "number": 9,
+    "word": "crust",
+    "senses": [
+      {
+        "id": "sense:9:0",
+        "pos": "n.",
+        "text": "面包皮",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:9:3",
+        "pos": "n.",
+        "text": "地壳",
+        "grade": 1,
+        "primary": true
+      }
+    ]
+  },
+  {
+    "id": "word:10",
+    "number": 10,
+    "word": "mantle",
+    "senses": [
+      {
+        "id": "sense:10:2",
+        "pos": "n.",
+        "text": "地幔",
+        "grade": 2,
+        "primary": true
+      }
+    ]
+  },
+  {
+    "id": "word:11",
+    "number": 11,
+    "word": "longitude",
+    "senses": [
+      {
+        "id": "sense:11:0",
+        "pos": "n.",
+        "text": "经度",
+        "grade": 2,
+        "primary": true
+      }
+    ]
+  },
+  {
+    "id": "word:12",
+    "number": 12,
+    "word": "latitude",
+    "senses": [
+      {
+        "id": "sense:12:0",
+        "pos": "n.",
+        "text": "纬度",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:12:1",
+        "pos": "n.",
+        "text": "自由",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:12:2",
+        "pos": "n.",
+        "text": "余地",
+        "grade": 1,
+        "primary": false
+      }
+    ]
+  },
+  {
+    "id": "word:13",
+    "number": 13,
+    "word": "horizon",
+    "senses": [
+      {
+        "id": "sense:13:0",
+        "pos": "n.",
+        "text": "地平线",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:13:1",
+        "pos": "n.",
+        "text": "海平线",
+        "grade": 1,
+        "primary": false
+      }
+    ]
+  },
+  {
+    "id": "word:14",
+    "number": 14,
+    "word": "altitude",
+    "senses": [
+      {
+        "id": "sense:14:0",
+        "pos": "n.",
+        "text": "海拔",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:14:1",
+        "pos": "n.",
+        "text": "高度",
+        "grade": 1,
+        "primary": false
+      }
+    ]
+  },
+  {
+    "id": "word:15",
+    "number": 15,
+    "word": "disaster",
+    "senses": [
+      {
+        "id": "sense:15:0",
+        "pos": "n.",
+        "text": "灾难",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:15:1",
+        "pos": "n.",
+        "text": "彻底失败的人或事物",
+        "grade": 1,
+        "primary": true
+      }
+    ]
+  },
+  {
+    "id": "word:16",
+    "number": 16,
+    "word": "mishap",
+    "senses": [
+      {
+        "id": "sense:16:0",
+        "pos": "n.",
+        "text": "小事故",
+        "grade": 2,
+        "primary": true
+      },
+      {
+        "id": "sense:16:1",
+        "pos": "n.",
+        "text": "不幸的意外",
+        "grade": 2,
+        "primary": false
+      }
+    ]
+  },
+  {
+    "id": "word:17",
+    "number": 17,
+    "word": "catastrophic",
+    "senses": [
+      {
+        "id": "sense:17:0",
+        "pos": "adj.",
+        "text": "灾难性的",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:17:1",
+        "pos": "adj.",
+        "text": "极其糟糕的",
+        "grade": 1,
+        "primary": false
+      }
+    ]
+  },
+  {
+    "id": "word:18",
+    "number": 18,
+    "word": "calamity",
+    "senses": [
+      {
+        "id": "sense:18:0",
+        "pos": "n.",
+        "text": "灾难",
+        "grade": 2,
+        "primary": true
+      },
+      {
+        "id": "sense:18:1",
+        "pos": "n.",
+        "text": "灾祸",
+        "grade": 2,
+        "primary": false
+      }
+    ]
+  },
+  {
+    "id": "word:19",
+    "number": 19,
+    "word": "endanger",
+    "senses": [
+      {
+        "id": "sense:19:0",
+        "pos": "vt.",
+        "text": "危及",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:19:1",
+        "pos": "vt.",
+        "text": "使处于险境",
+        "grade": 1,
+        "primary": false
+      }
+    ]
+  },
+  {
+    "id": "word:20",
+    "number": 20,
+    "word": "jeopardise",
+    "senses": [
+      {
+        "id": "sense:20:0",
+        "pos": "vt.",
+        "text": "危及",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:20:1",
+        "pos": "vt.",
+        "text": "危害",
+        "grade": 1,
+        "primary": false
+      }
+    ]
+  },
+  {
+    "id": "word:21",
+    "number": 21,
+    "word": "destructive",
+    "senses": [
+      {
+        "id": "sense:21:0",
+        "pos": "adj.",
+        "text": "破坏性的",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:21:1",
+        "pos": "adj.",
+        "text": "有害的",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:21:2",
+        "pos": "adj.",
+        "text": "消极的（有破坏作用）",
+        "grade": 1,
+        "primary": false
+      }
+    ]
+  },
+  {
+    "id": "word:22",
+    "number": 22,
+    "word": "El Niño",
+    "senses": [
+      {
+        "id": "sense:22:0",
+        "pos": "n.",
+        "text": "厄尔尼诺现象",
+        "grade": 2,
+        "primary": true
+      }
+    ]
+  },
+  {
+    "id": "word:23",
+    "number": 23,
+    "word": "greenhouse",
+    "senses": [
+      {
+        "id": "sense:23:0",
+        "pos": "n.",
+        "text": "温室",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:23:1",
+        "pos": "n.",
+        "text": "暖房",
+        "grade": 1,
+        "primary": false
+      }
+    ]
+  },
+  {
+    "id": "word:24",
+    "number": 24,
+    "word": "phenomenon",
+    "senses": [
+      {
+        "id": "sense:24:0",
+        "pos": "n.",
+        "text": "现象",
+        "grade": 0,
+        "primary": true
+      }
+    ]
+  },
+  {
+    "id": "word:25",
+    "number": 25,
+    "word": "pebble",
+    "senses": [
+      {
+        "id": "sense:25:0",
+        "pos": "n.",
+        "text": "鹅卵石",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:25:1",
+        "pos": "n.",
+        "text": "小圆石",
+        "grade": 1,
+        "primary": false
+      }
+    ]
+  },
+  {
+    "id": "word:26",
+    "number": 26,
+    "word": "magnet",
+    "senses": [
+      {
+        "id": "sense:26:0",
+        "pos": "n.",
+        "text": "磁铁",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:26:1",
+        "pos": "n.",
+        "text": "磁体",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:26:2",
+        "pos": "n.",
+        "text": "有吸引力的人或物",
+        "grade": 1,
+        "primary": true
+      }
+    ]
+  },
+  {
+    "id": "word:27",
+    "number": 27,
+    "word": "ore",
+    "senses": [
+      {
+        "id": "sense:27:0",
+        "pos": "n.",
+        "text": "矿石",
+        "grade": 1,
+        "primary": true
+      }
+    ]
+  },
+  {
+    "id": "word:28",
+    "number": 28,
+    "word": "mineral",
+    "senses": [
+      {
+        "id": "sense:28:0",
+        "pos": "n.",
+        "text": "矿物",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:28:1",
+        "pos": "n.",
+        "text": "矿物质",
+        "grade": 1,
+        "primary": true
+      }
+    ]
+  },
+  {
+    "id": "word:29",
+    "number": 29,
+    "word": "marble",
+    "senses": [
+      {
+        "id": "sense:29:0",
+        "pos": "n.",
+        "text": "大理石",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:29:1",
+        "pos": "n.",
+        "text": "玻璃弹珠",
+        "grade": 1,
+        "primary": true
+      }
+    ]
+  },
+  {
+    "id": "word:30",
+    "number": 30,
+    "word": "quartz",
+    "senses": [
+      {
+        "id": "sense:30:0",
+        "pos": "n.",
+        "text": "石英",
+        "grade": 2,
+        "primary": true
+      }
+    ]
+  },
+  {
+    "id": "word:31",
+    "number": 31,
+    "word": "granite",
+    "senses": [
+      {
+        "id": "sense:31:0",
+        "pos": "n.",
+        "text": "花岗岩",
+        "grade": 2,
+        "primary": true
+      }
+    ]
+  },
+  {
+    "id": "word:32",
+    "number": 32,
+    "word": "gust",
+    "senses": [
+      {
+        "id": "sense:32:0",
+        "pos": "n.",
+        "text": "阵风",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:32:2",
+        "pos": "vi.",
+        "text": "(风)猛刮",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:32:1",
+        "pos": "n.",
+        "text": "(情感的)迸发",
+        "grade": 1,
+        "primary": true
+      }
+    ]
+  },
+  {
+    "id": "word:33",
+    "number": 33,
+    "word": "breeze",
+    "senses": [
+      {
+        "id": "sense:33:0",
+        "pos": "n.",
+        "text": "微风",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:33:1",
+        "pos": "n.",
+        "text": "轻而易举的事",
+        "grade": 1,
+        "primary": true
+      }
+    ]
+  },
+  {
+    "id": "word:34",
+    "number": 34,
+    "word": "monsoon",
+    "senses": [
+      {
+        "id": "sense:34:0",
+        "pos": "n.",
+        "text": "雨季",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:34:1",
+        "pos": "n.",
+        "text": "季风雨",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:34:2",
+        "pos": "n.",
+        "text": "季风",
+        "grade": 1,
+        "primary": false
+      }
+    ]
+  },
+  {
+    "id": "word:35",
+    "number": 35,
+    "word": "gale",
+    "senses": [
+      {
+        "id": "sense:35:0",
+        "pos": "n.",
+        "text": "大风",
+        "grade": 2,
+        "primary": true
+      },
+      {
+        "id": "sense:35:1",
+        "pos": "n.",
+        "text": "狂风",
+        "grade": 2,
+        "primary": false
+      }
+    ]
+  },
+  {
+    "id": "word:36",
+    "number": 36,
+    "word": "hurricane",
+    "senses": [
+      {
+        "id": "sense:36:0",
+        "pos": "n.",
+        "text": "飓风",
+        "grade": 1,
+        "primary": true
+      }
+    ]
+  },
+  {
+    "id": "word:37",
+    "number": 37,
+    "word": "tornado",
+    "senses": [
+      {
+        "id": "sense:37:0",
+        "pos": "n.",
+        "text": "龙卷风",
+        "grade": 1,
+        "primary": true
+      }
+    ]
+  },
+  {
+    "id": "word:38",
+    "number": 38,
+    "word": "typhoon",
+    "senses": [
+      {
+        "id": "sense:38:0",
+        "pos": "n.",
+        "text": "台风",
+        "grade": 1,
+        "primary": true
+      }
+    ]
+  },
+  {
+    "id": "word:39",
+    "number": 39,
+    "word": "volcano",
+    "senses": [
+      {
+        "id": "sense:39:0",
+        "pos": "n.",
+        "text": "火山",
+        "grade": 1,
+        "primary": true
+      }
+    ]
+  },
+  {
+    "id": "word:40",
+    "number": 40,
+    "word": "erupt",
+    "senses": [
+      {
+        "id": "sense:40:0",
+        "pos": "vi./vt.",
+        "text": "(火山)喷发",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:40:1",
+        "pos": "vi./vt.",
+        "text": "喷出",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:40:2",
+        "pos": "vi.",
+        "text": "突然爆发",
+        "grade": 1,
+        "primary": true
+      }
+    ]
+  }
+]

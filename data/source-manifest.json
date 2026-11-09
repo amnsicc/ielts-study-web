@@ -1,0 +1,49 @@
+{
+  "sample": "001—040",
+  "module": "reading",
+  "groups": 40,
+  "materials": 2,
+  "sources": [
+    {
+      "path": "D:\\文档\\雅思备考\\codex讨论结果\\雅思词汇真经_1-20词_基础释义优化试样_主要释义标红复核版_20261029.pdf",
+      "sha256": "68ac92700283594f2bdc70e0f5c2fd2a09db74c8a0d3b860b2796f1e99b8e779",
+      "role": "audited-pdf"
+    },
+    {
+      "path": "D:\\文档\\雅思备考\\codex讨论结果\\雅思词汇真经_1-20词_重要词块与特殊形式试样_主要释义标红复核版_20261029.pdf",
+      "sha256": "5db2a124f66a7d8c7018a0adba624eb3cc760c48b74cec5fad4865522e3ee30b",
+      "role": "audited-pdf"
+    },
+    {
+      "path": "D:\\codex_project\\雅思备考\\output\\vocab-1-200-20261027\\reading-01-001-020.md",
+      "sha256": "1e619fbe74ce9570b0e5d9b5a9b9ab127712b451bd5ea1e4376a181e4e760f8f",
+      "role": "unchanged-reading-body"
+    },
+    {
+      "path": "D:\\codex_project\\雅思备考\\output\\vocab-1-200-20261027\\reading-02-021-040.md",
+      "sha256": "e2a10c74f28cc5c8c5fc0d47d28ad0448a15d729265f7a9b4219bbbf7298519d",
+      "role": "unchanged-reading-body"
+    },
+    {
+      "path": "D:\\codex_project\\雅思备考\\tmp\\pdfs\\vocab-order-audit-20261029\\audit.json",
+      "sha256": "9965699d8f68d298d72a9b3499738e404f75ef6fddbea71f0c5870d98c58a0b0",
+      "role": "conversion-source"
+    },
+    {
+      "path": "D:\\codex_project\\雅思备考\\tmp\\pdfs\\reading-rebuild-20261028\\passages.json",
+      "sha256": "01a06ad05b835411506ac94ad0145e0164124523fd5fe91d27c4fd7e14ef5469",
+      "role": "conversion-source"
+    },
+    {
+      "path": "D:\\codex_project\\雅思备考\\tmp\\pdfs\\vocab-order-audit-20261029\\published.json",
+      "sha256": "139a5c375e5fb7115c959cfd3e03eaeca2431dc1ff990346c54e72bcf40d06d1",
+      "role": "conversion-source"
+    }
+  ],
+  "notes": [
+    "Only reading-selected senses retained, source order and per-sense grades unchanged.",
+    "Body paragraphs exactly match published Markdown before rendering backtick delimiters.",
+    "No source publisher executed; no source material or learning database modified.",
+    "D1a has no extra-target article; expandable extras are deferred to D1b."
+  ]
+}
