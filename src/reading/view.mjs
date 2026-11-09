@@ -41,6 +41,24 @@ export function readingView(session, materials) {
   wordScroll.tabIndex = 0;
   wordScroll.setAttribute('aria-label', '阅读词表，可上下滚动');
   wordSection.append(wordToolbar, wordScroll);
+  const filters = node('div', 'filter-toolbar');
+  const scope = node('select', 'display-select');
+  scope.id = 'word-scope'; scope.setAttribute('aria-label', '词表范围');
+  scope.append(new Option('当前文章', 'current'), new Option('全部阅读词（001—040）', 'all'));
+  const grade = node('select', 'display-select');
+  grade.id = 'word-grade'; grade.setAttribute('aria-label', '词表P档');
+  for (const [value,title] of [['all','全部P档'],['0','P0'],['1','P1'],['2','P2']]) grade.append(new Option(title,value));
+  const wordQuery = node('input', 'search-input');
+  wordQuery.type = 'search'; wordQuery.id = 'word-query'; wordQuery.placeholder = '搜词：英文、中文、编号';
+  wordQuery.setAttribute('aria-label', '搜索词表');
+  const clearWord = node('button', 'quiet-button', '清除词表搜索');
+  clearWord.type = 'button'; clearWord.id = 'clear-word-query';
+  const wordResultsToggle = node('button', 'quiet-button');
+  wordResultsToggle.type = 'button'; wordResultsToggle.id = 'word-results-toggle';
+  filters.append(scope, grade, wordQuery, clearWord, wordResultsToggle);
+  wordSection.insertBefore(filters, wordScroll);
+  let wordResultsOpen = true;
+  let lastLocatedEntry;
 
   const separator = node('div', 'splitter');
   separator.id = 'reading-divider';
@@ -77,6 +95,76 @@ export function readingView(session, materials) {
   articleScroll.setAttribute('aria-label', '阅读文章，可上下滚动');
   articleToolbar.append(articleTitle, highlightLabel, label, select);
   articleSection.append(articleToolbar, articleScroll);
+  const articleSearch = node('div', 'filter-toolbar');
+  const articleQuery = node('input', 'search-input');
+  articleQuery.id = 'article-query'; articleQuery.type = 'search';
+  articleQuery.placeholder = '搜索文章库'; articleQuery.setAttribute('aria-label', '搜索文章库');
+  const clearArticle = node('button', 'quiet-button', '清除文章搜索');
+  clearArticle.id = 'clear-article-query'; clearArticle.type = 'button';
+  const articleResultsToggle = node('button', 'quiet-button');
+  articleResultsToggle.id = 'article-results-toggle'; articleResultsToggle.type = 'button';
+  articleSearch.append(articleQuery, clearArticle, articleResultsToggle);
+  articleSection.insertBefore(articleSearch, articleScroll);
+  const articleResults = node('div', 'search-results article-results');
+  articleResults.id = 'article-results';
+  let articleResultsOpen = true;
+
+  const flashTimers = new WeakMap();
+  function locate(element, container) {
+    if (!element) return;
+    const bounds = container.getBoundingClientRect();
+    container.scrollTop += element.getBoundingClientRect().top - bounds.top - 40;
+    element.tabIndex = -1;
+    element.focus({preventScroll:true});
+    clearTimeout(flashTimers.get(element));
+    element.classList.remove('locate-fading');
+    element.classList.add('locate-hit');
+    flashTimers.set(element, setTimeout(() => {
+      element.classList.add('locate-fading');
+      flashTimers.set(element, setTimeout(() => element.classList.remove('locate-hit','locate-fading'),250));
+    }, 850));
+  }
+
+  function locateEntry(match) {
+    const view = session.getView();
+    if (match.entryId !== match.groupId && !view.expandedIds.includes(match.groupId)) session.toggleExtras(match.groupId);
+    syncWords();
+    wordResultsOpen = false;
+    wordScroll.querySelector('.word-results')?.setAttribute('hidden','');
+    wordResultsToggle.textContent = `显示${view.matches.length}个定位结果`;
+    lastLocatedEntry = match.entryId;
+    locate([...wordScroll.querySelectorAll('[data-entry-id]')].find(row=>row.dataset.entryId===match.entryId),wordScroll);
+  }
+
+  function updateArticleResults() {
+    const hits = session.searchMaterials(articleQuery.value);
+    articleResults.replaceChildren();
+    articleResults.hidden = !articleQuery.value.trim() || !articleResultsOpen;
+    articleResultsToggle.hidden = !articleQuery.value.trim();
+    articleResultsToggle.textContent = `${articleResultsOpen ? '收起' : '显示'}${hits.length}个结果`;
+    if (!hits.length) articleResults.append(node('p','search-empty','没有匹配文章，请修改或清除关键词。'));
+    for (const hit of hits) {
+      const button = node('button','search-result article-search-result');
+      button.type = 'button'; button.dataset.searchHit = hit.id; button.dataset.materialId = hit.materialId;
+      button.append(node('strong','',hit.title),node('span','',hit.snippet));
+      button.addEventListener('click',()=>{
+        if (session.getView().material.id !== hit.materialId) {
+          session.selectMaterial(hit.materialId); paintMaterial();
+        }
+        articleResultsOpen = false; updateArticleResults();
+        const target = hit.kind === 'title' ? articleScroll.querySelector('.article-title') :
+          hit.kind === 'target' ? [...articleScroll.querySelectorAll('[data-occurrence-id]')].find(b=>b.dataset.occurrenceId===hit.occurrenceId) :
+          articleScroll.querySelector(`[data-paragraph-index="${hit.paragraphIndex}"]`);
+        locate(target, articleScroll);
+      });
+      articleResults.append(button);
+    }
+  }
+  function searchArticle() { articleResultsOpen = true; updateArticleResults(); articleScroll.scrollTop = 0; }
+  articleQuery.addEventListener('input',event=>{if (!event.isComposing) searchArticle();});
+  articleQuery.addEventListener('compositionend',searchArticle);
+  clearArticle.addEventListener('click',()=>{articleQuery.value='';updateArticleResults();articleQuery.focus({preventScroll:true});});
+  articleResultsToggle.addEventListener('click',()=>{articleResultsOpen=!articleResultsOpen;updateArticleResults();if(articleResultsOpen)articleScroll.scrollTop=0;});
 
   const dialog = node('dialog', 'meaning-dialog');
   dialog.setAttribute('aria-labelledby', 'meaning-title');
@@ -165,7 +253,9 @@ export function readingView(session, materials) {
 
   function paintWords() {
     const view = session.getView();
-    range.textContent = `本篇 ${view.groups.length} 词`;
+    scope.value = view.scope; grade.value = view.filters.grade;
+    if (wordQuery.value !== view.filters.query) wordQuery.value = view.filters.query;
+    range.textContent = `${view.scope === 'current' ? '本篇' : '样本'} ${view.groups.length} 组`;
     const table = node('table', 'word-table');
     const head = node('thead');
     const header = node('tr');
@@ -187,9 +277,48 @@ export function readingView(session, materials) {
         table.append(extras);
       }
     }
-    wordScroll.replaceChildren(table);
+    const results = node('div','search-results word-results');
+    results.hidden = !view.filters.query.trim() || !wordResultsOpen;
+    for (const match of view.matches) {
+      const button = node('button','quiet-button word-search-result',`定位 ${String(match.number).padStart(3,'0')}`);
+      button.type='button'; button.dataset.locateEntry=match.entryId;
+      button.addEventListener('click',()=>locateEntry(match)); results.append(button);
+    }
+    wordResultsToggle.hidden = !view.filters.query.trim();
+    wordResultsToggle.textContent = `${wordResultsOpen ? '收起' : '显示'}${view.matches.length}个定位结果`;
+    const empty = node('div','search-empty');
+    empty.hidden = view.groups.length !== 0;
+    empty.append(node('p','','没有匹配词组。可清除关键词或P档条件。'));
+    const clearFilters = node('button','quiet-button','清除词表筛选'); clearFilters.type='button';
+    clearFilters.addEventListener('click',()=>{session.setFilters({grade:'all',query:''});paintWords();});
+    empty.append(clearFilters);
+    wordScroll.replaceChildren(results, empty, table);
     syncWords();
   }
+
+  function searchWords() {
+    if (!wordQuery.value.trim()) { clearWordSearch(); return; }
+    session.setFilters({query:wordQuery.value}); wordResultsOpen=true; lastLocatedEntry=undefined;
+    paintWords(); wordScroll.scrollTop=0;
+  }
+  wordQuery.addEventListener('input',event=>{if (!event.isComposing) searchWords();});
+  wordQuery.addEventListener('compositionend',searchWords);
+  scope.addEventListener('change',()=>{session.setScope(scope.value);paintWords();wordScroll.scrollTop=0;});
+  grade.addEventListener('change',()=>{session.setFilters({grade:grade.value});paintWords();wordScroll.scrollTop=0;});
+  function clearWordSearch() {
+    const old = [...wordScroll.querySelectorAll('[data-entry-id]')].find(r=>r.dataset.entryId===lastLocatedEntry);
+    const top = old?.getBoundingClientRect().top;
+    session.setFilters({query:''});paintWords();
+    const row = [...wordScroll.querySelectorAll('[data-entry-id]')].find(r=>r.dataset.entryId===lastLocatedEntry);
+    if (row && top !== undefined) wordScroll.scrollTop += row.getBoundingClientRect().top-top;
+  }
+  clearWord.addEventListener('click',()=>{ clearWordSearch(); wordQuery.focus({preventScroll:true}); });
+  wordResultsToggle.addEventListener('click',()=>{
+    wordResultsOpen=!wordResultsOpen;
+    wordScroll.querySelector('.word-results').hidden=!wordResultsOpen;
+    wordResultsToggle.textContent=`${wordResultsOpen?'收起':'显示'}${session.getView().matches.length}个定位结果`;
+    if(wordResultsOpen)wordScroll.scrollTop=0;
+  });
 
   function showMeaning(occurrenceId, target) {
     const occurrence = session.getOccurrenceMeaning(occurrenceId);
@@ -208,16 +337,17 @@ export function readingView(session, materials) {
   }
 
   function paintArticle() {
-    const { material, groups } = session.getView();
+    const { material } = session.getView();
     const article = node('article', 'article-body');
     const heading = node('h3', 'article-title', material.title);
     heading.lang = 'en';
-    const numbers = groups.map(group => String(group.number).padStart(3, '0')).join('、');
+    const numbers = material.targetGroupIds.map(id=>String(id.split(':')[1]).padStart(3,'0')).join('、');
     article.append(heading, node('p', 'article-coverage', `目标原编号 ${numbers}`),
       node('p', 'article-extra', '本篇未额外选入派生词、特殊形式或词块。'));
     material.paragraphs.forEach((paragraph, index) => {
       const plain = paragraph.replaceAll('`', '');
       const p = node('p', 'article-paragraph');
+      p.dataset.paragraphIndex = index;
       p.lang = 'en';
       let offset = 0;
       const occurrences = (material.occurrences || []).filter(item => item.paragraphIndex === index);
@@ -235,13 +365,15 @@ export function readingView(session, materials) {
       article.append(p);
     });
     article.append(node('p', 'article-end', '本篇结束'));
-    articleScroll.replaceChildren(article);
+    articleScroll.replaceChildren(articleResults, article);
+    updateArticleResults();
     syncHighlight();
   }
 
   function paintMaterial() {
     if (dialog.open) dialog.close();
     select.value = session.getView().material.id;
+    lastLocatedEntry=undefined; wordResultsOpen=true;
     paintWords();
     paintArticle();
     wordScroll.scrollTop = 0;
@@ -250,7 +382,7 @@ export function readingView(session, materials) {
   select.addEventListener('change', () => { session.selectMaterial(select.value); paintMaterial(); });
   globalSelect.addEventListener('change', () => { session.setVisibility('all', globalSelect.value); syncWords(); });
   highlight.addEventListener('change', () => { session.setTargetHighlight(highlight.checked); syncHighlight(); });
-  reset.addEventListener('click', () => { session.resetView(); resize(0.46); paintMaterial(); });
+  reset.addEventListener('click', () => { session.resetView(); articleQuery.value=''; articleResultsOpen=true; resize(0.46); paintMaterial(); });
 
   function resize(value) {
     ratio = Math.max(0.25, Math.min(0.72, value));

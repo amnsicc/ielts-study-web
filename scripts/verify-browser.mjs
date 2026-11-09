@@ -8,7 +8,7 @@ const value = name => args[args.indexOf(name) + 1];
 if (!args.includes('--output')) throw new Error('需要 --output <尚不存在的证据目录>');
 const output = path.resolve(value('--output'));
 mkdirSync(output, { recursive: false });
-const session = args.includes('--session') ? value('--session') : `ielts-d1b-${Date.now()}`;
+const session = args.includes('--session') ? value('--session') : `ielts-d2a-regression-${Date.now()}`;
 const cli = process.env.AGENT_BROWSER_EXE || 'D:/NodeTools/npm-global/node_modules/agent-browser/bin/agent-browser-win32-x64.exe';
 const chrome = process.env.CHROME_PATH || 'C:/Program Files/Google/Chrome/Application/chrome.exe';
 const url = args.includes('--url') ? value('--url') : 'http://127.0.0.1:4178';
