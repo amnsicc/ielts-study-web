@@ -36,6 +36,228 @@
       "Some rusty nails beside the models showed how water and air could change everyday objects. We learned that iron can react with `oxygen` to form an `oxide`. Anna used this example to explain that chemical reactions can join substances together or break them apart. She then showed us a short film in which scientists split water to get `hydrogen`. Water was also part of the next example, which showed how plants use it, sunlight and `carbon dioxide` to grow.",
       "As well as explaining how nature works, the centre showed what happens when it threatens people's lives. One room told the story of a town hit by a flood. The `disaster` had destroyed houses and roads. Its effects were `catastrophic`: many families lost both their homes and their farms. An old newspaper called it 'a `calamity` for the whole town'. Photos showed neighbours helping one another rebuild.",
       "Our own visit had only one `mishap`: I dropped my notebook in a puddle. A few pages got wet, but my notes were still readable. Before we left, Anna explained why a path outside was closed. Loose rocks could `endanger` visitors. The centre would not `jeopardise` anyone's safety for a better view. Keeping people safe was at the `core` of its work."
+    ],
+    "occurrences": [
+      {
+        "id": "occurrence:1:0",
+        "paragraphIndex": 0,
+        "start": 183,
+        "end": 193,
+        "text": "atmosphere",
+        "groupId": "word:1",
+        "pos": "n.",
+        "meaning": "气氛",
+        "note": "本文指参观时友好、轻松的气氛。"
+      },
+      {
+        "id": "occurrence:1:1",
+        "paragraphIndex": 1,
+        "start": 68,
+        "end": 75,
+        "text": "horizon",
+        "groupId": "word:13",
+        "pos": "n.",
+        "meaning": "地平线",
+        "note": ""
+      },
+      {
+        "id": "occurrence:1:2",
+        "paragraphIndex": 1,
+        "start": 154,
+        "end": 163,
+        "text": "longitude",
+        "groupId": "word:11",
+        "pos": "n.",
+        "meaning": "经度",
+        "note": ""
+      },
+      {
+        "id": "occurrence:1:3",
+        "paragraphIndex": 1,
+        "start": 168,
+        "end": 176,
+        "text": "latitude",
+        "groupId": "word:12",
+        "pos": "n.",
+        "meaning": "纬度",
+        "note": ""
+      },
+      {
+        "id": "occurrence:1:4",
+        "paragraphIndex": 1,
+        "start": 229,
+        "end": 237,
+        "text": "altitude",
+        "groupId": "word:14",
+        "pos": "n.",
+        "meaning": "海拔",
+        "note": ""
+      },
+      {
+        "id": "occurrence:1:5",
+        "paragraphIndex": 2,
+        "start": 120,
+        "end": 125,
+        "text": "crust",
+        "groupId": "word:9",
+        "pos": "n.",
+        "meaning": "地壳",
+        "note": "本篇沿用已选定的“地壳”义。"
+      },
+      {
+        "id": "occurrence:1:6",
+        "paragraphIndex": 2,
+        "start": 157,
+        "end": 163,
+        "text": "mantle",
+        "groupId": "word:10",
+        "pos": "n.",
+        "meaning": "地幔",
+        "note": ""
+      },
+      {
+        "id": "occurrence:1:7",
+        "paragraphIndex": 2,
+        "start": 240,
+        "end": 251,
+        "text": "lithosphere",
+        "groupId": "word:3",
+        "pos": "n.",
+        "meaning": "岩石圈",
+        "note": "岩石圈包括地壳和地幔最上部的坚硬部分。"
+      },
+      {
+        "id": "occurrence:1:8",
+        "paragraphIndex": 2,
+        "start": 297,
+        "end": 308,
+        "text": "hydrosphere",
+        "groupId": "word:2",
+        "pos": "n.",
+        "meaning": "水圈",
+        "note": ""
+      },
+      {
+        "id": "occurrence:1:9",
+        "paragraphIndex": 3,
+        "start": 127,
+        "end": 133,
+        "text": "oxygen",
+        "groupId": "word:4",
+        "pos": "n.",
+        "meaning": "氧气",
+        "note": ""
+      },
+      {
+        "id": "occurrence:1:10",
+        "paragraphIndex": 3,
+        "start": 145,
+        "end": 150,
+        "text": "oxide",
+        "groupId": "word:5",
+        "pos": "n.",
+        "meaning": "氧化物",
+        "note": ""
+      },
+      {
+        "id": "occurrence:1:11",
+        "paragraphIndex": 3,
+        "start": 331,
+        "end": 339,
+        "text": "hydrogen",
+        "groupId": "word:7",
+        "pos": "n.",
+        "meaning": "氢",
+        "note": ""
+      },
+      {
+        "id": "occurrence:1:12",
+        "paragraphIndex": 3,
+        "start": 427,
+        "end": 441,
+        "text": "carbon dioxide",
+        "groupId": "word:6",
+        "pos": "n.",
+        "meaning": "二氧化碳",
+        "note": ""
+      },
+      {
+        "id": "occurrence:1:13",
+        "paragraphIndex": 4,
+        "start": 159,
+        "end": 167,
+        "text": "disaster",
+        "groupId": "word:15",
+        "pos": "n.",
+        "meaning": "灾难",
+        "note": ""
+      },
+      {
+        "id": "occurrence:1:14",
+        "paragraphIndex": 4,
+        "start": 217,
+        "end": 229,
+        "text": "catastrophic",
+        "groupId": "word:17",
+        "pos": "adj.",
+        "meaning": "灾难性的",
+        "note": ""
+      },
+      {
+        "id": "occurrence:1:15",
+        "paragraphIndex": 4,
+        "start": 314,
+        "end": 322,
+        "text": "calamity",
+        "groupId": "word:18",
+        "pos": "n.",
+        "meaning": "灾难",
+        "note": ""
+      },
+      {
+        "id": "occurrence:1:16",
+        "paragraphIndex": 5,
+        "start": 27,
+        "end": 33,
+        "text": "mishap",
+        "groupId": "word:16",
+        "pos": "n.",
+        "meaning": "小事故",
+        "note": ""
+      },
+      {
+        "id": "occurrence:1:17",
+        "paragraphIndex": 5,
+        "start": 205,
+        "end": 213,
+        "text": "endanger",
+        "groupId": "word:19",
+        "pos": "vt.",
+        "meaning": "危及",
+        "note": ""
+      },
+      {
+        "id": "occurrence:1:18",
+        "paragraphIndex": 5,
+        "start": 245,
+        "end": 255,
+        "text": "jeopardise",
+        "groupId": "word:20",
+        "pos": "vt.",
+        "meaning": "危及",
+        "note": ""
+      },
+      {
+        "id": "occurrence:1:19",
+        "paragraphIndex": 5,
+        "start": 322,
+        "end": 326,
+        "text": "core",
+        "groupId": "word:8",
+        "pos": "n.",
+        "meaning": "核心",
+        "note": "本文指安全在这项工作中的核心地位。"
+      }
     ]
   },
   {
@@ -75,6 +297,228 @@
       "I asked whether a `hurricane` was a different kind of storm. Grandad explained that hurricanes and typhoons were the same type of powerful tropical storm, named differently in different regions. A `tornado`, however, had a much narrower, spinning column of air reaching down to the ground. He drew its shape on an envelope. Looking at the pictures, I was glad we only had a `gale` outside, although even that strong wind made the windows shake.",
       "With no chance of working outdoors, Grandad suggested looking through his old stone collection. I picked up a smooth `pebble` from a beach. He placed a `magnet` near a different sample, and it pulled the sample towards it. The dark piece was iron `ore`, rock from which people could obtain iron. That started a conversation about what rocks were made of. Grandad showed me a clear piece of `quartz`, a `mineral` found in many rocks. We could even see small pieces of it in a block of `granite`.",
       "Beside the collection was a white `marble` bowl that he had bought on his travels. It held a photograph taken near a `volcano`. I asked if he had seen it `erupt`. 'Fortunately, no,' he said. 'The ground was quiet while I was there.' By then the wind outside was quieter too. We made some tea and agreed to check the tomatoes in the morning."
+    ],
+    "occurrences": [
+      {
+        "id": "occurrence:2:0",
+        "paragraphIndex": 0,
+        "start": 37,
+        "end": 47,
+        "text": "greenhouse",
+        "groupId": "word:23",
+        "pos": "n.",
+        "meaning": "温室",
+        "note": ""
+      },
+      {
+        "id": "occurrence:2:1",
+        "paragraphIndex": 0,
+        "start": 127,
+        "end": 131,
+        "text": "gust",
+        "groupId": "word:32",
+        "pos": "n.",
+        "meaning": "阵风",
+        "note": ""
+      },
+      {
+        "id": "occurrence:2:2",
+        "paragraphIndex": 0,
+        "start": 174,
+        "end": 180,
+        "text": "breeze",
+        "groupId": "word:33",
+        "pos": "n.",
+        "meaning": "微风",
+        "note": ""
+      },
+      {
+        "id": "occurrence:2:3",
+        "paragraphIndex": 1,
+        "start": 92,
+        "end": 103,
+        "text": "destructive",
+        "groupId": "word:21",
+        "pos": "adj.",
+        "meaning": "破坏性的",
+        "note": ""
+      },
+      {
+        "id": "occurrence:2:4",
+        "paragraphIndex": 1,
+        "start": 196,
+        "end": 203,
+        "text": "El Niño",
+        "groupId": "word:22",
+        "pos": "n.",
+        "meaning": "厄尔尼诺现象",
+        "note": "专名；本文按厄尔尼诺现象理解。"
+      },
+      {
+        "id": "occurrence:2:5",
+        "paragraphIndex": 1,
+        "start": 237,
+        "end": 247,
+        "text": "phenomenon",
+        "groupId": "word:24",
+        "pos": "n.",
+        "meaning": "现象",
+        "note": ""
+      },
+      {
+        "id": "occurrence:2:6",
+        "paragraphIndex": 2,
+        "start": 136,
+        "end": 143,
+        "text": "monsoon",
+        "groupId": "word:34",
+        "pos": "n.",
+        "meaning": "季风",
+        "note": ""
+      },
+      {
+        "id": "occurrence:2:7",
+        "paragraphIndex": 2,
+        "start": 215,
+        "end": 222,
+        "text": "typhoon",
+        "groupId": "word:38",
+        "pos": "n.",
+        "meaning": "台风",
+        "note": ""
+      },
+      {
+        "id": "occurrence:2:8",
+        "paragraphIndex": 3,
+        "start": 18,
+        "end": 27,
+        "text": "hurricane",
+        "groupId": "word:36",
+        "pos": "n.",
+        "meaning": "飓风",
+        "note": ""
+      },
+      {
+        "id": "occurrence:2:9",
+        "paragraphIndex": 3,
+        "start": 195,
+        "end": 202,
+        "text": "tornado",
+        "groupId": "word:37",
+        "pos": "n.",
+        "meaning": "龙卷风",
+        "note": ""
+      },
+      {
+        "id": "occurrence:2:10",
+        "paragraphIndex": 3,
+        "start": 370,
+        "end": 374,
+        "text": "gale",
+        "groupId": "word:35",
+        "pos": "n.",
+        "meaning": "大风",
+        "note": ""
+      },
+      {
+        "id": "occurrence:2:11",
+        "paragraphIndex": 4,
+        "start": 117,
+        "end": 123,
+        "text": "pebble",
+        "groupId": "word:25",
+        "pos": "n.",
+        "meaning": "鹅卵石",
+        "note": ""
+      },
+      {
+        "id": "occurrence:2:12",
+        "paragraphIndex": 4,
+        "start": 150,
+        "end": 156,
+        "text": "magnet",
+        "groupId": "word:26",
+        "pos": "n.",
+        "meaning": "磁铁",
+        "note": ""
+      },
+      {
+        "id": "occurrence:2:13",
+        "paragraphIndex": 4,
+        "start": 243,
+        "end": 246,
+        "text": "ore",
+        "groupId": "word:27",
+        "pos": "n.",
+        "meaning": "矿石",
+        "note": ""
+      },
+      {
+        "id": "occurrence:2:14",
+        "paragraphIndex": 4,
+        "start": 384,
+        "end": 390,
+        "text": "quartz",
+        "groupId": "word:30",
+        "pos": "n.",
+        "meaning": "石英",
+        "note": ""
+      },
+      {
+        "id": "occurrence:2:15",
+        "paragraphIndex": 4,
+        "start": 394,
+        "end": 401,
+        "text": "mineral",
+        "groupId": "word:28",
+        "pos": "n.",
+        "meaning": "矿物",
+        "note": ""
+      },
+      {
+        "id": "occurrence:2:16",
+        "paragraphIndex": 4,
+        "start": 474,
+        "end": 481,
+        "text": "granite",
+        "groupId": "word:31",
+        "pos": "n.",
+        "meaning": "花岗岩",
+        "note": ""
+      },
+      {
+        "id": "occurrence:2:17",
+        "paragraphIndex": 5,
+        "start": 34,
+        "end": 40,
+        "text": "marble",
+        "groupId": "word:29",
+        "pos": "n.",
+        "meaning": "大理石",
+        "note": ""
+      },
+      {
+        "id": "occurrence:2:18",
+        "paragraphIndex": 5,
+        "start": 115,
+        "end": 122,
+        "text": "volcano",
+        "groupId": "word:39",
+        "pos": "n.",
+        "meaning": "火山",
+        "note": ""
+      },
+      {
+        "id": "occurrence:2:19",
+        "paragraphIndex": 5,
+        "start": 150,
+        "end": 155,
+        "text": "erupt",
+        "groupId": "word:40",
+        "pos": "vi.",
+        "meaning": "（火山）喷发",
+        "note": ""
+      }
     ]
   }
 ]

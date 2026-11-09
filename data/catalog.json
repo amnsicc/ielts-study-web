@@ -25,6 +25,29 @@
         "grade": 0,
         "primary": false
       }
+    ],
+    "extras": [
+      {
+        "id": "extra:1-A",
+        "number": "1-A",
+        "word": "atmospheric",
+        "senses": [
+          {
+            "id": "sense:extra:1-A:0",
+            "pos": "adj.",
+            "text": "大气的",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:1-A:1",
+            "pos": "adj.",
+            "text": "气氛浓厚的",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      }
     ]
   },
   {
@@ -46,7 +69,8 @@
         "grade": 2,
         "primary": false
       }
-    ]
+    ],
+    "extras": []
   },
   {
     "id": "word:3",
@@ -60,7 +84,8 @@
         "grade": 2,
         "primary": true
       }
-    ]
+    ],
+    "extras": []
   },
   {
     "id": "word:4",
@@ -81,7 +106,8 @@
         "grade": 1,
         "primary": false
       }
-    ]
+    ],
+    "extras": []
   },
   {
     "id": "word:5",
@@ -95,7 +121,8 @@
         "grade": 2,
         "primary": true
       }
-    ]
+    ],
+    "extras": []
   },
   {
     "id": "word:6",
@@ -109,7 +136,8 @@
         "grade": 1,
         "primary": true
       }
-    ]
+    ],
+    "extras": []
   },
   {
     "id": "word:7",
@@ -130,7 +158,8 @@
         "grade": 1,
         "primary": false
       }
-    ]
+    ],
+    "extras": []
   },
   {
     "id": "word:8",
@@ -165,7 +194,8 @@
         "grade": 0,
         "primary": false
       }
-    ]
+    ],
+    "extras": []
   },
   {
     "id": "word:9",
@@ -186,7 +216,8 @@
         "grade": 1,
         "primary": true
       }
-    ]
+    ],
+    "extras": []
   },
   {
     "id": "word:10",
@@ -200,7 +231,8 @@
         "grade": 2,
         "primary": true
       }
-    ]
+    ],
+    "extras": []
   },
   {
     "id": "word:11",
@@ -213,6 +245,36 @@
         "text": "经度",
         "grade": 2,
         "primary": true
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:11-A",
+        "number": "11-A",
+        "word": "longitudinal",
+        "senses": [
+          {
+            "id": "sense:extra:11-A:0",
+            "pos": "adj.",
+            "text": "纵向的",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:11-A:1",
+            "pos": "adj.",
+            "text": "长期跟踪的",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:11-A:2",
+            "pos": "adj.",
+            "text": "经度的",
+            "grade": 1,
+            "primary": true
+          }
+        ]
       }
     ]
   },
@@ -242,6 +304,50 @@
         "grade": 1,
         "primary": false
       }
+    ],
+    "extras": [
+      {
+        "id": "extra:12-A",
+        "number": "12-A",
+        "word": "latitudes",
+        "senses": [
+          {
+            "id": "sense:extra:12-A:0",
+            "pos": "n.",
+            "text": "纬度地区(此义用复数)",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      },
+      {
+        "id": "extra:12-B",
+        "number": "12-B",
+        "word": "at high latitudes",
+        "senses": [
+          {
+            "id": "sense:extra:12-B:0",
+            "pos": "",
+            "text": "在高纬度地区",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      },
+      {
+        "id": "extra:12-C",
+        "number": "12-C",
+        "word": "at low latitudes",
+        "senses": [
+          {
+            "id": "sense:extra:12-C:0",
+            "pos": "",
+            "text": "在低纬度地区",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      }
     ]
   },
   {
@@ -262,6 +368,92 @@
         "text": "海平线",
         "grade": 1,
         "primary": false
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:13-A",
+        "number": "13-A",
+        "word": "on the horizon",
+        "senses": [
+          {
+            "id": "sense:extra:13-A:0",
+            "pos": "",
+            "text": "即将发生",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:13-A:1",
+            "pos": "",
+            "text": "可能很快出现",
+            "grade": 1,
+            "primary": false
+          }
+        ]
+      },
+      {
+        "id": "extra:13-B",
+        "number": "13-B",
+        "word": "horizons",
+        "senses": [
+          {
+            "id": "sense:extra:13-B:0",
+            "pos": "n.",
+            "text": "眼界",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:13-B:1",
+            "pos": "n.",
+            "text": "见识(通常用复数)",
+            "grade": 1,
+            "primary": false
+          }
+        ]
+      },
+      {
+        "id": "extra:13-C",
+        "number": "13-C",
+        "word": "horizontal",
+        "senses": [
+          {
+            "id": "sense:extra:13-C:0",
+            "pos": "adj.",
+            "text": "水平的",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:13-C:1",
+            "pos": "adj.",
+            "text": "横向的",
+            "grade": 1,
+            "primary": false
+          }
+        ]
+      },
+      {
+        "id": "extra:13-D",
+        "number": "13-D",
+        "word": "broaden / expand / widen someone's horizons",
+        "senses": [
+          {
+            "id": "sense:extra:13-D:0",
+            "pos": "",
+            "text": "开阔某人的眼界",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:13-D:1",
+            "pos": "",
+            "text": "增长见识",
+            "grade": 1,
+            "primary": false
+          }
+        ]
       }
     ]
   },
@@ -284,7 +476,8 @@
         "grade": 1,
         "primary": false
       }
-    ]
+    ],
+    "extras": []
   },
   {
     "id": "word:15",
@@ -304,6 +497,29 @@
         "text": "彻底失败的人或事物",
         "grade": 1,
         "primary": true
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:15-A",
+        "number": "15-A",
+        "word": "disastrous",
+        "senses": [
+          {
+            "id": "sense:extra:15-A:0",
+            "pos": "adj.",
+            "text": "灾难性的",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:15-A:1",
+            "pos": "adj.",
+            "text": "极糟糕的",
+            "grade": 1,
+            "primary": false
+          }
+        ]
       }
     ]
   },
@@ -326,7 +542,8 @@
         "grade": 2,
         "primary": false
       }
-    ]
+    ],
+    "extras": []
   },
   {
     "id": "word:17",
@@ -346,6 +563,29 @@
         "text": "极其糟糕的",
         "grade": 1,
         "primary": false
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:17-A",
+        "number": "17-A",
+        "word": "catastrophe",
+        "senses": [
+          {
+            "id": "sense:extra:17-A:0",
+            "pos": "n.",
+            "text": "大灾难",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:17-A:1",
+            "pos": "n.",
+            "text": "大灾祸",
+            "grade": 1,
+            "primary": false
+          }
+        ]
       }
     ]
   },
@@ -368,7 +608,8 @@
         "grade": 2,
         "primary": false
       }
-    ]
+    ],
+    "extras": []
   },
   {
     "id": "word:19",
@@ -388,6 +629,57 @@
         "text": "使处于险境",
         "grade": 1,
         "primary": false
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:19-A",
+        "number": "19-A",
+        "word": "danger",
+        "senses": [
+          {
+            "id": "sense:extra:19-A:0",
+            "pos": "n.",
+            "text": "危险",
+            "grade": 0,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:19-A:1",
+            "pos": "n.",
+            "text": "危险因素",
+            "grade": 0,
+            "primary": false
+          }
+        ]
+      },
+      {
+        "id": "extra:19-B",
+        "number": "19-B",
+        "word": "endangered",
+        "senses": [
+          {
+            "id": "sense:extra:19-B:0",
+            "pos": "adj.",
+            "text": "濒危的",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      },
+      {
+        "id": "extra:19-C",
+        "number": "19-C",
+        "word": "dangerous",
+        "senses": [
+          {
+            "id": "sense:extra:19-C:0",
+            "pos": "adj.",
+            "text": "危险的",
+            "grade": 0,
+            "primary": true
+          }
+        ]
       }
     ]
   },
@@ -409,6 +701,29 @@
         "text": "危害",
         "grade": 1,
         "primary": false
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:20-A",
+        "number": "20-A",
+        "word": "in jeopardy",
+        "senses": [
+          {
+            "id": "sense:extra:20-A:0",
+            "pos": "",
+            "text": "处于危险中",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:20-A:1",
+            "pos": "",
+            "text": "受到威胁",
+            "grade": 1,
+            "primary": false
+          }
+        ]
       }
     ]
   },
@@ -438,6 +753,57 @@
         "grade": 1,
         "primary": false
       }
+    ],
+    "extras": [
+      {
+        "id": "extra:21-A",
+        "number": "21-A",
+        "word": "destroy",
+        "senses": [
+          {
+            "id": "sense:extra:21-A:0",
+            "pos": "v.",
+            "text": "毁坏",
+            "grade": 0,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:21-A:1",
+            "pos": "v.",
+            "text": "摧毁",
+            "grade": 0,
+            "primary": false
+          }
+        ]
+      },
+      {
+        "id": "extra:21-B",
+        "number": "21-B",
+        "word": "destruction",
+        "senses": [
+          {
+            "id": "sense:extra:21-B:0",
+            "pos": "n.",
+            "text": "毁坏",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:21-B:1",
+            "pos": "n.",
+            "text": "破坏",
+            "grade": 1,
+            "primary": false
+          },
+          {
+            "id": "sense:extra:21-B:2",
+            "pos": "n.",
+            "text": "毁灭",
+            "grade": 1,
+            "primary": false
+          }
+        ]
+      }
     ]
   },
   {
@@ -452,7 +818,8 @@
         "grade": 2,
         "primary": true
       }
-    ]
+    ],
+    "extras": []
   },
   {
     "id": "word:23",
@@ -473,6 +840,36 @@
         "grade": 1,
         "primary": false
       }
+    ],
+    "extras": [
+      {
+        "id": "extra:23-A",
+        "number": "23-A",
+        "word": "the greenhouse effect",
+        "senses": [
+          {
+            "id": "sense:extra:23-A:0",
+            "pos": "n.",
+            "text": "温室效应",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      },
+      {
+        "id": "extra:23-B",
+        "number": "23-B",
+        "word": "greenhouse gas",
+        "senses": [
+          {
+            "id": "sense:extra:23-B:0",
+            "pos": "n.",
+            "text": "温室气体",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      }
     ]
   },
   {
@@ -486,6 +883,43 @@
         "text": "现象",
         "grade": 0,
         "primary": true
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:24-A",
+        "number": "24-A",
+        "word": "phenomena",
+        "senses": [
+          {
+            "id": "sense:extra:24-A:0",
+            "pos": "n.",
+            "text": "现象(复数)",
+            "grade": 0,
+            "primary": true
+          }
+        ]
+      },
+      {
+        "id": "extra:24-B",
+        "number": "24-B",
+        "word": "phenomenal",
+        "senses": [
+          {
+            "id": "sense:extra:24-B:0",
+            "pos": "adj.",
+            "text": "非凡的",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:24-B:1",
+            "pos": "adj.",
+            "text": "惊人的",
+            "grade": 1,
+            "primary": false
+          }
+        ]
       }
     ]
   },
@@ -508,7 +942,8 @@
         "grade": 1,
         "primary": false
       }
-    ]
+    ],
+    "extras": []
   },
   {
     "id": "word:26",
@@ -536,6 +971,29 @@
         "grade": 1,
         "primary": true
       }
+    ],
+    "extras": [
+      {
+        "id": "extra:26-A",
+        "number": "26-A",
+        "word": "magnetic",
+        "senses": [
+          {
+            "id": "sense:extra:26-A:0",
+            "pos": "adj.",
+            "text": "有磁性的",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:26-A:1",
+            "pos": "adj.",
+            "text": "有吸引力的",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      }
     ]
   },
   {
@@ -550,7 +1008,8 @@
         "grade": 1,
         "primary": true
       }
-    ]
+    ],
+    "extras": []
   },
   {
     "id": "word:28",
@@ -571,7 +1030,8 @@
         "grade": 1,
         "primary": true
       }
-    ]
+    ],
+    "extras": []
   },
   {
     "id": "word:29",
@@ -592,7 +1052,8 @@
         "grade": 1,
         "primary": true
       }
-    ]
+    ],
+    "extras": []
   },
   {
     "id": "word:30",
@@ -606,7 +1067,8 @@
         "grade": 2,
         "primary": true
       }
-    ]
+    ],
+    "extras": []
   },
   {
     "id": "word:31",
@@ -620,7 +1082,8 @@
         "grade": 2,
         "primary": true
       }
-    ]
+    ],
+    "extras": []
   },
   {
     "id": "word:32",
@@ -648,7 +1111,8 @@
         "grade": 1,
         "primary": true
       }
-    ]
+    ],
+    "extras": []
   },
   {
     "id": "word:33",
@@ -668,6 +1132,29 @@
         "text": "轻而易举的事",
         "grade": 1,
         "primary": true
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:33-A",
+        "number": "33-A",
+        "word": "breeze through sth",
+        "senses": [
+          {
+            "id": "sense:extra:33-A:0",
+            "pos": "",
+            "text": "轻松完成",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:33-A:1",
+            "pos": "",
+            "text": "轻松通过(非正式)",
+            "grade": 1,
+            "primary": false
+          }
+        ]
       }
     ]
   },
@@ -697,7 +1184,8 @@
         "grade": 1,
         "primary": false
       }
-    ]
+    ],
+    "extras": []
   },
   {
     "id": "word:35",
@@ -718,7 +1206,8 @@
         "grade": 2,
         "primary": false
       }
-    ]
+    ],
+    "extras": []
   },
   {
     "id": "word:36",
@@ -732,7 +1221,8 @@
         "grade": 1,
         "primary": true
       }
-    ]
+    ],
+    "extras": []
   },
   {
     "id": "word:37",
@@ -746,7 +1236,8 @@
         "grade": 1,
         "primary": true
       }
-    ]
+    ],
+    "extras": []
   },
   {
     "id": "word:38",
@@ -760,7 +1251,8 @@
         "grade": 1,
         "primary": true
       }
-    ]
+    ],
+    "extras": []
   },
   {
     "id": "word:39",
@@ -773,6 +1265,29 @@
         "text": "火山",
         "grade": 1,
         "primary": true
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:39-A",
+        "number": "39-A",
+        "word": "volcanic",
+        "senses": [
+          {
+            "id": "sense:extra:39-A:0",
+            "pos": "adj.",
+            "text": "火山的",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:39-A:1",
+            "pos": "adj.",
+            "text": "由火山引起的",
+            "grade": 1,
+            "primary": false
+          }
+        ]
       }
     ]
   },
@@ -801,6 +1316,22 @@
         "text": "突然爆发",
         "grade": 1,
         "primary": true
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:40-A",
+        "number": "40-A",
+        "word": "eruption",
+        "senses": [
+          {
+            "id": "sense:extra:40-A:0",
+            "pos": "n.",
+            "text": "(火山的)喷发",
+            "grade": 1,
+            "primary": true
+          }
+        ]
       }
     ]
   }

@@ -30,8 +30,13 @@ try {
   content.className = 'app-content';
   app.replaceChildren(header, content);
   let reading;
+  let readingScroll = [0, 0];
   function route() {
     const name = location.hash.replace(/^#\/?/, '') || 'home';
+    if (reading?.isConnected && name !== 'reading') {
+      reading.querySelector('dialog[open]')?.close();
+      readingScroll = [...reading.querySelectorAll('#word-scroll, #article-scroll')].map(element => element.scrollTop);
+    }
     back.hidden = name === 'home';
     breadcrumb.textContent = name === 'reading' ? '/ 阅读' : '';
     if (name === 'home') {
@@ -39,6 +44,7 @@ try {
     } else if (name === 'reading') {
       reading ??= readingView(session, materials);
       content.replaceChildren(reading);
+      [...reading.querySelectorAll('#word-scroll, #article-scroll')].forEach((element, index) => { element.scrollTop = readingScroll[index]; });
     } else {
       const panel = document.createElement('main');
       panel.className = 'unavailable';

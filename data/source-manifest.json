@@ -3,6 +3,8 @@
   "module": "reading",
   "groups": 40,
   "materials": 2,
+  "extras": 25,
+  "occurrences": 40,
   "sources": [
     {
       "path": "D:\\文档\\雅思备考\\codex讨论结果\\雅思词汇真经_1-20词_基础释义优化试样_主要释义标红复核版_20261029.pdf",
@@ -38,12 +40,18 @@
       "path": "D:\\codex_project\\雅思备考\\tmp\\pdfs\\vocab-order-audit-20261029\\published.json",
       "sha256": "139a5c375e5fb7115c959cfd3e03eaeca2431dc1ff990346c54e72bcf40d06d1",
       "role": "conversion-source"
+    },
+    {
+      "path": "D:\\codex_project\\雅思备考\\output\\vocab-1-200-20261027\\reading-meanings-001-200.md",
+      "sha256": "c6f7ac15dc79fe30fc24c04735adcc26cbca7b99cf4ac3c7f59c4cc0560aaad2",
+      "role": "conversion-source"
     }
   ],
   "notes": [
     "Only reading-selected senses retained, source order and per-sense grades unchanged.",
     "Body paragraphs exactly match published Markdown before rendering backtick delimiters.",
     "No source publisher executed; no source material or learning database modified.",
-    "D1a has no extra-target article; expandable extras are deferred to D1b."
+    "25 reading-selected extras retain source subnumbers; not claimed as article targets.",
+    "40 clickable occurrences come only from explicit backtick markers; meaning list equals article details."
   ]
 }

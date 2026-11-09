@@ -1,6 +1,7 @@
 """Read existing audited sources; write only this project's isolated sample."""
 import hashlib
 import json
+import re
 from pathlib import Path
 
 PROJECT = Path(__file__).resolve().parents[1]
@@ -31,19 +32,41 @@ for record in published['published']:
 audit_path = AUDIT_DIR / 'audit.json'
 audit = load(audit_path)
 catalog = []
+def reading_senses(entry, prefix):
+    return [
+        {'id': f"{prefix}:{sense['previous_index']}", 'pos': sense['pos'], 'text': sense['text'],
+         'grade': int(sense['code'][0]), 'primary': sense['primary_meaning']}
+        for sense in entry['senses'] if sense['code'][0] != '-'
+    ]
+
 for word in audit['words']:
     if word['n'] > 40:
         continue
-    senses = [
-        {'id': f"sense:{word['n']}:{sense['previous_index']}",
-         'pos': sense['pos'], 'text': sense['text'], 'grade': int(sense['code'][0]),
-         'primary': sense['primary_meaning']}
-        for sense in word['senses'] if sense['code'][0] != '-'
-    ]
+    senses = reading_senses(word, f"sense:{word['n']}")
     if senses:
+        extras = [
+            {'id': f"extra:{extra['id']}", 'number': extra['id'], 'word': extra['text'],
+             'senses': reading_senses(extra, f"sense:extra:{extra['id']}")}
+            for extra in audit['extras'] if extra['parent'] == word['n']
+            and any(s['code'][0] != '-' for s in extra['senses'])
+        ]
         catalog.append({'id': f"word:{word['n']}", 'number': word['n'],
-                        'word': word['word'], 'senses': senses})
+                        'word': word['word'], 'senses': senses, 'extras': extras})
 assert len(catalog) == 40
+assert sum(len(group['extras']) for group in catalog) == 25
+
+meanings_path = READING_DIR / 'reading-meanings-001-200.md'
+meanings_text = meanings_path.read_text(encoding='utf-8')
+lookup = {group['id']: group for group in catalog}
+selected_meanings = {}
+for match in re.finditer(r'^\[(\d{3})\] (.+?) (n\.|adj\.|vi\.|vt\.) (.+)$', meanings_text, re.M):
+    number, word, pos, explanation = match.groups()
+    if int(number) > 40:
+        continue
+    meaning, _, note = explanation.partition('｜')
+    selected_meanings[word] = {'groupId': f'word:{int(number)}', 'pos': pos,
+                               'meaning': meaning, 'note': note}
+assert len(selected_meanings) == 40
 
 passages_path = WORKSPACE / 'tmp/pdfs/reading-rebuild-20261028/passages.json'
 materials = []
@@ -53,23 +76,40 @@ for item in load(passages_path)[:2]:
     raw = original.read_text(encoding='utf-8')
     body = raw.split('\n\n', 2)[2].split('\n\n<details>')[0].strip()
     assert body == '\n\n'.join(item['paragraphs']), f'Body differs: {original}'
+    for line in re.findall(r'^\[\d{3}\].+$', raw, re.M):
+        assert line in meanings_text, f'Article and meaning list disagree: {line}'
+    occurrences = []
+    for paragraph_index, paragraph in enumerate(item['paragraphs']):
+        plain = paragraph.replace('`', '')
+        removed = 0
+        for match in re.finditer(r'`([^`]+)`', paragraph):
+            text = match.group(1)
+            selected = selected_meanings[text]
+            start = match.start() - removed
+            assert plain[start:start + len(text)] == text
+            occurrences.append({'id': f"occurrence:{item['index']}:{len(occurrences)}",
+                                'paragraphIndex': paragraph_index, 'start': start, 'end': start + len(text),
+                                'text': text, **selected})
+            removed += 2
+    assert len(occurrences) == 20
     materials.append({'id': f"reading:{item['index']}", 'version': '2026-10-28',
                       'label': 'A' if item['index'] == 1 else 'B',
                       'title': item['title'], 'start': item['start'], 'end': item['end'],
                       'targetGroupIds': [f'word:{n}' for n in range(item['start'], item['end'] + 1)],
-                      'extraTargets': [], 'paragraphs': item['paragraphs']})
+                      'extraTargets': [], 'paragraphs': item['paragraphs'], 'occurrences': occurrences})
     sources.append({'path': str(original), 'sha256': digest(original), 'role': 'unchanged-reading-body'})
 
-for path in [audit_path, passages_path, AUDIT_DIR / 'published.json']:
+for path in [audit_path, passages_path, AUDIT_DIR / 'published.json', meanings_path]:
     sources.append({'path': str(path), 'sha256': digest(path), 'role': 'conversion-source'})
 write('catalog.json', catalog)
 write('materials.json', materials)
 write('source-manifest.json', {
     'sample': '001—040', 'module': 'reading', 'groups': len(catalog),
-    'materials': len(materials), 'sources': sources,
+    'materials': len(materials), 'extras': 25, 'occurrences': 40, 'sources': sources,
     'notes': ['Only reading-selected senses retained, source order and per-sense grades unchanged.',
               'Body paragraphs exactly match published Markdown before rendering backtick delimiters.',
               'No source publisher executed; no source material or learning database modified.',
-              'D1a has no extra-target article; expandable extras are deferred to D1b.'],
+              '25 reading-selected extras retain source subnumbers; not claimed as article targets.',
+              '40 clickable occurrences come only from explicit backtick markers; meaning list equals article details.'],
 })
-print('Verified PDF publication hashes; 40 groups, 2 original article bodies prepared.')
+print('Verified PDF hashes and article details; 40 groups, 25 extras, 40 occurrences, 2 unchanged article bodies prepared.')

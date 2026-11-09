@@ -36,7 +36,7 @@ const server = createServer(async (req, res) => {
   }
 });
 server.on('error', error => { console.error(`启动失败：${error.message}`); process.exitCode = 1; });
-server.listen(port, '127.0.0.1', () => console.log(`雅思学习区 D1a: http://127.0.0.1:${port}`));
+server.listen(port, '127.0.0.1', () => console.log(`雅思学习区 D1b: http://127.0.0.1:${port}`));
 for (const signal of ['SIGINT', 'SIGTERM']) {
   process.on(signal, () => server.close());
 }

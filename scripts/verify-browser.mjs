@@ -8,7 +8,7 @@ const value = name => args[args.indexOf(name) + 1];
 if (!args.includes('--output')) throw new Error('需要 --output <尚不存在的证据目录>');
 const output = path.resolve(value('--output'));
 mkdirSync(output, { recursive: false });
-const session = args.includes('--session') ? value('--session') : `ielts-d1a-${Date.now()}`;
+const session = args.includes('--session') ? value('--session') : `ielts-d1b-${Date.now()}`;
 const cli = process.env.AGENT_BROWSER_EXE || 'D:/NodeTools/npm-global/node_modules/agent-browser/bin/agent-browser-win32-x64.exe';
 const chrome = process.env.CHROME_PATH || 'C:/Program Files/Google/Chrome/Application/chrome.exe';
 const url = args.includes('--url') ? value('--url') : 'http://127.0.0.1:4178';
@@ -50,8 +50,11 @@ try {
   check('四入口、未开放模块说明与返回可用');
   command('click', '.module-reading');
   command('wait', '#material-select');
-  const numbers = () => evaluate(`Array.from(document.querySelectorAll('tbody tr'), row => Number(row.dataset.number))`);
+  const numbers = () => evaluate(`Array.from(document.querySelectorAll('tr.main-row'), row => Number(row.dataset.number))`);
   assert.deepEqual(numbers(), [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]);
+  assert.equal(evaluate(`getComputedStyle(document.querySelector('[data-number="1"] .meaning-content')).visibility`), 'hidden');
+  assert.equal(evaluate(`document.querySelector('#target-highlight').checked`), true);
+  command('select', '#global-display', 'both');
   const atmosphere = evaluate(`Array.from(document.querySelector('[data-number="1"]').querySelectorAll('.sense-text'), n=>n.textContent)`);
   assert.deepEqual(atmosphere, ['气氛', '大气层', '空气']);
   assert.deepEqual(evaluate(`Array.from(document.querySelector('[data-number="8"]').querySelectorAll('.sense-text'), n=>n.textContent)`), ['核心', '中心部分', '核心的', '最重要的']);
@@ -119,17 +122,164 @@ try {
   assert.equal(evaluate('document.querySelector("#material-select").value'), 'reading:1');
   check('重新加载为新会话，恢复首篇和默认分区');
 
+  const hiddenSnapshot = command('snapshot', '-i');
+  writeFileSync(path.join(output, 'default-visibility-snapshot.json'), JSON.stringify(hiddenSnapshot, null, 2));
+  assert.ok(!JSON.stringify(hiddenSnapshot).includes('气氛'));
+  const visible = id => evaluate(`(() => { const row=document.querySelector('[data-entry-id="${id}"]'); return {
+    english:getComputedStyle(row.querySelector('[data-language=english]')).visibility,
+    chinese:getComputedStyle(row.querySelector('[data-language=chinese]')).visibility,
+    height:row.getBoundingClientRect().height
+  }; })()`);
+  assert.equal(visible('word:1').chinese, 'hidden');
+  const originalHeight = visible('word:1').height;
+  command('select', '[data-display-for="word:1"]', 'chinese');
+  command('select', '[data-display-for="word:2"]', 'english');
+  assert.deepEqual([visible('word:1').english, visible('word:1').chinese], ['hidden', 'visible']);
+  assert.deepEqual([visible('word:2').english, visible('word:2').chinese], ['visible', 'hidden']);
+  assert.equal(visible('word:1').height, originalHeight);
+  command('select', '#global-display', 'none');
+  assert.deepEqual([visible('word:1').english, visible('word:1').chinese], ['hidden', 'hidden']);
+  assert.equal(visible('word:1').height, originalHeight);
+  command('select', '[data-display-for="word:1"]', 'both');
+  assert.equal(evaluate('document.querySelector("#global-display").value'), 'custom');
+  command('select', '#global-display', 'both');
+  check('默认仅英文、逐词独立、整体四模式、遮挡保留行高且不在无障碍树泄露');
+
+  // 阅读滚动后，词表操作不得重置正文。
+  command('focus', '#article-scroll');
+  command('press', 'Control+End');
+  command('wait', '--fn', '(() => {const e=document.querySelector("#article-scroll");return e.scrollTop >= e.scrollHeight-e.clientHeight-2})()');
+  const articlePosition = metrics().articleTop;
+  command('click', '[data-expand="word:1"]');
+  assert.equal(evaluate(`document.querySelector('[data-entry-id="extra:1-A"]').hidden`), false);
+  assert.equal(visible('extra:1-A').chinese, 'visible');
+  command('select', '[data-display-for="extra:1-A"]', 'chinese');
+  assert.equal(visible('extra:1-A').english, 'hidden');
+  assert.equal(visible('word:1').english, 'visible');
+  command('click', '[data-expand="word:1"]');
+  command('click', '[data-expand="word:1"]');
+  assert.equal(visible('extra:1-A').english, 'hidden');
+  assert.equal(metrics().articleTop, articlePosition);
+  assert.deepEqual(numbers(), [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]);
+  check('展开/收起及拓展单条显隐保留编号和状态，正文位置不变');
+
+  // 两篇全部已知拓展入口均用真实点击展开，记录文字供来源对照。
+  const allExtras = [];
+  for (const material of ['reading:1', 'reading:2']) {
+    command('select', '#material-select', material);
+    command('select', '#global-display', 'both');
+    const closedGroups = evaluate(`Array.from(document.querySelectorAll('[data-expand][aria-expanded="false"]'),b=>b.dataset.expand)`);
+    for (const id of closedGroups) {
+      command('scrollintoview', `[data-expand="${id}"]`);
+      command('click', `[data-expand="${id}"]`);
+    }
+    const data = evaluate(`Array.from(document.querySelectorAll('.extra-row'),r=>({id:r.dataset.entryId,number:r.querySelector('.word-number').textContent,
+      word:r.querySelector('.entry-word').textContent,hidden:r.hidden,senses:Array.from(r.querySelectorAll('.gloss'),g=>({text:g.querySelector('.sense-text').textContent,grade:g.querySelector('.sense-grade').textContent}))}))`);
+    assert.ok(data.every(row => !row.hidden));
+    allExtras.push(...data);
+  }
+  assert.equal(allExtras.length, 25);
+  assert.deepEqual(allExtras.find(row => row.id === 'extra:13-A').senses.map(s=>s.text), ['即将发生', '可能很快出现']);
+  writeFileSync(path.join(output, 'all-extras-dom.json'), JSON.stringify(allExtras, null, 2));
+  check('两篇25条阅读拓展均真实展开，内容/子编号记录可核对');
+  capture('08-extras-b.png');
+
+  command('select', '#material-select', 'reading:1');
+  const originalBody = evaluate(`Array.from(document.querySelectorAll('.article-paragraph'),p=>p.textContent)`);
+  command('click', '[data-occurrence-id="occurrence:1:0"]');
+  assert.equal(evaluate('document.querySelector("dialog .meaning-text").textContent'), 'n. 气氛');
+  assert.equal(evaluate('document.querySelector("dialog[open] .meaning-title").textContent'), 'atmosphere');
+  capture('09-meaning-atmosphere.png');
+  command('press', 'Escape');
+  assert.equal(evaluate('document.activeElement.dataset.occurrenceId'), 'occurrence:1:0');
+  command('scrollintoview', '[data-occurrence-id="occurrence:1:5"]');
+  command('click', '[data-occurrence-id="occurrence:1:5"]');
+  assert.equal(evaluate('document.querySelector("dialog .meaning-text").textContent'), 'n. 地壳');
+  command('click', '.meaning-top button');
+  check('正文查义准确绑定气氛/地壳，关闭和Escape返回原目标焦点');
+  command('uncheck', '#target-highlight');
+  assert.equal(evaluate(`getComputedStyle(document.querySelector('.article-target')).backgroundColor`), 'rgba(0, 0, 0, 0)');
+  command('scrollintoview', '[data-occurrence-id="occurrence:1:0"]');
+  command('focus', '[data-occurrence-id="occurrence:1:0"]');
+  command('press', 'Enter');
+  assert.equal(evaluate('document.querySelector("dialog .meaning-text").textContent'), 'n. 气氛');
+  command('press', 'Escape');
+  command('check', '#target-highlight');
+  assert.deepEqual(evaluate(`Array.from(document.querySelectorAll('.article-paragraph'),p=>p.textContent)`), originalBody);
+  check('高亮关闭仍可键盘查义，开关不改变正文');
+
+  const allMeanings = [];
+  for (const material of ['reading:1', 'reading:2']) {
+    command('select', '#material-select', material);
+    const ids = evaluate('Array.from(document.querySelectorAll(".article-target"),b=>b.dataset.occurrenceId)');
+    assert.equal(ids.length, 20);
+    for (const id of ids) {
+      command('scrollintoview', `[data-occurrence-id="${id}"]`);
+      command('click', `[data-occurrence-id="${id}"]`);
+      allMeanings.push({ material, id, ...evaluate('({text:document.querySelector(".meaning-title").textContent,meaning:document.querySelector(".meaning-text").textContent,note:document.querySelector(".meaning-note").textContent})') });
+      command('press', 'Escape');
+      assert.equal(evaluate('document.activeElement.dataset.occurrenceId'), id);
+    }
+  }
+  writeFileSync(path.join(output, 'all-meaning-dialogs.json'), JSON.stringify(allMeanings, null, 2));
+  check('两篇40处目标逐一真实点击查义并关闭，焦点返回对应目标');
+
+  command('set', 'viewport', '560', '740');
+  command('select', '#material-select', 'reading:1');
+  command('select', '#global-display', 'both');
+  command('scrollintoview', '[data-expand="word:13"]');
+  // 前序已展开时不重复关闭。
+  if (evaluate(`document.querySelector('[data-expand="word:13"]').getAttribute('aria-expanded')`) === 'false') command('click', '[data-expand="word:13"]');
+  command('scrollintoview', '[data-entry-id="extra:13-D"]');
+  assert.equal(evaluate('document.querySelector("#word-scroll").scrollWidth <= document.querySelector("#word-scroll").clientWidth'), true);
+  capture('10-long-extra-560.png');
+  command('select', '[data-display-for="extra:13-D"]', 'none');
+  assert.equal(visible('extra:13-D').english, 'hidden');
+  command('select', '[data-display-for="extra:13-D"]', 'both');
+  command('scrollintoview', '[data-occurrence-id="occurrence:1:0"]');
+  command('click', '[data-occurrence-id="occurrence:1:0"]');
+  capture('11-meaning-560.png');
+  const dialogBounds = evaluate('(() => {const r=document.querySelector("dialog").getBoundingClientRect();return {left:r.left,right:r.right,bottom:r.bottom,height:innerHeight}})()');
+  assert.ok(dialogBounds.left >= 0 && dialogBounds.right <= 560 && dialogBounds.bottom <= dialogBounds.height);
+  command('press', 'Escape');
+  check('560宽长词块可达且可逐条遮挡，查义浮层在可视区内');
+  command('set', 'viewport', '1440', '1000');
+
+  command('select', '#material-select', 'reading:2');
+  command('select', '#global-display', 'none');
+  command('focus', '#reading-divider');
+  command('press', 'End');
+  command('uncheck', '#target-highlight');
+  command('click', '.back-link');
+  command('click', '.module-reading');
+  command('wait', '#global-display');
+  assert.equal(evaluate('document.querySelector("#global-display").value'), 'none');
+  assert.equal(evaluate('document.querySelector("#target-highlight").checked'), false);
+  command('click', '.reset-view');
+  assert.equal(evaluate('document.querySelector("#material-select").value'), 'reading:1');
+  assert.equal(evaluate('document.querySelector("#global-display").value'), 'english');
+  assert.equal(evaluate('document.querySelector("#reading-divider").getAttribute("aria-valuenow")'), '46');
+  assert.equal(evaluate('document.querySelector("#target-highlight").checked'), true);
+  assert.equal(evaluate('document.querySelectorAll(".extra-row:not([hidden])").length'), 0);
+  assert.equal(metrics().articleTop, 0);
+  assert.equal(metrics().wordTop, 0);
+  check('页内保留状态；阅读模块重置恢复首篇/46%/英文/收起/高亮/零滚动');
+  command('select', '#global-display', 'both');
+
   for (const [width, height] of [[1280,720],[900,700],[560,740]]) {
     command('set', 'viewport', String(width), String(height));
     const size = metrics();
     assert.ok(size.pageWidth <= width);
     assert.ok(size.wordHeight > 80 && size.articleHeight > 80);
+    assert.equal(evaluate('document.querySelector("#word-scroll").scrollWidth <= document.querySelector("#word-scroll").clientWidth'), true);
     capture(`06-reading-${width}.png`);
     check(`窗口${width}×${height}无整页横向溢出，两区仍可滚动`, size);
   }
   command('set', 'viewport', '1440', '1000');
   capture('07-reading-final.png');
-  writeFileSync(path.join(output, 'browser-errors.json'), JSON.stringify(command('errors'), null, 2));
+  const errors = command('errors');
+  assert.deepEqual(errors.errors, []);
+  writeFileSync(path.join(output, 'browser-errors.json'), JSON.stringify(errors, null, 2));
   writeFileSync(path.join(output, 'reading-snapshot.json'), JSON.stringify(command('snapshot', '-i'), null, 2));
   writeFileSync(path.join(output, 'result.json'), JSON.stringify({ status: 'passed', session, url, checks }, null, 2));
   console.log(JSON.stringify({ status: 'passed', checks: checks.length, output }));
