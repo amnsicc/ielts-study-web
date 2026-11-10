@@ -158,6 +158,8 @@ button:disabled { cursor:default; opacity:.55; }
 .listening-layout { --listen-left:64%; display:grid; grid-template-columns:minmax(430px,var(--listen-left)) 18px minmax(250px,1fr); height:100%; padding:18px 28px 22px; max-width:1800px; margin:auto; min-height:0; }
 .listening-left-region { min-height:0; min-width:0; }
 .listening-left.reading-layout { padding:0; height:100%; max-width:none; }
+.listening-left.clip-open { overflow:auto; }
+.listening-left.clip-open .word-panel { flex-shrink:1; min-height:220px; }
 .listening-column-divider { cursor:col-resize; touch-action:none; display:flex; align-items:center; justify-content:center; }
 .listening-column-divider::before { content:''; width:4px; height:48px; background:#a9babe; border-radius:3px; }
 .listening-left .word-english { width:26%; font-size:19px; }
@@ -171,6 +173,14 @@ button:disabled { cursor:default; opacity:.55; }
 .listening-player { flex:none; display:flex; flex-wrap:wrap; align-items:center; gap:7px; padding:9px 12px; border-bottom:1px solid var(--line); }
 .listening-player audio { width:100%; height:36px; }
 .playback-status { width:100%; margin:0; font-size:12px; color:var(--muted); }
+.clip-bar { width:100%; border-left:3px solid #176c63; padding:7px 10px; background:#f3f8fa; }
+.clip-selection { margin:0 0 4px; max-height:64px; overflow:auto; font:17px/1.5 Georgia,serif; overflow-wrap:anywhere; white-space:pre-wrap; }
+.clip-status,.clip-availability { font-size:12px; color:var(--muted); line-height:1.6; }
+.clip-availability { margin:0; width:100%; }
+.clip-actions { display:flex; gap:6px; flex-wrap:wrap; margin-top:6px; }
+.clip-actions [aria-pressed="true"] { background:#176c63; color:#fff; }
+::highlight(listening-clip) { background-color:#d9ebfa; color:#143f68; }
+.listening-left .article-paragraph,.listening-left .article-target { user-select:text; }
 .listening-left.transcript-closed .word-panel { flex:1; }
 .listening-left.transcript-closed .article-panel { flex:0 0 auto; margin-top:12px; }
 .listening-left .article-panel { min-height:200px; }

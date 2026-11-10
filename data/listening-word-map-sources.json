@@ -1,0 +1,41 @@
+{
+  "formatVersion": 1,
+  "sources": [
+    {
+      "path": "D:\\codex_project\\雅思备考\\ielts-study-web\\data\\listening-materials.json",
+      "sha256": "b01f795f069f0b90aa8a8f1539096019dd312c28c78cc3c90e1a1a471fd6b8d0"
+    },
+    {
+      "path": "D:\\codex_project\\雅思备考\\tmp\\pdfs\\reading-listening-1-200-20261027\\listening-round-01-001-010-speech-events.json",
+      "sha256": "fc0e06c1be85e8e2e4004a8ff34824575dabd813946edf740d3629903283090f"
+    },
+    {
+      "path": "D:\\codex_project\\雅思备考\\output\\vocab-1-200-20261027\\listening-round-01-001-010.mp3",
+      "sha256": "128a967e08c895829efc24d5c1112d38b40585ce28e6ba2dc2f34ce25b4accee"
+    },
+    {
+      "path": "D:\\codex_project\\雅思备考\\output\\vocab-1-200-20261027\\listening-round-01-001-010.txt",
+      "sha256": "1644f9d683f0b92eb17a07d5c3dab391c6587dc9e753816557a3f7d4668962e2"
+    },
+    {
+      "path": "D:\\codex_project\\雅思备考\\tmp\\pdfs\\reading-listening-1-200-20261027\\listening-round-01-001-010-male-us-speech-events.json",
+      "sha256": "b08353a999109ce8f75791efcc765e5889cdca9855ed7450595e3f87c2d933d3"
+    },
+    {
+      "path": "D:\\codex_project\\雅思备考\\output\\vocab-1-200-20261027\\listening-round-01-001-010-male-us.mp3",
+      "sha256": "cc0ca757258480d98994319cccd0832f2cfc99a2ca39d74d3c6d13e28d491c91"
+    },
+    {
+      "path": "D:\\codex_project\\雅思备考\\tmp\\pdfs\\reading-listening-1-200-20261027\\listening-round-01-speech-events.json",
+      "sha256": "61019d74e1297b40160beb01627e62f72e46869d23c2c7c881e4b1dce4ce9afd"
+    },
+    {
+      "path": "D:\\codex_project\\雅思备考\\output\\vocab-1-200-20261027\\listening-round-01-001-040.mp3",
+      "sha256": "d2344ef8c9ab9f4ee44e7aaa9b1a22c9adf115b6ad7eff354787e22737b29562"
+    },
+    {
+      "path": "D:\\codex_project\\雅思备考\\output\\vocab-1-200-20261027\\listening-round-01-001-040.txt",
+      "sha256": "0de4b369799fb66f912644907f1b459feccbc416457e445f86882b8ecc844b00"
+    }
+  ]
+}

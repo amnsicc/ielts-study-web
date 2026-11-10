@@ -2,6 +2,7 @@ import {readingView} from '../reading/view.mjs';
 import {createReadingSession} from '../reading/session.mjs';
 import {createRecordsClient} from '../records/client.mjs';
 import {createDraftsClient} from './drafts-client.mjs';
+import {createClipView} from './clip-view.mjs';
 
 function node(tag,className,text){const e=document.createElement(tag);if(className)e.className=className;if(text!==undefined)e.textContent=text;return e;}
 function button(text,id,action){const e=node('button','quiet-button',text);e.type='button';e.id=id;e.addEventListener('click',action);return e;}
@@ -24,16 +25,17 @@ export function listeningView(catalog,materials){
       drafts.context(current.id,{voiceId:voice.id,position});
     }
   };
-  const rewind=button('回退5秒','rewind-audio',()=>{if(loaded){audio.currentTime=Math.max(0,audio.currentTime-Number(step.value));remember();}});
+  const rewind=button('回退5秒','rewind-audio',()=>{if(loaded){clips.rewind(Number(step.value));remember();}});
   const rewindControl=node('div','rewind-control');rewindControl.id='rewind-control';rewindControl.setAttribute('role','group');rewindControl.setAttribute('aria-label','回退与秒数选择');
   const rewindPicker=node('span','rewind-picker'),rewindArrow=node('span','','▾');rewindArrow.setAttribute('aria-hidden','true');
   rewindPicker.append(step,rewindArrow);rewindControl.append(rewind,rewindPicker);
   const syncRewindLabel=()=>{rewind.textContent=`回退${step.value}秒`;rewindPicker.title=`选择回退秒数（当前${step.value}秒）`;};
   step.addEventListener('change',syncRewindLabel);syncRewindLabel();
-  const restart=button('从头重听','restart-audio',()=>{if(!loaded)return;audio.currentTime=0;void audio.play().catch(e=>playbackStatus.textContent='播放未开始：'+e.message);remember();});
+  const restart=button('从头重听','restart-audio',()=>{if(!loaded)return;clips.clear();audio.currentTime=0;void audio.play().catch(e=>playbackStatus.textContent='播放未开始：'+e.message);remember();});
   const transcriptToggle=button('展开原稿','toggle-transcript',()=>setTranscript(!visible));
   transcriptToggle.setAttribute('aria-expanded','false');transcriptToggle.setAttribute('aria-controls','article-scroll');
   player.append(voices,audio,rewindControl,speed,restart,transcriptToggle,playbackStatus);
+  const clips=createClipView({root,audio,container:player});
   const answerToolbar=node('div','panel-toolbar');answerToolbar.append(node('h2','','目标填号'));
   const reveal=node('input');reveal.type='checkbox';reveal.id='question-meanings';
   const revealLabel=node('label','highlight-label');revealLabel.append(reveal,document.createTextNode('显示本篇中文'));
@@ -52,6 +54,7 @@ export function listeningView(catalog,materials){
   right.append(answerToolbar,hint,actions,recoveryBox,remote,answers);
   let left;
   function setTranscript(open){
+    if(!open)clips.clear();
     visible=open;left.classList.toggle('transcript-closed',!open);left.querySelector('#article-scroll').hidden=!open;
     left.querySelector('#reading-divider').hidden=!open;transcriptToggle.textContent=open?'收起原稿':'展开原稿';transcriptToggle.setAttribute('aria-expanded',String(open));
   }
@@ -77,6 +80,7 @@ export function listeningView(catalog,materials){
   function setVoice(id,position=0){
     suppressPosition=true;audio.pause();loaded=false;
     voice=current.voices.find(v=>v.id===id)||current.voices[0];voices.value=voice.id;
+    void clips.load(current,voice);
     audio.src=voice.url;audio.load();audio.playbackRate=Number(speed.value);playbackStatus.textContent='正在读取固定录音…';rewind.disabled=true;
     const expected=voice.id,materialId=current.id;
     audio.onloadedmetadata=()=>{
@@ -135,9 +139,9 @@ export function listeningView(catalog,materials){
   voices.addEventListener('change',()=>{const id=voices.value;setVoice(id,0);drafts.context(current.id,{voiceId:id,position:0});});
   speed.addEventListener('change',()=>audio.playbackRate=Number(speed.value));
   audio.addEventListener('pause',()=>remember());audio.addEventListener('seeked',()=>remember());
-  audio.addEventListener('error',()=>{loaded=false;rewind.disabled=true;playbackStatus.textContent='音频未能读取，请检查本地服务后重新选择材料。';});
+  audio.addEventListener('error',()=>{loaded=false;clips.clear();rewind.disabled=true;playbackStatus.textContent='音频未能读取，请检查本地服务后重新选择材料。';});
   drafts.subscribe(state=>{const first=!draftState?.view&&state.view;draftState=state;syncDrafts();if(first&&current){const c=state.items[current.id]?.context;if(c)setVoice(c.voiceId,c.position);}});
   changed(materials[0]);setTranscript(false);void records.refresh();void drafts.refresh().then(()=>void drafts.flush());
-  root.leave=()=>{remember();audio.pause();void drafts.flush();left.querySelectorAll('dialog[open]').forEach(d=>d.close());};
+  root.leave=()=>{remember();clips.clear();audio.pause();void drafts.flush();left.querySelectorAll('dialog[open]').forEach(d=>d.close());};
   return root;
 }
