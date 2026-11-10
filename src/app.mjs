@@ -1,6 +1,7 @@
 import { homeView } from './home.mjs';
 import { readingView } from './reading/view.mjs';
 import { createReadingSession } from './reading/session.mjs';
+import { createRecordsClient } from './records/client.mjs';
 
 const app = document.querySelector('#app');
 try {
@@ -10,6 +11,8 @@ try {
     return response.json();
   }));
   const session = createReadingSession(catalog, materials);
+  const records = createRecordsClient();
+  void records.refresh();
   const header = document.createElement('header');
   header.className = 'app-header';
   const brand = document.createElement('a');
@@ -40,9 +43,12 @@ try {
     back.hidden = name === 'home';
     breadcrumb.textContent = name === 'reading' ? '/ 阅读' : '';
     if (name === 'home') {
-      content.replaceChildren(homeView(id => { location.hash = `/${id}`; }));
+      content.replaceChildren(homeView(id => {
+        if(id==='reading')records.mutate({type:'open',materialId:session.getView().material.id});
+        location.hash = `/${id}`;
+      }));
     } else if (name === 'reading') {
-      reading ??= readingView(session, materials);
+      reading ??= readingView(session, materials, records);
       content.replaceChildren(reading);
       [...reading.querySelectorAll('#word-scroll, #article-scroll')].forEach((element, index) => { element.scrollTop = readingScroll[index]; });
     } else {

@@ -139,4 +139,14 @@ a { color: var(--accent); text-underline-offset: 4px; }
 .search-empty { padding: 12px; font-size: 13px; color: var(--muted); line-height: 1.8; }
 .locate-hit { background-color: #f6e8ac !important; outline: 2px solid #9f7e27; outline-offset: -2px; }
 .locate-hit.locate-fading { background-color: transparent !important; outline-color: transparent; transition: background-color 250ms,outline-color 250ms; }
+.record-bar { flex:none; display:flex; flex-wrap:wrap; gap:6px; align-items:center; padding:5px 14px; border-bottom:1px solid var(--line); }
+.record-status { font-size:12px; color:var(--muted); margin-right:auto; overflow-wrap:anywhere; }
+.reading-history { flex:none; margin:0; padding:4px 14px; font-size:12px; color:var(--muted); border-bottom:1px solid var(--line); }
+.forget-count { display:block; font-size:12px; font-weight:600; color:#94532a; margin-top:5px; white-space:nowrap; }
+.memory-controls { display:flex; flex-wrap:wrap; gap:4px; margin-top:6px; }
+.memory-controls .quiet-button { padding:4px 5px; font-size:11px; }
+.count-threshold { width:55px; min-width:0; padding:5px; border:1px solid #c1d0d5; border-radius:4px; font:12px system-ui; }
+button:disabled { cursor:default; opacity:.55; }
+.entry-controls { width:136px; }
+@media(max-width:760px) { .entry-controls { width:100px; } .filter-toolbar { gap:5px; padding:5px 10px; } .record-bar { padding:4px 10px; } .record-bar .quiet-button { padding:4px 6px; } }
 @media (prefers-reduced-motion: reduce) { .locate-hit { transition: none !important; } }

@@ -17,7 +17,7 @@ function modeSelect(id, label) {
 }
 const modeName = visibility => visibility.english ? (visibility.chinese ? 'both' : 'english') : (visibility.chinese ? 'chinese' : 'none');
 
-export function readingView(session, materials) {
+export function readingView(session, materials, records) {
   const layout = node('main', 'reading-layout');
   let ratio = 0.46;
   const wordSection = node('section', 'study-panel word-panel');
@@ -56,9 +56,22 @@ export function readingView(session, materials) {
   const wordResultsToggle = node('button', 'quiet-button');
   wordResultsToggle.type = 'button'; wordResultsToggle.id = 'word-results-toggle';
   filters.append(scope, grade, wordQuery, clearWord, wordResultsToggle);
+  const countOperator=node('select','display-select');countOperator.id='count-operator';
+  countOperator.setAttribute('aria-label','没记住次数条件');
+  for(const [value,title] of [['off','不限次数'],['>','次数 >'],['>=','次数 ≥'],['=','次数 ='],['<=','次数 ≤'],['<','次数 <']])countOperator.append(new Option(title,value));
+  const countThreshold=node('input','count-threshold');countThreshold.id='count-threshold';countThreshold.type='number';countThreshold.min='0';countThreshold.step='1';countThreshold.value='5';countThreshold.setAttribute('aria-label','次数阈值');
+  filters.append(countOperator,countThreshold);
   wordSection.insertBefore(filters, wordScroll);
   let wordResultsOpen = true;
   let lastLocatedEntry;
+  const recordBar=node('div','record-bar');
+  const recordStatus=node('span','record-status','正在读取记录…');recordStatus.id='record-status';recordStatus.setAttribute('role','status');
+  const retryRecords=node('button','quiet-button','重试未完成操作');retryRecords.id='retry-records';retryRecords.type='button';retryRecords.hidden=true;
+  const refreshRecords=node('button','quiet-button','刷新记录');refreshRecords.id='refresh-records';refreshRecords.type='button';
+  const exportRecords=node('button','quiet-button','导出记录');exportRecords.id='export-records';exportRecords.type='button';
+  recordBar.append(recordStatus,retryRecords,refreshRecords,exportRecords);
+  let recordState={view:null,busy:true,error:'',pending:0};
+  const history=node('p','reading-history');history.id='reading-history';
 
   const separator = node('div', 'splitter');
   separator.id = 'reading-divider';
@@ -105,6 +118,7 @@ export function readingView(session, materials) {
   articleResultsToggle.id = 'article-results-toggle'; articleResultsToggle.type = 'button';
   articleSearch.append(articleQuery, clearArticle, articleResultsToggle);
   articleSection.insertBefore(articleSearch, articleScroll);
+  articleSection.insertBefore(history, articleScroll);
   const articleResults = node('div', 'search-results article-results');
   articleResults.id = 'article-results';
   let articleResultsOpen = true;
@@ -150,6 +164,7 @@ export function readingView(session, materials) {
       button.addEventListener('click',()=>{
         if (session.getView().material.id !== hit.materialId) {
           session.selectMaterial(hit.materialId); paintMaterial();
+          records.mutate({type:'open',materialId:hit.materialId});
         }
         articleResultsOpen = false; updateArticleResults();
         const target = hit.kind === 'title' ? articleScroll.querySelector('.article-title') :
@@ -208,6 +223,17 @@ export function readingView(session, materials) {
       button.setAttribute('aria-expanded', String(open));
       button.textContent = open ? '▴' : '▾';
     }
+    countOperator.disabled=!view.recordsReady || !!recordState.error;
+    countThreshold.disabled=countOperator.disabled;
+    for(const row of wordScroll.querySelectorAll('[data-entry-id]')) {
+      const count=row.querySelector('.forget-count');const value=view.counts?.[row.dataset.entryId]||0;
+      count.textContent=value?`${value}次`:'';count.hidden=!value;
+      const unavailable=!view.recordsReady||recordState.busy||!!recordState.error||recordState.pending>0;
+      row.querySelector('[data-forget]').disabled=unavailable;
+      row.querySelector('[data-undo]').disabled=unavailable||!view.undoable?.[row.dataset.entryId];
+    }
+    const used=view.history?.[view.material.id];
+    history.textContent=!view.recordsReady?'学习记录尚未读取':used?`打开 ${used.opens} 次 · 最近 ${new Date(used.lastOpened).toLocaleString('zh-CN',{hour12:false})}`:'这篇尚无主动打开记录';
   }
 
   function entryRow(entry, parentId) {
@@ -216,7 +242,9 @@ export function readingView(session, materials) {
     if (parentId) row.dataset.extraParent = parentId;
     else { row.dataset.number = entry.number; row.dataset.groupId = entry.id; }
     const number = String(entry.number).padStart(3, '0');
-    row.append(node('td', 'word-number', number));
+    const numberCell=node('td','word-number',number);
+    const count=node('span','forget-count');count.setAttribute('aria-label',`编号${number}没记住次数`);numberCell.append(count);
+    row.append(numberCell);
     const english = node('th', 'word-english');
     english.scope = 'row';
     const content = node('span', 'entry-word', entry.word);
@@ -247,6 +275,12 @@ export function readingView(session, materials) {
     const mode = modeSelect(entry.id, `编号${number}的显示方式`);
     mode.addEventListener('change', () => { session.setVisibility(entry.id, mode.value); syncWords(); });
     controls.append(mode);
+    const memory=node('div','memory-controls');
+    const add=node('button','quiet-button','没记住+1');add.type='button';add.dataset.forget=entry.id;add.setAttribute('aria-label',`编号${number}没记住加一`);
+    add.addEventListener('click',()=>records.mutate({type:'forget',entryId:entry.id}));
+    const undo=node('button','quiet-button','撤销');undo.type='button';undo.dataset.undo=entry.id;undo.setAttribute('aria-label',`撤销编号${number}最近一次增加`);
+    undo.addEventListener('click',()=>records.mutate({type:'undo',entryId:entry.id,targetOperationId:session.getView().undoable[entry.id]}));
+    memory.append(add,undo);controls.append(memory);
     row.append(meanings, controls);
     return row;
   }
@@ -254,6 +288,8 @@ export function readingView(session, materials) {
   function paintWords() {
     const view = session.getView();
     scope.value = view.scope; grade.value = view.filters.grade;
+    countOperator.value=view.countFilter?.operator||'off';
+    if(view.countFilter)countThreshold.value=String(view.countFilter.threshold);
     if (wordQuery.value !== view.filters.query) wordQuery.value = view.filters.query;
     range.textContent = `${view.scope === 'current' ? '本篇' : '样本'} ${view.groups.length} 组`;
     const table = node('table', 'word-table');
@@ -290,9 +326,9 @@ export function readingView(session, materials) {
     empty.hidden = view.groups.length !== 0;
     empty.append(node('p','','没有匹配词组。可清除关键词或P档条件。'));
     const clearFilters = node('button','quiet-button','清除词表筛选'); clearFilters.type='button';
-    clearFilters.addEventListener('click',()=>{session.setFilters({grade:'all',query:''});paintWords();});
+    clearFilters.addEventListener('click',()=>{session.setFilters({grade:'all',query:''});session.setCountFilter(null);paintWords();});
     empty.append(clearFilters);
-    wordScroll.replaceChildren(results, empty, table);
+    wordScroll.replaceChildren(recordBar, results, empty, table);
     syncWords();
   }
 
@@ -305,6 +341,12 @@ export function readingView(session, materials) {
   wordQuery.addEventListener('compositionend',searchWords);
   scope.addEventListener('change',()=>{session.setScope(scope.value);paintWords();wordScroll.scrollTop=0;});
   grade.addEventListener('change',()=>{session.setFilters({grade:grade.value});paintWords();wordScroll.scrollTop=0;});
+  function filterCounts(){
+    if(!countThreshold.validity.valid || countThreshold.value==='')return;
+    session.setCountFilter(countOperator.value==='off'?null:{operator:countOperator.value,threshold:Number(countThreshold.value)});
+    paintWords();wordScroll.scrollTop=0;
+  }
+  countOperator.addEventListener('change',filterCounts);countThreshold.addEventListener('input',filterCounts);
   function clearWordSearch() {
     const old = [...wordScroll.querySelectorAll('[data-entry-id]')].find(r=>r.dataset.entryId===lastLocatedEntry);
     const top = old?.getBoundingClientRect().top;
@@ -379,7 +421,7 @@ export function readingView(session, materials) {
     wordScroll.scrollTop = 0;
     articleScroll.scrollTop = 0;
   }
-  select.addEventListener('change', () => { session.selectMaterial(select.value); paintMaterial(); });
+  select.addEventListener('change', () => { session.selectMaterial(select.value); paintMaterial();records.mutate({type:'open',materialId:select.value}); });
   globalSelect.addEventListener('change', () => { session.setVisibility('all', globalSelect.value); syncWords(); });
   highlight.addEventListener('change', () => { session.setTargetHighlight(highlight.checked); syncHighlight(); });
   reset.addEventListener('click', () => { session.resetView(); articleQuery.value=''; articleResultsOpen=true; resize(0.46); paintMaterial(); });
@@ -417,5 +459,22 @@ export function readingView(session, materials) {
   });
   resize(ratio);
   paintMaterial();
+  records.subscribe(state=>{
+    recordState=state;
+    const oldGroups=session.getView().groups.map(g=>g.id).join(',');
+    if(state.view)session.setRecords(state.view);
+    const newGroups=session.getView().groups.map(g=>g.id).join(',');
+    const position=wordScroll.scrollTop;
+    if(oldGroups!==newGroups)paintWords();else syncWords();
+    wordScroll.scrollTop=position;
+    recordStatus.textContent=state.error?`未完成：${state.error}`:state.busy?(state.pending?'正在保存…':'正在读取记录…'):state.view?'记录已保存（本机）':'记录不可用';
+    retryRecords.hidden=!state.error;retryRecords.disabled=state.busy;
+    refreshRecords.disabled=state.busy||state.pending>0;
+    exportRecords.disabled=state.busy||state.pending>0||!!state.error||!state.view;
+  });
+  retryRecords.addEventListener('click',()=>records.retry());
+  refreshRecords.addEventListener('click',()=>void records.refresh());
+  exportRecords.addEventListener('click',()=>void records.download().catch(error=>{recordStatus.textContent=`导出失败：${error.message}`;}));
+  window.addEventListener('focus',()=>void records.refresh());
   return layout;
 }

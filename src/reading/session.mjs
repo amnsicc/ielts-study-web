@@ -6,6 +6,9 @@ export function createReadingSession(catalog, materials) {
   let current = materials[0];
   let scope = 'current';
   let filters = { grade: 'all', query: '' };
+  let countFilter=null;
+  let records=null;
+  const comparisons={'>':(a,b)=>a>b,'>=':(a,b)=>a>=b,'=':(a,b)=>a===b,'<':(a,b)=>a<b,'<=':(a,b)=>a<=b};
   const matchesEntry = entry => {
     const query = filters.query.trim().toLowerCase();
     const number = normalizeNumber(query);
@@ -24,6 +27,14 @@ export function createReadingSession(catalog, materials) {
   const expanded = new Set();
   let highlightTargets = true;
   return {
+    setRecords(value){
+      if(!value || !value.counts?.reading || !Number.isSafeInteger(value.revision))throw new Error('记录视图无效。');
+      if(!records || value.revision>=records.revision) records=structuredClone(value);
+    },
+    setCountFilter(value){
+      if(value!==null && (!records || !Object.hasOwn(comparisons,value.operator)||!Number.isSafeInteger(value.threshold)||value.threshold<0))throw new Error('次数筛选无效或记录尚未读取。');
+      countFilter=value===null?null:{...value};
+    },
     searchMaterials(value) {
       const query = value.trim().toLowerCase();
       if (!query) return [];
@@ -62,6 +73,7 @@ export function createReadingSession(catalog, materials) {
       scope = value;
     },
     resetView() {
+      countFilter=null;
       current = materials[0];
       scope = 'current';
       filters = { grade: 'all', query: '' };
@@ -96,6 +108,7 @@ export function createReadingSession(catalog, materials) {
       const next = materials.find(material => material.id === id);
       if (!next) throw new RangeError('未知材料，已保留当前文章。');
       current = next;
+      countFilter=null;
       scope = 'current';
       filters = { grade: 'all', query: '' };
     },
@@ -104,10 +117,16 @@ export function createReadingSession(catalog, materials) {
         .filter(group => scope === 'all' || current.targetGroupIds.includes(group.id))
         .filter(group => filters.grade === 'all' || [group,...(group.extras || [])].some(entry => entry.senses.some(s => String(s.grade) === filters.grade)))
         .filter(group => !filters.query.trim() || [group,...(group.extras || [])].some(matchesEntry))
+        .filter(group => !countFilter || [group,...(group.extras || [])].some(entry=>comparisons[countFilter.operator](records.counts.reading[entry.id]||0,countFilter.threshold)))
         .sort((a, b) => a.number - b.number);
       return {
         scope,
         filters: { ...filters },
+        countFilter:countFilter&&{...countFilter},
+        recordsReady:records!==null,
+        counts:records ? {...records.counts.reading}:null,
+        undoable:records ? {...records.undoable.reading}:null,
+        history:records ? structuredClone(records.history.reading):null,
         globalMode,
         expandedIds: [...expanded],
         highlightTargets,
