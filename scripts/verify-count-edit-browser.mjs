@@ -63,6 +63,7 @@ try{
   assert.equal(count('word:1'),0);assert.equal((await publicRead()).revision,0);
   assert.equal(evaluate('document.activeElement.dataset.editCount'),'word:1');
   openEdit('word:1');command('fill','#count-edit-value','3');command('press','Escape');assert.equal((await publicRead()).revision,0);
+  assert.equal(evaluate('document.activeElement.dataset.editCount'),'word:1');
   check('弹窗预填、取消与Escape不写入，焦点回编辑入口');
   openEdit('word:1');
   for(const invalid of ['-1','0.5','','9007199254740992']){
@@ -71,6 +72,7 @@ try{
     assert.equal((await publicRead()).revision,0);
   }
   command('fill','#count-edit-value','10');command('press','Enter');editClosed();saved();assert.equal(count('word:1'),10);
+  assert.equal(evaluate('document.activeElement.dataset.editCount'),'word:1');
   capture('01-edit-ten.png');check('非法数值拒绝，直接设10成功且只写一个调整事件');
   openEdit('word:1');assert.equal(evaluate('document.querySelector("#count-edit-value").value'),'10');
   command('click','#save-count-edit');editClosed();assert.equal((await publicRead()).revision,1);
@@ -98,19 +100,42 @@ try{
   openEdit('word:1');writeFileSync(path.join(dataDirectory,'fail-before'),'isolated');saveEdit(8);
   command('wait','--fn',`document.querySelector('#count-edit-status').textContent.includes('测试目录写入失败')`);
   assert.equal(count('word:1'),0);assert.equal(evaluate('document.querySelector("#count-edit-value").value'),'8');capture('02-edit-failure.png');
-  unlinkSync(path.join(dataDirectory,'fail-before'));command('click','#retry-count-edit');editClosed();saved();assert.equal(count('word:1'),8);
+  command('click','#cancel-count-edit');editClosed();
+  const failedCloseFocus=evaluate('({tag:document.activeElement.tagName,id:document.activeElement.id,entryDisabled:document.querySelector("[data-edit-count=\\\"word:1\\\"]").disabled})');
+  writeFileSync(path.join(output,'failed-close-focus.json'),JSON.stringify(failedCloseFocus,null,2));
+  assert.equal(failedCloseFocus.id,'retry-records');assert.equal(failedCloseFocus.entryDisabled,true);
+  assert.equal(evaluate('document.querySelector("#retry-records").disabled'),false);
+  assert.equal(evaluate('(() => {const r=document.querySelector("#retry-records").getBoundingClientRect(),s=document.querySelector("#word-scroll").getBoundingClientRect();return r.top>=s.top&&r.bottom<=s.bottom;})()'),true);
+  capture('05-f01-retry-focused.png');
+  const failedRevision=(await publicRead()).revision;
+  unlinkSync(path.join(dataDirectory,'fail-before'));command('press','Enter');saved();assert.equal(count('word:1'),8);
+  assert.equal((await publicRead()).revision,failedRevision+1);
+  check('F01写前失败关闭焦点到可用重试，编辑仍禁用，Enter仅保存一次');
   openEdit('word:1');writeFileSync(path.join(dataDirectory,'lose-response'),'isolated');saveEdit(9);
   command('wait','--fn',`document.querySelector('#count-edit-status').textContent.includes('回执丢失')`);
   assert.equal(count('word:1'),8);assert.equal((await publicRead()).counts.reading['word:1'],9);
-  unlinkSync(path.join(dataDirectory,'lose-response'));command('click','#retry-count-edit');editClosed();saved();assert.equal(count('word:1'),9);
+  command('click','#cancel-count-edit');editClosed();
+  assert.equal(evaluate('document.activeElement.id'),'retry-records');
+  assert.equal(evaluate('document.querySelector("[data-edit-count=\\\"word:1\\\"]").disabled'),true);
+  const lostRevision=(await publicRead()).revision;
+  unlinkSync(path.join(dataDirectory,'lose-response'));command('press','Enter');saved();assert.equal(count('word:1'),9);
+  assert.equal((await publicRead()).revision,lostRevision);
+  check('回执丢失关闭焦点到重试，Enter仅确认既有事件');
   check('保存失败保留输入，预写失败/已写回执丢失都可原操作重试');
   openEdit('word:1');command('fill','#count-edit-value','4');
   command('tab','new',url+'/#/reading');command('wait','#record-status');saved();add('word:1');assert.equal(count('word:1'),10);
   command('tab','t1');command('click','#save-count-edit');
   command('wait','--fn',`!document.querySelector('#refresh-count-edit').hidden`);
   assert.equal((await publicRead()).counts.reading['word:1'],10);capture('03-edit-conflict.png');
-  command('click','#refresh-count-edit');command('wait','--fn',`!document.querySelector('#save-count-edit').disabled`);
+  command('click','#cancel-count-edit');editClosed();assert.equal(evaluate('document.activeElement.id'),'retry-records');
+  command('press','Enter');saved();openEdit('word:1');
   assert.equal(evaluate('document.querySelector("#count-edit-value").value'),'10');
+  check('冲突关闭回可用刷新重试入口，不直接开放新编辑');
+  // 原有窗口内刷新确认路径仍单独覆盖一次。
+  command('tab','t2');add('word:1');command('tab','t1');saveEdit(3);
+  command('wait','--fn',`!document.querySelector('#refresh-count-edit').hidden`);
+  command('click','#refresh-count-edit');command('wait','--fn',`!document.querySelector('#save-count-edit').disabled`);
+  assert.equal(evaluate('document.querySelector("#count-edit-value").value'),'11');
   saveEdit(4);editClosed();saved();assert.equal(count('word:1'),4);
   command('tab','t2');command('tab','close');
   check('双标签同对象冲突不覆盖，刷新最新值后可重新确认');
@@ -119,6 +144,12 @@ try{
   assert.ok(!ax.snapshot.includes('atmosphere'));assert.ok(!ax.snapshot.includes('气氛'));
   writeFileSync(path.join(output,'edit-masked-ax.json'),JSON.stringify(ax,null,2));command('press','Escape');
   check('编辑窗只显示编号/次数，不泄露被遮中英文');
+  command('fill','#count-threshold','3');command('select','#count-operator','>');
+  openEdit('word:1');saveEdit(0);editClosed();saved();
+  assert.equal(evaluate('document.querySelectorAll("[data-entry-id=\\\"word:1\\\"]").length'),0);
+  assert.equal(evaluate('document.activeElement.id'),'word-query');
+  command('click','.reset-view');openEdit('word:1');saveEdit(4);editClosed();saved();
+  check('保存后原行被次数条件筛除，回退可用搜索入口而非BODY');
   const port=Number(new URL(url).port);await stop();await start(port);
   command('reload');command('wait','#count-threshold');saved();assert.equal(count('word:1'),4);assert.equal(threshold(),'0');
   assert.equal((await publicRead()).counts.reading['extra:1-A'],3);

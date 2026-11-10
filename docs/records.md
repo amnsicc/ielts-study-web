@@ -1,5 +1,11 @@
 # D2b记录公开边界（实施前固定）
 
+## F01实施前设计与边界
+
+关闭编辑窗恢复可操作焦点：连接/可见/非disabled的原编辑入口优先，失败待办交给记录状态行重试；无原入口时搜索框后备。调用focus后核对真实activeElement，重试入口必要时仅在词表区域内滚动可见。不开新编辑、不清待办、不自动重试，不改事件、保存或Store/API。
+
+沿用#F4F6F8/#FFFFFF/#192C36/#536771/#176C63/#D8E1E5与现有中文系统字体/Georgia，未增加视觉组件。流程：编辑窗口关闭 → 可用编辑入口；保存失败关闭 → 可用重试按钮；筛选移除原行 → 词表搜索。自查以实际焦点和可用键盘操作判断，不以截图或focus调用成功判断；不增加抢焦点动画/装饰或解除禁用。
+
 ## D2b-R1实施前约定
 
 新增apply({operationId,type:'set_count',module,entryId,count,expectedLastOperationId})。count为非负安全整数，expectedLastOperationId为该对象当前最近次数事件ID，无历史为null。read追加entryVersions分模块/entryId返回此ID；同对象并发改变时拒绝覆盖，错误code=COUNT_CONFLICT，原操作不写入。不同对象/材料打开不冲突；相同ID重放先按幂等核对，再校验并发条件。

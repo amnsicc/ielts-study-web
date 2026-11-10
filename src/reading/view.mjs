@@ -227,7 +227,19 @@ export function readingView(session, materials, records) {
   }
   editCancel.addEventListener('click',()=>editDialog.close());
   editDialog.addEventListener('cancel',event=>{if(recordState.busy && editOperationId)event.preventDefault();});
-  editDialog.addEventListener('close',()=>{if(editTarget?.isConnected)editTarget.focus({preventScroll:true});else wordQuery.focus({preventScroll:true});});
+  editDialog.addEventListener('close',()=>{
+    for(const target of [editTarget,retryRecords,wordQuery]){
+      if(!target?.isConnected || target.disabled || !target.getClientRects().length || getComputedStyle(target).visibility!=='visible')continue;
+      target.focus({preventScroll:true});
+      if(document.activeElement!==target)continue;
+      if(wordScroll.contains(target)){
+        const bounds=wordScroll.getBoundingClientRect(),rect=target.getBoundingClientRect();
+        if(rect.top<bounds.top)wordScroll.scrollTop+=rect.top-bounds.top;
+        else if(rect.bottom>bounds.bottom)wordScroll.scrollTop+=rect.bottom-bounds.bottom;
+      }
+      break;
+    }
+  });
   editForm.addEventListener('submit',event=>{
     event.preventDefault();
     const count=Number(editValue.value);
