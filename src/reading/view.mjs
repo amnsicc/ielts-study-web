@@ -69,9 +69,12 @@ export function readingView(session, materials, records, options = {}) {
   const recordBar=node('div','record-bar');
   const recordStatus=node('span','record-status','正在读取记录…');recordStatus.id='record-status';recordStatus.setAttribute('role','status');
   const retryRecords=node('button','quiet-button','重试未完成操作');retryRecords.id='retry-records';retryRecords.type='button';retryRecords.hidden=true;
-  const refreshRecords=node('button','quiet-button','刷新记录');refreshRecords.id='refresh-records';refreshRecords.type='button';
-  const exportRecords=node('button','quiet-button','导出记录');exportRecords.id='export-records';exportRecords.type='button';
-  recordBar.append(recordStatus,retryRecords,refreshRecords,exportRecords);
+  const refreshRecords=listening?null:node('button','quiet-button','刷新记录');
+  const exportRecords=listening?null:node('button','quiet-button','导出记录');
+  if(refreshRecords){refreshRecords.id='refresh-records';refreshRecords.type='button';}
+  if(exportRecords){exportRecords.id='export-records';exportRecords.type='button';}
+  if(listening){wordToolbar.append(recordStatus);recordBar.append(retryRecords);recordBar.hidden=true;}
+  else recordBar.append(recordStatus,retryRecords,refreshRecords,exportRecords);
   let recordState={view:null,busy:true,error:'',pending:0};
   const history=node('p','reading-history');history.id='reading-history';
 
@@ -536,12 +539,16 @@ export function readingView(session, materials, records, options = {}) {
       }
     }
     retryRecords.hidden=!state.error;retryRecords.disabled=state.busy;
-    refreshRecords.disabled=state.busy||state.pending>0;
-    exportRecords.disabled=state.busy||state.pending>0||!!state.error||!state.view;
+    if(refreshRecords)refreshRecords.disabled=state.busy||state.pending>0;
+    if(exportRecords)exportRecords.disabled=state.busy||state.pending>0||!!state.error||!state.view;
+    if(listening){
+      recordBar.hidden=!state.error;
+      if(state.error)recordBar.prepend(recordStatus);else wordToolbar.append(recordStatus);
+    }
   });
   retryRecords.addEventListener('click',()=>records.retry());
-  refreshRecords.addEventListener('click',()=>void records.refresh());
-  exportRecords.addEventListener('click',()=>void records.download().catch(error=>{recordStatus.textContent=`导出失败：${error.message}`;}));
+  refreshRecords?.addEventListener('click',()=>void records.refresh());
+  exportRecords?.addEventListener('click',()=>void records.download().catch(error=>{recordStatus.textContent=`导出失败：${error.message}`;}));
   window.addEventListener('focus',()=>void records.refresh());
   return layout;
 }

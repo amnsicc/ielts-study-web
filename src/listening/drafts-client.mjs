@@ -14,7 +14,7 @@ export function createDraftsClient(materials){
       if(pending){backupKey||= `ielts-listening-recovery:${view.storeId}:${pageId}`;localStorage.setItem(backupKey,JSON.stringify(snapshot));}
       else if(backupKey){localStorage.removeItem(backupKey);backupKey=null;}
       storageError='';
-    }catch(failure){storageError='浏览器待办保全失败：'+failure.message+'。请导出本地草稿并保持页面打开。';}
+    }catch(failure){storageError='浏览器待办保全失败：'+failure.message+'。请保持页面打开，确认自动保存成功后再离开。';}
   }
   async function request(url,options){const response=await fetch(url,options),result=await response.json();if(!response.ok){const failure=new Error(result.error||'草稿请求失败');failure.code=result.code;throw failure;}return result;}
   const material=id=>materials.find(m=>m.id===id);
@@ -28,7 +28,7 @@ export function createDraftsClient(materials){
     if(busy)return;busy=true;error='';notify();
     try{
       const next=await request('/api/listening/drafts');
-      if(view&&view.storeId!==next.storeId)throw new Error('数据目录已更换，请导出当前本地稿后重新打开页面，禁止跨目录重放。');
+      if(view&&view.storeId!==next.storeId)throw new Error('数据目录已更换。请保留本窗口输入并确认当前数据位置，未完成内容不会跨目录写入。');
       const first=!view;view=next;
       if(first){
         for(const m of materials)items[m.id]=fresh(m.id);
@@ -90,14 +90,14 @@ export function createDraftsClient(materials){
     context(id,context){const x=items[id];if(!x||!view||JSON.stringify(x.context)===JSON.stringify(context))return;x.context={...context};x.dirty=true;persist();notify();schedule();},
     async compare(id){const next=await request('/api/listening/drafts');if(next.storeId!==view.storeId)throw new Error('数据目录身份变化');view=next;notify();return next.drafts[id]||fresh(id);},
     async useRemote(id){
-      if(busy||!confirm('采用远端草稿将替换本窗口该材料的未保存输入。建议先导出本地稿。确定继续？'))return;
+      if(busy||!confirm('采用远端草稿将替换本窗口该材料的未保存输入。请先比较远端内容；如需保留本地输入，请取消。确定继续？'))return;
       busy=true;resolving=true;notify();
       try{await this.compare(id);items[id]=fresh(id);if(!Object.values(items).some(x=>x.pending||x.conflict))error='';}
       finally{busy=false;resolving=false;persist();notify();}
     },
     recover(key){const backup=recovery.find(r=>r.key===key);if(!backup)return;for(const [id,x] of Object.entries(backup.snapshot.items)){
       if(!(x.dirty||x.pending||x.conflict))continue;
-      if(items[id].dirty||items[id].pending||items[id].conflict)throw new Error('当前材料已有未完成输入，请先导出并处理，不能直接覆盖。');items[id]=structuredClone(x);
+      if(items[id].dirty||items[id].pending||items[id].conflict)throw new Error('当前材料已有未完成输入，请先完成保存或处理冲突，不能直接覆盖。');items[id]=structuredClone(x);
     }persist();notify();},
     downloadLocal,
     async download(){const data=await request('/api/listening/drafts/export');const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='ielts-listening-drafts.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),10000);},

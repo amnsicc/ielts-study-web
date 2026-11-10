@@ -24,11 +24,16 @@ export function listeningView(catalog,materials){
       drafts.context(current.id,{voiceId:voice.id,position});
     }
   };
-  const rewind=button('回退','rewind-audio',()=>{if(loaded){audio.currentTime=Math.max(0,audio.currentTime-Number(step.value));remember();}});
+  const rewind=button('回退5秒','rewind-audio',()=>{if(loaded){audio.currentTime=Math.max(0,audio.currentTime-Number(step.value));remember();}});
+  const rewindControl=node('div','rewind-control');rewindControl.id='rewind-control';rewindControl.setAttribute('role','group');rewindControl.setAttribute('aria-label','回退与秒数选择');
+  const rewindPicker=node('span','rewind-picker'),rewindArrow=node('span','','▾');rewindArrow.setAttribute('aria-hidden','true');
+  rewindPicker.append(step,rewindArrow);rewindControl.append(rewind,rewindPicker);
+  const syncRewindLabel=()=>{rewind.textContent=`回退${step.value}秒`;rewindPicker.title=`选择回退秒数（当前${step.value}秒）`;};
+  step.addEventListener('change',syncRewindLabel);syncRewindLabel();
   const restart=button('从头重听','restart-audio',()=>{if(!loaded)return;audio.currentTime=0;void audio.play().catch(e=>playbackStatus.textContent='播放未开始：'+e.message);remember();});
   const transcriptToggle=button('展开原稿','toggle-transcript',()=>setTranscript(!visible));
   transcriptToggle.setAttribute('aria-expanded','false');transcriptToggle.setAttribute('aria-controls','article-scroll');
-  player.append(voices,audio,step,rewind,speed,restart,transcriptToggle,playbackStatus);
+  player.append(voices,audio,rewindControl,speed,restart,transcriptToggle,playbackStatus);
   const answerToolbar=node('div','panel-toolbar');answerToolbar.append(node('h2','','目标填号'));
   const reveal=node('input');reveal.type='checkbox';reveal.id='question-meanings';
   const revealLabel=node('label','highlight-label');revealLabel.append(reveal,document.createTextNode('显示本篇中文'));
@@ -36,17 +41,15 @@ export function listeningView(catalog,materials){
   const status=node('p','draft-status','正在读取草稿…');status.id='draft-status';status.setAttribute('role','status');
   const actions=node('div','draft-actions');
   const retry=button('重试保存','retry-drafts',()=>{if(draftState?.view)void drafts.flush();else void drafts.refresh();});
-  const refresh=button('刷新草稿','refresh-drafts',()=>void drafts.refresh());
-  const exportLocal=button('导出本地稿','export-local-drafts',()=>drafts.downloadLocal());
-  const exportSaved=button('导出已存草稿','export-drafts',()=>void drafts.download().catch(e=>status.textContent=e.message));
   const compare=button('查看远端草稿','compare-drafts',()=>void drafts.compare(current.id).then(x=>{remote.textContent=JSON.stringify(x.answers,null,2);remote.hidden=false;}).catch(e=>status.textContent=e.message));
   const useRemote=button('采用远端草稿','use-remote-drafts',()=>void drafts.useRemote(current.id).catch(e=>status.textContent=e.message));
-  actions.append(retry,refresh,exportLocal,exportSaved,compare,useRemote);
+  actions.append(retry,compare,useRemote);actions.hidden=true;
   const remote=node('pre','remote-draft');remote.id='remote-draft';remote.hidden=true;
   const recoveryBox=node('div','draft-recovery');recoveryBox.id='draft-recovery';
   const answers=node('div','answer-scroll');answers.id='answer-scroll';
   const hint=node('p','listening-hint','按原编号排列；填写音频中听到的目标出现序号，可填多个号或问号。当前保存草稿，答案核对将在后续开放。');
-  right.append(answerToolbar,hint,status,actions,recoveryBox,remote,answers);
+  answerToolbar.append(status);
+  right.append(answerToolbar,hint,actions,recoveryBox,remote,answers);
   let left;
   function setTranscript(open){
     visible=open;left.classList.toggle('transcript-closed',!open);left.querySelector('#article-scroll').hidden=!open;
@@ -91,7 +94,7 @@ export function listeningView(catalog,materials){
     setVoice(context?.voiceId||current.voices[0].id,context?.position||0);buildAnswers();setTranscript(visible);
   }
   left=readingView(session,materials,records,{module:'listening',materialChanged:changed,reset:()=>{
-    suppressPosition=true;audio.pause();step.value='5';speed.value='1';reveal.checked=false;
+    suppressPosition=true;audio.pause();step.value='5';syncRewindLabel();speed.value='1';reveal.checked=false;
     resize(64);setTranscript(false);setVoice(current.voices[0].id,0);buildAnswers();
   }});
   left.classList.add('listening-left');left.setAttribute('role','region');left.setAttribute('aria-label','听力词表与原音');
@@ -121,9 +124,9 @@ export function listeningView(catalog,materials){
       x?.conflict?'草稿冲突：本地输入已保留，请查看远端并选择处理。':draftState.error?`未保存：${draftState.error}`:
       draftState.busy?'正在保存草稿…':(x?.pending||x?.dirty)?'草稿待保存（本地保全）':'草稿已保存（本机）');
     retry.hidden=ready&&!draftState.error&&!x?.pending;retry.disabled=draftState.busy;
-    refresh.disabled=draftState.busy;compare.hidden=useRemote.hidden=!x?.conflict;compare.disabled=useRemote.disabled=draftState.busy;
+    compare.hidden=useRemote.hidden=!x?.conflict;compare.disabled=useRemote.disabled=draftState.busy;
+    actions.hidden=retry.hidden&&compare.hidden&&useRemote.hidden;
     if(!x?.conflict)remote.hidden=true;
-    exportSaved.disabled=!ready||draftState.busy;exportLocal.disabled=!ready;
     if(recoveryBox.childElementCount!==draftState.recovery.length){
       recoveryBox.replaceChildren(...draftState.recovery.map((r,i)=>button(`恢复待办备份${i+1}（可能来自其他窗口）`,`recover-draft-${i}`,()=>{try{drafts.recover(r.key);void drafts.flush();}catch(e){status.textContent=e.message;}})));
     }

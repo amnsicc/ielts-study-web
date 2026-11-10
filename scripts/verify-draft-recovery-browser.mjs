@@ -50,10 +50,12 @@ try{
  const upper=await p.locator('#word-scroll').boundingBox();await p.locator('#reading-divider').focus();await p.keyboard.press('ArrowDown');
  assert.ok((await p.locator('#word-scroll').boundingBox()).height>upper.height);
  await p.screenshot({path:path.join(output,'02-dividers.png')});check('1440/900桌面左右分隔实际改变宽度，展开原稿后上下分隔实际改变高度');
- const dl=await Promise.all([p.waitForEvent('download'),p.locator('#export-drafts').click()]);const download=dl[0];
- await download.saveAs(path.join(output,'downloaded-drafts.json'));const exported=JSON.parse(readFileSync(path.join(output,'downloaded-drafts.json'),'utf8'));
+ // R1 removes normal-page export. Validate the retained public preservation API honestly.
+ assert.equal(await p.locator('#export-drafts').count(),0);
+ const exportResponse=await context.request.get(url+'/api/listening/drafts/export');assert.equal(exportResponse.status(),200);
+ writeFileSync(path.join(output,'http-exported-drafts.json'),await exportResponse.body());const exported=JSON.parse(readFileSync(path.join(output,'http-exported-drafts.json'),'utf8'));
  assert.equal(exported.format,'ielts-listening-drafts');assert.equal(exported.view.drafts['listening:short'].answers['word:1'],'4、9?');
- check('正常页面导出草稿产生真实文件，可解析且包含已保存原填写');
+ check('听力页面不提供导出入口，保留的公开HTTP保全接口可读取正确已存稿');
  writeFileSync(path.join(directory,'draft-lose-response'),'isolated');await p.locator('[data-answer-for="word:1"]').fill('40');
  await p.waitForFunction(()=>document.querySelector('#draft-status').textContent.includes('回执丢失'));
  await p.locator('[data-answer-for="word:1"]').fill('41');
