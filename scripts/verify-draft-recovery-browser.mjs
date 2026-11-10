@@ -65,6 +65,14 @@ try{
  assert.equal(await p.locator('[data-answer-for="word:1"]').inputValue(),'41');
  const afterConcurrent=await (await context.request.get(url+'/api/listening/drafts')).json();assert.equal(afterConcurrent.drafts[material.id].answers['word:1'],'42');
  check('旧操作回执丢失后远端继续更新，新本地输入不能借幂等回执自动覆盖远端');
+ let releaseRemote,remoteRequested;
+ const gate=new Promise(r=>releaseRemote=r),requested=new Promise(r=>remoteRequested=r);
+ await p.route('**/api/listening/drafts',async route=>{remoteRequested();await gate;await route.continue();});
+ await p.locator('#use-remote-drafts').click();await requested;
+ assert.equal(await p.locator('[data-answer-for="word:1"]').isDisabled(),true);
+ releaseRemote();await saved(p);await p.unroute('**/api/listening/drafts');
+ assert.equal(await p.locator('[data-answer-for="word:1"]').inputValue(),'42');
+ check('确认采用远端后读取期间锁定本篇输入，避免异步回执丢弃新输入');
  assert.ok(dialogs.some(d=>d.type==='beforeunload'));
  writeFileSync(path.join(output,'result.json'),JSON.stringify({status:'passed',url,checks,dialogs},null,2));
 }catch(error){writeFileSync(path.join(output,'result.json'),JSON.stringify({status:'failed',url,checks,dialogs,error:error.stack},null,2));console.error(error);process.exitCode=1;}

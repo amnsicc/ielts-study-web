@@ -1,9 +1,9 @@
 // Browser persistence is an outbox, never an optimistic server acknowledgement.
 export function createDraftsClient(materials){
-  let view=null,busy=false,error='',storageError='',recoveryError='',items={},timer;
+  let view=null,busy=false,resolving=false,error='',storageError='',recoveryError='',items={},timer;
   const listeners=new Set(),pageId=crypto.randomUUID(),sessionKey='ielts-listening-outbox-v1';
   let backupKey=null,recovery=[];
-  const state=()=>({view,busy,error,storageError:storageError||recoveryError,items:structuredClone(items),recovery:structuredClone(recovery)});
+  const state=()=>({view,busy,resolving,error,storageError:storageError||recoveryError,items:structuredClone(items),recovery:structuredClone(recovery)});
   const notify=()=>listeners.forEach(f=>f(state()));
   function persist(){
     if(!view||recoveryError)return;
@@ -89,7 +89,12 @@ export function createDraftsClient(materials){
     edit(id,entry,text){const x=items[id];if(!view||!x||typeof text!=='string'||text.length>1000)throw new Error('草稿尚未读取或输入超过1000字符');x.answers[entry]=text;x.dirty=true;persist();notify();schedule();},
     context(id,context){const x=items[id];if(!x||!view||JSON.stringify(x.context)===JSON.stringify(context))return;x.context={...context};x.dirty=true;persist();notify();schedule();},
     async compare(id){const next=await request('/api/listening/drafts');if(next.storeId!==view.storeId)throw new Error('数据目录身份变化');view=next;notify();return next.drafts[id]||fresh(id);},
-    async useRemote(id){if(!confirm('采用远端草稿将替换本窗口该材料的未保存输入。建议先导出本地稿。确定继续？'))return;await this.compare(id);items[id]=fresh(id);if(!Object.values(items).some(x=>x.pending||x.conflict))error='';persist();notify();},
+    async useRemote(id){
+      if(busy||!confirm('采用远端草稿将替换本窗口该材料的未保存输入。建议先导出本地稿。确定继续？'))return;
+      busy=true;resolving=true;notify();
+      try{await this.compare(id);items[id]=fresh(id);if(!Object.values(items).some(x=>x.pending||x.conflict))error='';}
+      finally{busy=false;resolving=false;persist();notify();}
+    },
     recover(key){const backup=recovery.find(r=>r.key===key);if(!backup)return;for(const [id,x] of Object.entries(backup.snapshot.items)){
       if(!(x.dirty||x.pending||x.conflict))continue;
       if(items[id].dirty||items[id].pending||items[id].conflict)throw new Error('当前材料已有未完成输入，请先导出并处理，不能直接覆盖。');items[id]=structuredClone(x);

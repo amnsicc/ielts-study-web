@@ -113,7 +113,7 @@ export function listeningView(catalog,materials){
     if(!draftState||!current)return;
     const x=draftState.items[current.id],ready=!!draftState.view;
     for(const input of answers.querySelectorAll('input')){
-      input.disabled=!ready;
+      input.disabled=!ready||draftState.resolving;
       const value=x?.answers[input.dataset.answerFor]||'';
       if(input!==document.activeElement&&input.value!==value)input.value=value;
     }
