@@ -4,13 +4,14 @@ import {createRecordsClient} from '../records/client.mjs';
 import {createDraftsClient} from './drafts-client.mjs';
 import {createClipView} from './clip-view.mjs';
 import {createPracticeView} from './practice-view.mjs';
+import {createSentenceNavigation} from './sentence-view.mjs';
 
 function node(tag,className,text){const e=document.createElement(tag);if(className)e.className=className;if(text!==undefined)e.textContent=text;return e;}
 function button(text,id,action){const e=node('button','quiet-button',text);e.type='button';e.id=id;e.addEventListener('click',action);return e;}
 export function listeningView(catalog,materials){
   const session=createReadingSession(catalog,materials,'listening'),records=createRecordsClient('listening'),drafts=createDraftsClient(materials);
   const root=node('main','listening-layout'),right=node('section','study-panel listening-answers');
-  let current=null,voice=null,draftState=null,visible=false,loaded=false,suppressPosition=false,practiceLocked=false,practice;
+  let current=null,voice=null,draftState=null,visible=false,loaded=false,suppressPosition=false,practiceLocked=false,practice,sentences;
   const audio=node('audio');audio.id='listening-audio';audio.preload='metadata';audio.controls=true;
   audio.setAttribute('aria-label','固定原音播放器');
   const player=node('div','listening-player');
@@ -50,12 +51,12 @@ export function listeningView(catalog,materials){
   const remote=node('pre','remote-draft');remote.id='remote-draft';remote.hidden=true;
   const recoveryBox=node('div','draft-recovery');recoveryBox.id='draft-recovery';
   const answers=node('div','answer-scroll');answers.id='answer-scroll';
-  const hint=node('p','listening-hint','按原编号排列；填写听到的目标出现序号，可填多个号或单独问号。核对按已填序号统计，首次结果保留，订正另存。');
+  const hint=node('p','listening-hint','填写听到的顺序号，多个号用空格隔开。');
   answerToolbar.append(status);
   right.append(answerToolbar,hint,actions,recoveryBox,remote,answers);
   let left;
   function setTranscript(open){
-    if(!open)clips.clear();
+    if(!open){sentences?.clear();clips.clear();}
     visible=open;left.classList.toggle('transcript-closed',!open);left.querySelector('#article-scroll').hidden=!open;
     left.querySelector('#reading-divider').hidden=!open;transcriptToggle.textContent=open?'收起原稿':'展开原稿';transcriptToggle.setAttribute('aria-expanded',String(open));
   }
@@ -94,6 +95,7 @@ export function listeningView(catalog,materials){
   }
   function changed(material){
     if(!left)return;
+    sentences?.clear();
     remember();suppressPosition=true;audio.pause();current=material;
     voices.replaceChildren(...current.voices.map(v=>new Option(v.label,v.id)));
     const context=draftState?.items[current.id]?.context;
@@ -118,7 +120,8 @@ export function listeningView(catalog,materials){
   divider.addEventListener('pointerup',e=>{if(divider.hasPointerCapture(e.pointerId))divider.releasePointerCapture(e.pointerId);});
   divider.addEventListener('keydown',e=>{if(['ArrowLeft','ArrowRight','Home','End'].includes(e.key)){resize(e.key==='Home'?45:e.key==='End'?75:share+(e.key==='ArrowRight'?3:-3));e.preventDefault();}});
   root.append(leftRegion,divider,right);
-  practice=createPracticeView({root,drafts,audio,getMaterial:()=>current,onLock:value=>{practiceLocked=value;syncDrafts();},onRoundChanged:id=>{if(current?.id===id){clips.clear();audio.pause();if(loaded)audio.currentTime=0;}}});
+  sentences=createSentenceNavigation({root,getMaterial:()=>current,showTranscript:()=>setTranscript(true),setOpen:clips.setSentenceOpen});
+  practice=createPracticeView({root,drafts,audio,getMaterial:()=>current,onLock:value=>{practiceLocked=value;syncDrafts();},onRoundChanged:id=>{if(current?.id===id){sentences.clear();clips.clear();audio.pause();if(loaded)audio.currentTime=0;}},onLocateSentence:sentences.locate});
   function syncDrafts(){
     if(!draftState||!current)return;
     const x=draftState.items[current.id],ready=!!draftState.view;
@@ -145,6 +148,6 @@ export function listeningView(catalog,materials){
   audio.addEventListener('error',()=>{loaded=false;clips.clear();rewind.disabled=true;playbackStatus.textContent='音频未能读取，请检查本地服务后重新选择材料。';});
   drafts.subscribe(state=>{const first=!draftState?.view&&state.view;draftState=state;syncDrafts();practice?.render();if(first&&current){const c=state.items[current.id]?.context;if(c)setVoice(c.voiceId,c.position);}});
   changed(materials[0]);setTranscript(false);void records.refresh();void drafts.refresh().then(()=>void drafts.flush());
-  root.leave=()=>{remember();clips.clear();audio.pause();void drafts.flush();practice.close();left.querySelectorAll('dialog[open]').forEach(d=>d.close());};
+  root.leave=()=>{remember();sentences.clear();clips.clear();audio.pause();void drafts.flush();practice.close();left.querySelectorAll('dialog[open]').forEach(d=>d.close());};
   return root;
 }

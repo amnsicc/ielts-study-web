@@ -1,6 +1,6 @@
 import {createPracticeClient} from './practice-client.mjs';
 const node=(tag,cls,text)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e;};
-export function createPracticeView({root,drafts,audio,getMaterial,onLock,onRoundChanged}){
+export function createPracticeView({root,drafts,audio,getMaterial,onLock,onRoundChanged,onLocateSentence}){
   const client=createPracticeClient(drafts),bar=node('div','practice-toolbar'),label=node('span','practice-round');label.id='practice-round';
   const summary=node('div','practice-summary');summary.id='practice-summary';
   const status=node('p','practice-status');status.id='practice-status';status.setAttribute('role','status');
@@ -32,14 +32,14 @@ export function createPracticeView({root,drafts,audio,getMaterial,onLock,onRound
   root.querySelector('.listening-answers').insertBefore(bar,root.querySelector('.listening-hint'));
   bar.after(status,actions,recovery,summary,remote);
   const percent=r=>`${Math.round(r.percentage*10)/10}%`;
-  const line=(title,s)=>`${title}：正确${s.result.correct} / 已填${s.result.submitted}，${percent(s.result)}；错填${s.result.wrong}，未对应答案${s.result.unmatchedExpected}`;
+  const line=(title,s)=>`${title}：正确率 ${percent(s.result)} · 答对 ${s.result.correct}个 · 共${s.result.totalExpected}个`;
   function render(){
     const m=getMaterial();if(!m)return;
     const s=state.view?.materials[m.id],r=s?.rounds.find(r=>r.id===s.currentRoundId),locked=state.busy||!!state.pending;
     if(s){const old=observedRounds.get(m.id);observedRounds.set(m.id,s.currentRoundId);if(old&&old!==s.currentRoundId)onRoundChanged?.(m.id);}
     onLock(locked);check.disabled=fresh.disabled=!s||locked||!!state.storageError;history.disabled=!s||state.busy;
     label.textContent=s?`第${s.rounds.findIndex(x=>x.id===s.currentRoundId)+1}轮`:'';check.textContent=r?.first?'核对订正':'核对答案';
-    status.textContent=state.storageError||state.error||(state.busy?'正在确认保存…':state.pending?'核对待办已保全，尚未确认保存。':r?.first?'首次核对已保存；继续修改属于订正。':'');
+    status.textContent=state.storageError||state.error||(state.busy?'正在确认保存…':state.pending?'核对待办已保全，尚未确认保存。':'');
     status.hidden=!status.textContent;retry.hidden=!state.error&&!state.pending||state.code==='PRACTICE_CONFLICT';retry.disabled=state.busy;
     compare.hidden=adopt.hidden=state.code!=='PRACTICE_CONFLICT';compare.disabled=adopt.disabled=state.busy;
     actions.hidden=retry.hidden&&compare.hidden&&adopt.hidden;
@@ -48,18 +48,19 @@ export function createPracticeView({root,drafts,audio,getMaterial,onLock,onRound
     recovery.replaceChildren();for(const [i,x] of state.recovery.entries())button(`恢复核对待办${i+1}`,`recover-practice-${i}`,()=>client.recover(x.key),recovery).disabled=locked;
     recovery.hidden=!recovery.childElementCount;
     summary.replaceChildren();
-    if(r?.first){summary.append(node('p','',line('首次核对',r.first)));const last=r.corrections.at(-1);if(last)summary.append(node('p','',line(`第${r.corrections.length}次订正`,last)));summary.append(node('p','practice-scope','仅按已填序号统计；未对应答案不代表没听懂。'));}
+    if(r?.first){summary.append(node('p','',line('首次核对',r.first)));const last=r.corrections.at(-1);if(last)summary.append(node('p','',line(`第${r.corrections.length}次订正`,last)));}
     summary.hidden=!r?.first;
     const latest=r?.corrections.at(-1)||r?.first;
     for(const row of root.querySelectorAll('.answer-row')){
+      const wasOpen=row.querySelector('.answer-feedback details')?.open;
       row.querySelector('.answer-feedback')?.remove();if(!latest)continue;
-      const id=row.dataset.targetId,feedback=latest.result.rows[id],target=latest.definition.targets.find(t=>t.id===id);
-      const box=node('div','answer-feedback');box.append(node('p','',`上次核对原填：${feedback.raw||'（空白）'}；正确${feedback.correct.length}处，错填序号：${feedback.wrong.join('、')||'无'}${feedback.question?'；含待确认问号':''}`));
-      if(feedback.duplicates.length)box.append(node('p','','同行重复号已去重：'+feedback.duplicates.join('、')));
-      if(feedback.outOfRange.length)box.append(node('p','','超出本篇事件范围：'+feedback.outOfRange.join('、')));
-      const shared=latest.result.sharedNumbers.filter(x=>x.targetIds.includes(id));if(shared.length)box.append(node('p','','多个目标使用同号：'+shared.map(x=>x.number).join('、')));
-      const details=node('details');details.append(node('summary','','查看正确序号与原句'),node('p','',`正确序号：${target.correctNumbers.join('、')}；未对应：${feedback.missing.join('、')||'无'}`));
-      for(const o of target.occurrences){const p=node('p','',`${o.number} · ${o.actualForm} · ${o.sentence}`);p.lang='en';details.append(p);}box.append(details);row.append(box);
+      const id=row.dataset.targetId,target=latest.definition.targets.find(t=>t.id===id);
+      const box=node('div','answer-feedback');box.append(node('p','answer-key',`答案：${target.correctNumbers.join('、')}`));
+      const details=node('details');details.open=!!wasOpen;details.append(node('summary','','原句'));
+      for(const o of target.occurrences){
+        const link=node('button','sentence-link',o.sentence);link.type='button';link.lang='en';link.dataset.locateSentence=String(o.number);link.dataset.sentenceTarget=id;
+        link.addEventListener('click',()=>void onLocateSentence(latest.definition,id,o.number).catch(e=>{status.textContent=e.message;status.hidden=false;}));details.append(link);
+      }box.append(details);row.append(box);
     }
     if(state.issues.length){const id=state.issues[0].targetId;const input=[...root.querySelectorAll('.answer-input')].find(e=>e.dataset.answerFor===id);input?.focus();}
   }

@@ -79,10 +79,10 @@ try{
  const recordsBefore=await (await fetch(url+'/api/records')).json();
  await page.selectOption('#material-select','listening:long');await saved();
  await page.locator('[data-answer-for="word:4"]').fill('16、19');await page.locator('[data-answer-for="word:8"]').fill('1、39');await page.click('#check-listening');
- await page.waitForFunction(()=>document.querySelector('#practice-summary')?.textContent.includes('正确4 / 已填4'));
+ await page.waitForFunction(()=>document.querySelector('#practice-summary')?.textContent.includes('答对 4个 · 共39个'));
  const longState=(await (await fetch(url+'/api/listening/practice')).json()).materials['listening:long'];
  assert.equal(longState.rounds[0].first.result.totalExpected,39);assert.equal(longState.rounds[0].first.voice.id,'en-GB-SoniaNeural');
- const oxygen=page.locator('[data-target-id="word:4"] .answer-feedback details');await oxygen.locator('summary').click();assert.ok((await oxygen.innerText()).includes('16、19'));
+ const oxygen=page.locator('[data-target-id="word:4"] .answer-feedback');await oxygen.locator('summary').click();assert.equal(await oxygen.locator('.answer-key').innerText(),'答案：16、19');assert.equal(await oxygen.locator('[data-locate-sentence]').count(),2);
  const recordsAfter=await (await fetch(url+'/api/records')).json();assert.deepEqual(recordsAfter.counts,recordsBefore.counts);assert.equal((await read()).rounds[0].first.result.percentage,50);
  check('长篇重复目标按39事件核对、实际形式原句可展开，跨材料和次数互不污染');
  await page.selectOption('#material-select','listening:short');await saved();
@@ -94,8 +94,8 @@ try{
  check('composition系统事件边界：组合中不核对，结束后保存再核对；非真人IME认证');
  await page.selectOption('#listening-voice','en-US-GuyNeural');await saved();await input.fill('1、1 ?');await page.click('#check-listening');await page.waitForFunction(()=>document.querySelector('#practice-summary')?.textContent.includes('第1次订正'));
  const active=(await read()).rounds[2];assert.equal(active.first.voice.id,'en-US-JennyNeural');assert.equal(active.corrections[0].voice.id,'en-US-GuyNeural');assert.equal(active.corrections[0].result.submitted,1);
- assert.ok((await page.locator('[data-target-id="word:1"] .answer-feedback').innerText()).includes('同行重复号'));
- check('切声不换轮，首次声音版本固定，订正记录新声音及同行去重提示');
+ assert.deepEqual(active.corrections[0].result.rows['word:1'].duplicates,[1]);assert.equal(await page.locator('[data-target-id="word:1"] .answer-key').innerText(),'答案：1');
+ check('切声不换轮，首次声音版本固定，订正记录新声音及保持同行去重数据');
  for(const [width,height] of [[1440,1000],[1042,811],[900,700],[497,811]]){
   await page.setViewportSize({width,height});await page.locator('#check-listening').scrollIntoViewIfNeeded();assert.ok(await page.locator('.listening-layout').evaluate(e=>e.scrollWidth<=e.clientWidth));
   assert.ok(await page.locator('#answer-scroll').evaluate(e=>e.clientHeight>100));

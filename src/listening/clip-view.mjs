@@ -14,12 +14,21 @@ export function createClipView({root,audio,container}){
   button('clip-exit','退出选段',()=>{clear();container.querySelector('#toggle-transcript')?.focus();});
   bar.append(text,status,actions);container.append(bar);
   const notice=document.createElement('p');notice.id='clip-availability';notice.className='clip-availability';notice.setAttribute('role','status');container.append(notice);
-  let material=null,voice=null,mapping=null,revision=0,dragging=false,lastSelection=null,pointerStart=null;
+  let material=null,voice=null,mapping=null,revision=0,dragging=false,lastSelection=null,pointerStart=null,sentenceOpen=false;
   const paragraphs=()=>root.querySelectorAll('.article-body > .article-paragraph');
   function layout(){
     const panel=root.querySelector('.article-panel'),left=root.querySelector('.listening-left');if(!panel||!left)return;
     left.classList.toggle('clip-open',!bar.hidden);
-    panel.style.minHeight=bar.hidden?'':`${Math.ceil(container.getBoundingClientRect().height+panel.querySelector('.article-toolbar').getBoundingClientRect().height+panel.querySelector('.filter-toolbar').getBoundingClientRect().height+142)}px`;
+    left.classList.toggle('sentence-open',sentenceOpen);
+    panel.style.minHeight=bar.hidden&&!sentenceOpen?'':`${Math.ceil(container.getBoundingClientRect().height+panel.querySelector('.article-toolbar').getBoundingClientRect().height+panel.querySelector('.filter-toolbar').getBoundingClientRect().height+142)}px`;
+    const wordPanel=root.querySelector('.word-panel'),wordScroll=root.querySelector('#word-scroll');
+    if(wordPanel&&wordScroll){
+      const height=e=>e.getBoundingClientRect().height;
+      const chrome=[...wordPanel.children].filter(e=>e!==wordScroll).reduce((n,e)=>n+height(e),0);
+      const beforeTable=[...wordScroll.children].filter(e=>e.tagName!=='TABLE').reduce((n,e)=>n+height(e),0);
+      const head=wordScroll.querySelector('thead')?.getBoundingClientRect().height||0;
+      wordPanel.style.minHeight=sentenceOpen?`${Math.ceil(chrome+beforeTable+head+102)}px`:'';
+    }
   }
   new ResizeObserver(layout).observe(container);
   const player=createClipPlayer(audio,{onChange:s=>{
@@ -63,7 +72,7 @@ export function createClipView({root,audio,container}){
   root.addEventListener('pointerdown',e=>{if(e.target.closest('.article-paragraph')){pointerStart=[e.clientX,e.clientY];dragging=false;}else pointerStart=null;});
   root.addEventListener('pointermove',e=>{if(pointerStart&&Math.hypot(e.clientX-pointerStart[0],e.clientY-pointerStart[1])>3)dragging=true;});
   document.addEventListener('pointerup',e=>{
-    if(!root.isConnected||e.target.closest('#clip-controls'))return;
+    if(!root.isConnected||e.target.closest('#clip-controls, .answer-feedback'))return;
     if(pointerStart){capture();pointerStart=null;}else if(!e.target.closest('.listening-player'))capture();
   });
   root.addEventListener('click',e=>{if(dragging&&e.target.closest('.article-target')){e.preventDefault();e.stopPropagation();}dragging=false;},true);
@@ -77,5 +86,5 @@ export function createClipView({root,audio,container}){
     }
   });
   document.addEventListener('visibilitychange',()=>{if(document.hidden&&player.snapshot().range)audio.pause();});
-  return {load,clear,rewind:seconds=>player.rewind(seconds),leave(){revision++;clear();},snapshot:player.snapshot};
+  return {load,clear,setSentenceOpen(value){sentenceOpen=value;layout();},rewind:seconds=>player.rewind(seconds),leave(){revision++;clear();},snapshot:player.snapshot};
 }

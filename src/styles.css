@@ -158,8 +158,8 @@ button:disabled { cursor:default; opacity:.55; }
 .listening-layout { --listen-left:64%; display:grid; grid-template-columns:minmax(430px,var(--listen-left)) 18px minmax(250px,1fr); height:100%; padding:18px 28px 22px; max-width:1800px; margin:auto; min-height:0; }
 .listening-left-region { min-height:0; min-width:0; }
 .listening-left.reading-layout { padding:0; height:100%; max-width:none; }
-.listening-left.clip-open { overflow:auto; }
-.listening-left.clip-open .word-panel { flex-shrink:1; min-height:220px; }
+.listening-left.clip-open,.listening-left.sentence-open { overflow:auto; }
+.listening-left.clip-open .word-panel,.listening-left.sentence-open .word-panel { flex-shrink:1; min-height:220px; }
 .listening-column-divider { cursor:col-resize; touch-action:none; display:flex; align-items:center; justify-content:center; }
 .listening-column-divider::before { content:''; width:4px; height:48px; background:#a9babe; border-radius:3px; }
 .listening-left .word-english { width:26%; font-size:19px; }
@@ -180,6 +180,7 @@ button:disabled { cursor:default; opacity:.55; }
 .clip-actions { display:flex; gap:6px; flex-wrap:wrap; margin-top:6px; }
 .clip-actions [aria-pressed="true"] { background:#176c63; color:#fff; }
 ::highlight(listening-clip) { background-color:#d9ebfa; color:#143f68; }
+::highlight(listening-sentence) { background-color:#f6e8ac; color:#192c36; }
 .listening-left .article-paragraph,.listening-left .article-target { user-select:text; }
 .listening-left.transcript-closed .word-panel { flex:1; }
 .listening-left.transcript-closed .article-panel { flex:0 0 auto; margin-top:12px; }
@@ -210,6 +211,8 @@ button:disabled { cursor:default; opacity:.55; }
 .answer-feedback { margin-top:10px; padding-top:6px; border-top:1px solid var(--line); font-size:12px; line-height:1.7; color:var(--muted); overflow-wrap:anywhere; }
 .answer-feedback p { margin:4px 0; }
 .answer-feedback summary { cursor:pointer; color:var(--accent); }
+.sentence-link { display:block; width:100%; text-align:left; border:0; border-radius:3px; background:transparent; padding:7px 0; color:var(--accent); font:16px/1.65 Georgia,serif; cursor:pointer; overflow-wrap:anywhere; }
+.sentence-link:hover { text-decoration:underline; text-underline-offset:3px; }
 .practice-history-dialog { width:min(680px,92vw); max-height:82dvh; padding:22px; }
 .practice-history-dialog h2 { font-size:21px; margin:0 0 12px; }
 .practice-history-body { overflow-wrap:anywhere; font-size:13px; line-height:1.7; }
