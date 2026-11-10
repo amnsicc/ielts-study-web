@@ -1,10 +1,10 @@
 {
-  "sample": "001—040",
+  "sample": "001—200",
   "module": "reading",
-  "groups": 40,
-  "materials": 2,
-  "extras": 25,
-  "occurrences": 40,
+  "groups": 200,
+  "materials": 10,
+  "extras": 137,
+  "occurrences": 200,
   "sources": [
     {
       "path": "D:\\文档\\雅思备考\\codex讨论结果\\雅思词汇真经_1-20词_基础释义优化试样_主要释义标红复核版_20261029.pdf",
@@ -24,6 +24,46 @@
     {
       "path": "D:\\codex_project\\雅思备考\\output\\vocab-1-200-20261027\\reading-02-021-040.md",
       "sha256": "e2a10c74f28cc5c8c5fc0d47d28ad0448a15d729265f7a9b4219bbbf7298519d",
+      "role": "unchanged-reading-body"
+    },
+    {
+      "path": "D:\\codex_project\\雅思备考\\output\\vocab-1-200-20261027\\reading-03-041-060.md",
+      "sha256": "b34b4bb3ad3a1f365ba2e4598c495c250c3debbf9620004d0b8eb9b3f00c395e",
+      "role": "unchanged-reading-body"
+    },
+    {
+      "path": "D:\\codex_project\\雅思备考\\output\\vocab-1-200-20261027\\reading-04-061-080.md",
+      "sha256": "22fa6a83a5ec6983162bfbe393f5459c4f5fc844f3db00294ecca4dfede1b414",
+      "role": "unchanged-reading-body"
+    },
+    {
+      "path": "D:\\codex_project\\雅思备考\\output\\vocab-1-200-20261027\\reading-05-081-100.md",
+      "sha256": "37151960b50ea878fa24926b6312c7972a417b9a543e9ac574ade5e1f22629c7",
+      "role": "unchanged-reading-body"
+    },
+    {
+      "path": "D:\\codex_project\\雅思备考\\output\\vocab-1-200-20261027\\reading-06-101-120.md",
+      "sha256": "998819ffdad1161eabcb8fb67d59e8871ecfeb5dd54411ebb1bb2c8ec8d616ea",
+      "role": "unchanged-reading-body"
+    },
+    {
+      "path": "D:\\codex_project\\雅思备考\\output\\vocab-1-200-20261027\\reading-07-121-140.md",
+      "sha256": "8068777a86df511534f05082852af73c1d345a57543a71a3aad5e7e41d4a2174",
+      "role": "unchanged-reading-body"
+    },
+    {
+      "path": "D:\\codex_project\\雅思备考\\output\\vocab-1-200-20261027\\reading-08-141-160.md",
+      "sha256": "3aa3082472e5f59f3e313db26cf6b0ea28e1546ceb1baedb071e72c3f7ab532e",
+      "role": "unchanged-reading-body"
+    },
+    {
+      "path": "D:\\codex_project\\雅思备考\\output\\vocab-1-200-20261027\\reading-09-161-180.md",
+      "sha256": "9cdd472d633c8a885bf02fd20a362b9fbca80bea6018fe1c2d2fe5705240e0f9",
+      "role": "unchanged-reading-body"
+    },
+    {
+      "path": "D:\\codex_project\\雅思备考\\output\\vocab-1-200-20261027\\reading-10-181-200.md",
+      "sha256": "b55513b59e886e9d775c399ace697e1c98af625391bb682bb05f9abe834efd4d",
       "role": "unchanged-reading-body"
     },
     {
@@ -51,7 +91,8 @@
     "Only reading-selected senses retained, source order and per-sense grades unchanged.",
     "Body paragraphs exactly match published Markdown before rendering backtick delimiters.",
     "No source publisher executed; no source material or learning database modified.",
-    "25 reading-selected extras retain source subnumbers; not claimed as article targets.",
-    "40 clickable occurrences come only from explicit backtick markers; meaning list equals article details."
+    "137 reading-selected extras retain source subnumbers; not claimed as article targets.",
+    "200 clickable occurrences come only from explicit backtick markers; meaning list equals article details.",
+    "Source Arctic maps to original 067 arctic by identity; original spelling and compound POS retained."
   ]
 }

@@ -46,7 +46,7 @@ try {
   assert.equal(selected('#word-query'),'');assert.equal(selected('#article-query'),'');
   capture('01-default.png');check('D2a默认当前文章/全部P档/空搜索，沿用仅英文');
 
-  command('select','#word-scope','all');assert.equal(numbers().length,40);
+  command('select','#word-scope','all');assert.equal(numbers().length,200);
   assert.equal(selected('#material-select'),'reading:1');assert.deepEqual(bodyText(),original);
   command('fill','#word-query','DeStRuCtIvE');command('select','#word-grade','0');
   assert.deepEqual(numbers(),[21]);

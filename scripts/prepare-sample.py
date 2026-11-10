@@ -1,4 +1,4 @@
-"""Read existing audited sources; write only this project's isolated sample."""
+"""Read the audited 001—200 batch; write only this project's data copies."""
 import hashlib
 import json
 import re
@@ -40,7 +40,7 @@ def reading_senses(entry, prefix):
     ]
 
 for word in audit['words']:
-    if word['n'] > 40:
+    if word['n'] > 200:
         continue
     senses = reading_senses(word, f"sense:{word['n']}")
     if senses:
@@ -52,25 +52,26 @@ for word in audit['words']:
         ]
         catalog.append({'id': f"word:{word['n']}", 'number': word['n'],
                         'word': word['word'], 'senses': senses, 'extras': extras})
-assert len(catalog) == 40
-assert sum(len(group['extras']) for group in catalog) == 25
+assert len(catalog) == 200
+assert sum(len(group['extras']) for group in catalog) == 137
 
 meanings_path = READING_DIR / 'reading-meanings-001-200.md'
 meanings_text = meanings_path.read_text(encoding='utf-8')
 lookup = {group['id']: group for group in catalog}
 selected_meanings = {}
-for match in re.finditer(r'^\[(\d{3})\] (.+?) (n\.|adj\.|vi\.|vt\.) (.+)$', meanings_text, re.M):
+for match in re.finditer(r'^\[(\d{3})\] (.+?) ((?:n|adj|adv|vi|vt)\.(?:/(?:n|adj|adv|vi|vt)\.)*) (.+)$', meanings_text, re.M):
     number, word, pos, explanation = match.groups()
-    if int(number) > 40:
-        continue
     meaning, _, note = explanation.partition('｜')
-    selected_meanings[word] = {'groupId': f'word:{int(number)}', 'pos': pos,
-                               'meaning': meaning, 'note': note}
-assert len(selected_meanings) == 40
+    group_id = f'word:{int(number)}'
+    assert group_id not in selected_meanings
+    assert lookup[group_id]['word'].casefold() == word.casefold()
+    selected_meanings[group_id] = {'groupId': group_id, 'pos': pos,
+                                   'meaning': meaning, 'note': note}
+assert len(selected_meanings) == 200
 
 passages_path = WORKSPACE / 'tmp/pdfs/reading-rebuild-20261028/passages.json'
 materials = []
-for item in load(passages_path)[:2]:
+for item in load(passages_path):
     filename = f"reading-{item['index']:02d}-{item['start']:03d}-{item['end']:03d}.md"
     original = READING_DIR / filename
     raw = original.read_text(encoding='utf-8')
@@ -84,7 +85,11 @@ for item in load(passages_path)[:2]:
         removed = 0
         for match in re.finditer(r'`([^`]+)`', paragraph):
             text = match.group(1)
-            selected = selected_meanings[text]
+            candidates = [group_id for group_id, group in lookup.items()
+                          if item['start'] <= group['number'] <= item['end']
+                          and group['word'].casefold() == text.casefold()]
+            assert len(candidates) == 1, f'Ambiguous or missing target: {text} in {original}'
+            selected = selected_meanings[candidates[0]]
             start = match.start() - removed
             assert plain[start:start + len(text)] == text
             occurrences.append({'id': f"occurrence:{item['index']}:{len(occurrences)}",
@@ -93,7 +98,7 @@ for item in load(passages_path)[:2]:
             removed += 2
     assert len(occurrences) == 20
     materials.append({'id': f"reading:{item['index']}", 'version': '2026-10-28',
-                      'label': 'A' if item['index'] == 1 else 'B',
+                      'label': chr(ord('A') + item['index'] - 1),
                       'title': item['title'], 'start': item['start'], 'end': item['end'],
                       'targetGroupIds': [f'word:{n}' for n in range(item['start'], item['end'] + 1)],
                       'extraTargets': [], 'paragraphs': item['paragraphs'], 'occurrences': occurrences})
@@ -104,12 +109,13 @@ for path in [audit_path, passages_path, AUDIT_DIR / 'published.json', meanings_p
 write('catalog.json', catalog)
 write('materials.json', materials)
 write('source-manifest.json', {
-    'sample': '001—040', 'module': 'reading', 'groups': len(catalog),
-    'materials': len(materials), 'extras': 25, 'occurrences': 40, 'sources': sources,
+    'sample': '001—200', 'module': 'reading', 'groups': len(catalog),
+    'materials': len(materials), 'extras': 137, 'occurrences': 200, 'sources': sources,
     'notes': ['Only reading-selected senses retained, source order and per-sense grades unchanged.',
               'Body paragraphs exactly match published Markdown before rendering backtick delimiters.',
               'No source publisher executed; no source material or learning database modified.',
-              '25 reading-selected extras retain source subnumbers; not claimed as article targets.',
-              '40 clickable occurrences come only from explicit backtick markers; meaning list equals article details.'],
+              '137 reading-selected extras retain source subnumbers; not claimed as article targets.',
+              '200 clickable occurrences come only from explicit backtick markers; meaning list equals article details.',
+              'Source Arctic maps to original 067 arctic by identity; original spelling and compound POS retained.'],
 })
-print('Verified PDF hashes and article details; 40 groups, 25 extras, 40 occurrences, 2 unchanged article bodies prepared.')
+print('Verified PDF hashes and article details; 200 groups, 137 extras, 200 occurrences, 10 unchanged article bodies prepared.')

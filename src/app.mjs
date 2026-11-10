@@ -27,7 +27,7 @@ try {
   back.textContent = '返回首页';
   const sample = document.createElement('span');
   sample.className = 'sample-label';
-  sample.textContent = '原编号 001—040';
+  sample.textContent = '原编号 001—200';
   header.append(brand, breadcrumb, sample, back);
   const content = document.createElement('div');
   content.className = 'app-content';

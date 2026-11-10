@@ -44,7 +44,7 @@ export function readingView(session, materials, records) {
   const filters = node('div', 'filter-toolbar');
   const scope = node('select', 'display-select');
   scope.id = 'word-scope'; scope.setAttribute('aria-label', '词表范围');
-  scope.append(new Option('当前文章', 'current'), new Option('全部阅读词（001—040）', 'all'));
+  scope.append(new Option('当前文章', 'current'), new Option('全部阅读词（001—200）', 'all'));
   const grade = node('select', 'display-select');
   grade.id = 'word-grade'; grade.setAttribute('aria-label', '词表P档');
   for (const [value,title] of [['all','全部P档'],['0','P0'],['1','P1'],['2','P2']]) grade.append(new Option(title,value));
@@ -342,7 +342,7 @@ export function readingView(session, materials, records) {
     countOperator.value=view.countFilter?.operator||'off';
     if(view.countFilter)countThreshold.value=String(view.countFilter.threshold);
     if (wordQuery.value !== view.filters.query) wordQuery.value = view.filters.query;
-    range.textContent = `${view.scope === 'current' ? '本篇' : '样本'} ${view.groups.length} 组`;
+    range.textContent = `${view.scope === 'current' ? '本篇' : '全部'} ${view.groups.length} 组`;
     const table = node('table', 'word-table');
     const head = node('thead');
     const header = node('tr');

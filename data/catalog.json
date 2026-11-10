@@ -1334,5 +1334,6406 @@
         ]
       }
     ]
+  },
+  {
+    "id": "word:41",
+    "number": 41,
+    "word": "magma",
+    "senses": [
+      {
+        "id": "sense:41:0",
+        "pos": "n.",
+        "text": "岩浆",
+        "grade": 2,
+        "primary": true
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:42",
+    "number": 42,
+    "word": "thermodynamic",
+    "senses": [
+      {
+        "id": "sense:42:0",
+        "pos": "adj.",
+        "text": "热力学的",
+        "grade": 2,
+        "primary": true
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:43",
+    "number": 43,
+    "word": "smog",
+    "senses": [
+      {
+        "id": "sense:43:0",
+        "pos": "n.",
+        "text": "雾霾",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:43:1",
+        "pos": "n.",
+        "text": "烟雾（烟与雾混合状的空气污染）",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:44",
+    "number": 44,
+    "word": "fume",
+    "senses": [
+      {
+        "id": "sense:44:0",
+        "pos": "vi.",
+        "text": "发怒",
+        "grade": 2,
+        "primary": true
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:44-A",
+        "number": "44-A",
+        "word": "fumes",
+        "senses": [
+          {
+            "id": "sense:extra:44-A:0",
+            "pos": "n.",
+            "text": "刺鼻或有害的气体(通常用复数)",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:45",
+    "number": 45,
+    "word": "mist",
+    "senses": [
+      {
+        "id": "sense:45:0",
+        "pos": "n.",
+        "text": "薄雾",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:45:1",
+        "pos": "n.",
+        "text": "水汽",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:45:3",
+        "pos": "vt./vi.",
+        "text": "(使)结雾",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:45:2",
+        "pos": "n.",
+        "text": "喷雾",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:45:4",
+        "pos": "vt./vi.",
+        "text": "喷雾",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:45-A",
+        "number": "45-A",
+        "word": "misty",
+        "senses": [
+          {
+            "id": "sense:extra:45-A:0",
+            "pos": "adj.",
+            "text": "有薄雾的",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:46",
+    "number": 46,
+    "word": "tsunami",
+    "senses": [
+      {
+        "id": "sense:46:0",
+        "pos": "n.",
+        "text": "海啸",
+        "grade": 1,
+        "primary": true
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:47",
+    "number": 47,
+    "word": "drought",
+    "senses": [
+      {
+        "id": "sense:47:0",
+        "pos": "n.",
+        "text": "干旱",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:47:1",
+        "pos": "n.",
+        "text": "旱灾",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:48",
+    "number": 48,
+    "word": "flooding",
+    "senses": [
+      {
+        "id": "sense:48:0",
+        "pos": "n.",
+        "text": "洪水泛滥",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:48:1",
+        "pos": "n.",
+        "text": "水灾",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:48-A",
+        "number": "48-A",
+        "word": "flood",
+        "senses": [
+          {
+            "id": "sense:extra:48-A:0",
+            "pos": "n.",
+            "text": "洪水",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:48-A:1",
+            "pos": "n.",
+            "text": "水灾",
+            "grade": 1,
+            "primary": false
+          },
+          {
+            "id": "sense:extra:48-A:2",
+            "pos": "v.",
+            "text": "淹没",
+            "grade": 1,
+            "primary": false
+          },
+          {
+            "id": "sense:extra:48-A:3",
+            "pos": "v.",
+            "text": "泛滥",
+            "grade": 1,
+            "primary": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:49",
+    "number": 49,
+    "word": "torrent",
+    "senses": [
+      {
+        "id": "sense:49:0",
+        "pos": "n.",
+        "text": "急流",
+        "grade": 2,
+        "primary": true
+      },
+      {
+        "id": "sense:49:1",
+        "pos": "n.",
+        "text": "洪流",
+        "grade": 2,
+        "primary": false
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:50",
+    "number": 50,
+    "word": "earthquake",
+    "senses": [
+      {
+        "id": "sense:50:0",
+        "pos": "n.",
+        "text": "地震",
+        "grade": 1,
+        "primary": true
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:51",
+    "number": 51,
+    "word": "seismic",
+    "senses": [
+      {
+        "id": "sense:51:0",
+        "pos": "adj.",
+        "text": "地震的",
+        "grade": 2,
+        "primary": true
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:52",
+    "number": 52,
+    "word": "avalanche",
+    "senses": [
+      {
+        "id": "sense:52:0",
+        "pos": "n.",
+        "text": "雪崩",
+        "grade": 1,
+        "primary": true
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:53",
+    "number": 53,
+    "word": "terrain",
+    "senses": [
+      {
+        "id": "sense:53:0",
+        "pos": "n.",
+        "text": "地形",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:53:1",
+        "pos": "n.",
+        "text": "地势",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:53:2",
+        "pos": "n.",
+        "text": "地带（就地形而言）",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:54",
+    "number": 54,
+    "word": "landscape",
+    "senses": [
+      {
+        "id": "sense:54:0",
+        "pos": "n.",
+        "text": "风景",
+        "grade": 0,
+        "primary": true
+      },
+      {
+        "id": "sense:54:1",
+        "pos": "n.",
+        "text": "景观",
+        "grade": 0,
+        "primary": false
+      },
+      {
+        "id": "sense:54:2",
+        "pos": "n.",
+        "text": "形势",
+        "grade": 0,
+        "primary": true
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:54-A",
+        "number": "54-A",
+        "word": "landscaping",
+        "senses": [
+          {
+            "id": "sense:extra:54-A:0",
+            "pos": "n.",
+            "text": "景观美化",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:54-A:1",
+            "pos": "n.",
+            "text": "园林设计",
+            "grade": 1,
+            "primary": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:55",
+    "number": 55,
+    "word": "continent",
+    "senses": [
+      {
+        "id": "sense:55:0",
+        "pos": "n.",
+        "text": "洲",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:55:1",
+        "pos": "n.",
+        "text": "大陆",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:55-A",
+        "number": "55-A",
+        "word": "continental",
+        "senses": [
+          {
+            "id": "sense:extra:55-A:0",
+            "pos": "adj.",
+            "text": "大陆的",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:55-A:1",
+            "pos": "adj.",
+            "text": "欧洲大陆的",
+            "grade": 1,
+            "primary": false
+          }
+        ]
+      },
+      {
+        "id": "extra:55-B",
+        "number": "55-B",
+        "word": "continental breakfast",
+        "senses": [
+          {
+            "id": "sense:extra:55-B:0",
+            "pos": "n.",
+            "text": "欧陆式早餐(面包、咖啡等)",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:56",
+    "number": 56,
+    "word": "cave",
+    "senses": [
+      {
+        "id": "sense:56:0",
+        "pos": "n.",
+        "text": "洞穴",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:56:1",
+        "pos": "n.",
+        "text": "山洞",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:56-A",
+        "number": "56-A",
+        "word": "cave in",
+        "senses": [
+          {
+            "id": "sense:extra:56-A:0",
+            "pos": "v.",
+            "text": "塌陷",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:56-A:1",
+            "pos": "v.",
+            "text": "屈服",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:57",
+    "number": 57,
+    "word": "cliff",
+    "senses": [
+      {
+        "id": "sense:57:0",
+        "pos": "n.",
+        "text": "悬崖",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:57:1",
+        "pos": "n.",
+        "text": "峭壁",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:58",
+    "number": 58,
+    "word": "glacier",
+    "senses": [
+      {
+        "id": "sense:58:0",
+        "pos": "n.",
+        "text": "冰川",
+        "grade": 1,
+        "primary": true
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:58-A",
+        "number": "58-A",
+        "word": "glacial",
+        "senses": [
+          {
+            "id": "sense:extra:58-A:0",
+            "pos": "adj.",
+            "text": "冰川的",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:58-A:1",
+            "pos": "adj.",
+            "text": "冰期的",
+            "grade": 1,
+            "primary": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:59",
+    "number": 59,
+    "word": "swamp",
+    "senses": [
+      {
+        "id": "sense:59:0",
+        "pos": "n.",
+        "text": "沼泽",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:59:1",
+        "pos": "n.",
+        "text": "湿地（沼泽类）",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:59:2",
+        "pos": "vt.",
+        "text": "淹没",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:59:3",
+        "pos": "vt.",
+        "text": "使应接不暇",
+        "grade": 1,
+        "primary": true
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:59-A",
+        "number": "59-A",
+        "word": "be swamped with sth",
+        "senses": [
+          {
+            "id": "sense:extra:59-A:0",
+            "pos": "",
+            "text": "忙于应付大量...(如工作、请求)",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:60",
+    "number": 60,
+    "word": "delta",
+    "senses": [
+      {
+        "id": "sense:60:0",
+        "pos": "n.",
+        "text": "(河口)三角洲",
+        "grade": 1,
+        "primary": true
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:61",
+    "number": 61,
+    "word": "plain",
+    "senses": [
+      {
+        "id": "sense:61:0",
+        "pos": "adj.",
+        "text": "朴素的",
+        "grade": 0,
+        "primary": true
+      },
+      {
+        "id": "sense:61:1",
+        "pos": "adj.",
+        "text": "清楚的",
+        "grade": 0,
+        "primary": false
+      },
+      {
+        "id": "sense:61:2",
+        "pos": "adj.",
+        "text": "普通的",
+        "grade": 0,
+        "primary": false
+      },
+      {
+        "id": "sense:61:3",
+        "pos": "n.",
+        "text": "平原",
+        "grade": 0,
+        "primary": true
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:62",
+    "number": 62,
+    "word": "plateau",
+    "senses": [
+      {
+        "id": "sense:62:0",
+        "pos": "n.",
+        "text": "高原",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:62:1",
+        "pos": "n.",
+        "text": "稳定期",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:62:2",
+        "pos": "n.",
+        "text": "停滞期",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:62:3",
+        "pos": "vi.",
+        "text": "趋于稳定",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:63",
+    "number": 63,
+    "word": "oasis",
+    "senses": [
+      {
+        "id": "sense:63:0",
+        "pos": "n.",
+        "text": "绿洲",
+        "grade": 2,
+        "primary": true
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:64",
+    "number": 64,
+    "word": "globe",
+    "senses": [
+      {
+        "id": "sense:64:0",
+        "pos": "n.",
+        "text": "地球",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:64:1",
+        "pos": "n.",
+        "text": "世界",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:64:2",
+        "pos": "n.",
+        "text": "地球仪",
+        "grade": 1,
+        "primary": true
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:64-A",
+        "number": "64-A",
+        "word": "global",
+        "senses": [
+          {
+            "id": "sense:extra:64-A:0",
+            "pos": "adj.",
+            "text": "全球的",
+            "grade": 0,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:64-A:1",
+            "pos": "adj.",
+            "text": "全世界的",
+            "grade": 0,
+            "primary": false
+          }
+        ]
+      },
+      {
+        "id": "extra:64-B",
+        "number": "64-B",
+        "word": "globalisation / globalization",
+        "senses": [
+          {
+            "id": "sense:extra:64-B:0",
+            "pos": "n.",
+            "text": "全球化",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:65",
+    "number": 65,
+    "word": "hemisphere",
+    "senses": [
+      {
+        "id": "sense:65:0",
+        "pos": "n.",
+        "text": "(地球的)半球",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:65:1",
+        "pos": "n.",
+        "text": "(大脑的)半球",
+        "grade": 1,
+        "primary": true
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:66",
+    "number": 66,
+    "word": "equator",
+    "senses": [
+      {
+        "id": "sense:66:0",
+        "pos": "n.",
+        "text": "赤道",
+        "grade": 1,
+        "primary": true
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:67",
+    "number": 67,
+    "word": "arctic",
+    "senses": [
+      {
+        "id": "sense:67:0",
+        "pos": "adj.",
+        "text": "北极的",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:67:1",
+        "pos": "adj.",
+        "text": "严寒的",
+        "grade": 1,
+        "primary": true
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:67-A",
+        "number": "67-A",
+        "word": "the Arctic",
+        "senses": [
+          {
+            "id": "sense:extra:67-A:0",
+            "pos": "n.",
+            "text": "北极地区",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:68",
+    "number": 68,
+    "word": "Antarctic",
+    "senses": [
+      {
+        "id": "sense:68:0",
+        "pos": "adj.",
+        "text": "南极的",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:68:1",
+        "pos": "adj.",
+        "text": "南极地区的",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:68-A",
+        "number": "68-A",
+        "word": "the Antarctic",
+        "senses": [
+          {
+            "id": "sense:extra:68-A:0",
+            "pos": "n.",
+            "text": "南极地区",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      },
+      {
+        "id": "extra:68-B",
+        "number": "68-B",
+        "word": "Antarctica",
+        "senses": [
+          {
+            "id": "sense:extra:68-B:0",
+            "pos": "n.",
+            "text": "南极洲",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:69",
+    "number": 69,
+    "word": "pole",
+    "senses": [
+      {
+        "id": "sense:69:0",
+        "pos": "n.",
+        "text": "杆",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:69:1",
+        "pos": "n.",
+        "text": "柱",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:69:2",
+        "pos": "n.",
+        "text": "地极",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:69:3",
+        "pos": "n.",
+        "text": "磁极",
+        "grade": 1,
+        "primary": true
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:69-A",
+        "number": "69-A",
+        "word": "poles apart",
+        "senses": [
+          {
+            "id": "sense:extra:69-A:0",
+            "pos": "",
+            "text": "截然不同",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:69-A:1",
+            "pos": "",
+            "text": "相差甚远",
+            "grade": 1,
+            "primary": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:70",
+    "number": 70,
+    "word": "polar",
+    "senses": [
+      {
+        "id": "sense:70:0",
+        "pos": "adj.",
+        "text": "极地的",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:70:1",
+        "pos": "adj.",
+        "text": "磁极的",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:70:2",
+        "pos": "adj.",
+        "text": "完全相反的",
+        "grade": 1,
+        "primary": true
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:71",
+    "number": 71,
+    "word": "axis",
+    "senses": [
+      {
+        "id": "sense:71:0",
+        "pos": "n.",
+        "text": "轴(旋转轴)",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:71:1",
+        "pos": "n.",
+        "text": "轴线",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:71:2",
+        "pos": "n.",
+        "text": "坐标轴",
+        "grade": 1,
+        "primary": true
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:71-A",
+        "number": "71-A",
+        "word": "axes",
+        "senses": [
+          {
+            "id": "sense:extra:71-A:0",
+            "pos": "n.",
+            "text": "旋转轴(复数)",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:71-A:1",
+            "pos": "n.",
+            "text": "轴线(复数)",
+            "grade": 1,
+            "primary": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:72",
+    "number": 72,
+    "word": "deteriorate",
+    "senses": [
+      {
+        "id": "sense:72:0",
+        "pos": "vi.",
+        "text": "恶化",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:72:1",
+        "pos": "vi.",
+        "text": "变坏",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:72-A",
+        "number": "72-A",
+        "word": "deterioration",
+        "senses": [
+          {
+            "id": "sense:extra:72-A:0",
+            "pos": "n.",
+            "text": "恶化",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:72-A:1",
+            "pos": "n.",
+            "text": "变坏",
+            "grade": 1,
+            "primary": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:73",
+    "number": 73,
+    "word": "aggravate",
+    "senses": [
+      {
+        "id": "sense:73:0",
+        "pos": "vt.",
+        "text": "加重",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:73:1",
+        "pos": "vt.",
+        "text": "使恶化",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:73:2",
+        "pos": "vt.",
+        "text": "激怒",
+        "grade": 1,
+        "primary": true
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:74",
+    "number": 74,
+    "word": "degrade",
+    "senses": [
+      {
+        "id": "sense:74:0",
+        "pos": "vt.",
+        "text": "贬低",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:74:1",
+        "pos": "vt.",
+        "text": "使退化",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:74:2",
+        "pos": "vt./vi.",
+        "text": "(使)降解",
+        "grade": 1,
+        "primary": true
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:74-A",
+        "number": "74-A",
+        "word": "degradation",
+        "senses": [
+          {
+            "id": "sense:extra:74-A:0",
+            "pos": "n.",
+            "text": "恶化",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:74-A:1",
+            "pos": "n.",
+            "text": "退化",
+            "grade": 1,
+            "primary": false
+          }
+        ]
+      },
+      {
+        "id": "extra:74-B",
+        "number": "74-B",
+        "word": "biodegradable",
+        "senses": [
+          {
+            "id": "sense:extra:74-B:0",
+            "pos": "adj.",
+            "text": "可生物降解的",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:75",
+    "number": 75,
+    "word": "upgrade",
+    "senses": [
+      {
+        "id": "sense:75:0",
+        "pos": "vt./vi.",
+        "text": "升级",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:75:1",
+        "pos": "vt./vi.",
+        "text": "改善",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:75:2",
+        "pos": "n.",
+        "text": "升级",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:75:3",
+        "pos": "n.",
+        "text": "改进",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:76",
+    "number": 76,
+    "word": "erode",
+    "senses": [
+      {
+        "id": "sense:76:0",
+        "pos": "vt./vi.",
+        "text": "侵蚀",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:76:1",
+        "pos": "vt./vi.",
+        "text": "逐渐削弱",
+        "grade": 1,
+        "primary": true
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:76-A",
+        "number": "76-A",
+        "word": "erosion",
+        "senses": [
+          {
+            "id": "sense:extra:76-A:0",
+            "pos": "n.",
+            "text": "侵蚀",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:76-A:1",
+            "pos": "n.",
+            "text": "流失",
+            "grade": 1,
+            "primary": false
+          },
+          {
+            "id": "sense:extra:76-A:2",
+            "pos": "n.",
+            "text": "逐渐削弱",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:77",
+    "number": 77,
+    "word": "Mediterranean",
+    "senses": [
+      {
+        "id": "sense:77:0",
+        "pos": "n.",
+        "text": "地中海",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:77:1",
+        "pos": "n.",
+        "text": "地中海地区",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:77:2",
+        "pos": "adj.",
+        "text": "地中海的",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:78",
+    "number": 78,
+    "word": "Atlantic",
+    "senses": [
+      {
+        "id": "sense:78:0",
+        "pos": "n.",
+        "text": "大西洋",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:78:1",
+        "pos": "adj.",
+        "text": "大西洋的",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:79",
+    "number": 79,
+    "word": "pacific",
+    "senses": [
+      {
+        "id": "sense:79:0",
+        "pos": "adj.",
+        "text": "和平的",
+        "grade": 2,
+        "primary": true
+      },
+      {
+        "id": "sense:79:1",
+        "pos": "adj.",
+        "text": "爱好和平的",
+        "grade": 2,
+        "primary": false
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:80",
+    "number": 80,
+    "word": "ocean",
+    "senses": [
+      {
+        "id": "sense:80:0",
+        "pos": "n.",
+        "text": "海洋",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:80:1",
+        "pos": "n.",
+        "text": "大洋",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:81",
+    "number": 81,
+    "word": "marine",
+    "senses": [
+      {
+        "id": "sense:81:0",
+        "pos": "adj.",
+        "text": "海洋的",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:81:1",
+        "pos": "adj.",
+        "text": "海运的",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:82",
+    "number": 82,
+    "word": "navigation",
+    "senses": [
+      {
+        "id": "sense:82:0",
+        "pos": "n.",
+        "text": "导航",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:82:1",
+        "pos": "n.",
+        "text": "航行",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:82:2",
+        "pos": "n.",
+        "text": "网站导航",
+        "grade": 1,
+        "primary": true
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:82-A",
+        "number": "82-A",
+        "word": "navigate",
+        "senses": [
+          {
+            "id": "sense:extra:82-A:0",
+            "pos": "v.",
+            "text": "导航",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:82-A:1",
+            "pos": "v.",
+            "text": "(在网站等)浏览",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:83",
+    "number": 83,
+    "word": "gulf",
+    "senses": [
+      {
+        "id": "sense:83:0",
+        "pos": "n.",
+        "text": "海湾",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:83:1",
+        "pos": "n.",
+        "text": "巨大差距",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:83:2",
+        "pos": "n.",
+        "text": "分歧",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:84",
+    "number": 84,
+    "word": "beach",
+    "senses": [
+      {
+        "id": "sense:84:0",
+        "pos": "n.",
+        "text": "海滩",
+        "grade": 0,
+        "primary": true
+      },
+      {
+        "id": "sense:84:1",
+        "pos": "n.",
+        "text": "湖滨（有沙石的岸边）",
+        "grade": 0,
+        "primary": false
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:85",
+    "number": 85,
+    "word": "coast",
+    "senses": [
+      {
+        "id": "sense:85:0",
+        "pos": "n.",
+        "text": "海岸",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:85:1",
+        "pos": "n.",
+        "text": "海滨",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:85:2",
+        "pos": "vi.",
+        "text": "(车辆)靠惯性滑行",
+        "grade": 1,
+        "primary": true
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:85-A",
+        "number": "85-A",
+        "word": "coastal",
+        "senses": [
+          {
+            "id": "sense:extra:85-A:0",
+            "pos": "adj.",
+            "text": "沿海的",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:85-A:1",
+            "pos": "adj.",
+            "text": "海岸的",
+            "grade": 1,
+            "primary": false
+          }
+        ]
+      },
+      {
+        "id": "extra:85-B",
+        "number": "85-B",
+        "word": "coastline",
+        "senses": [
+          {
+            "id": "sense:extra:85-B:0",
+            "pos": "n.",
+            "text": "海岸线",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:86",
+    "number": 86,
+    "word": "shore",
+    "senses": [
+      {
+        "id": "sense:86:0",
+        "pos": "n.",
+        "text": "岸",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:86:1",
+        "pos": "n.",
+        "text": "滨",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:86-A",
+        "number": "86-A",
+        "word": "shore sth up",
+        "senses": [
+          {
+            "id": "sense:extra:86-A:0",
+            "pos": "",
+            "text": "支撑",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:86-A:1",
+            "pos": "",
+            "text": "巩固",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:86-A:2",
+            "pos": "",
+            "text": "支持",
+            "grade": 1,
+            "primary": false
+          }
+        ]
+      },
+      {
+        "id": "extra:86-B",
+        "number": "86-B",
+        "word": "offshore",
+        "senses": [
+          {
+            "id": "sense:extra:86-B:0",
+            "pos": "adj.",
+            "text": "海上的",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:86-B:1",
+            "pos": "adj.",
+            "text": "近海的",
+            "grade": 1,
+            "primary": false
+          },
+          {
+            "id": "sense:extra:86-B:2",
+            "pos": "adv.",
+            "text": "离岸",
+            "grade": 1,
+            "primary": false
+          },
+          {
+            "id": "sense:extra:86-B:3",
+            "pos": "adv.",
+            "text": "在海上",
+            "grade": 1,
+            "primary": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:87",
+    "number": 87,
+    "word": "tide",
+    "senses": [
+      {
+        "id": "sense:87:0",
+        "pos": "n.",
+        "text": "潮汐",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:87:1",
+        "pos": "n.",
+        "text": "潮流",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:87:2",
+        "pos": "n.",
+        "text": "趋势",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:87-A",
+        "number": "87-A",
+        "word": "turn the tide",
+        "senses": [
+          {
+            "id": "sense:extra:87-A:0",
+            "pos": "",
+            "text": "扭转局势",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:87-A:1",
+            "pos": "",
+            "text": "改变趋势",
+            "grade": 1,
+            "primary": false
+          }
+        ]
+      },
+      {
+        "id": "extra:87-B",
+        "number": "87-B",
+        "word": "tidal",
+        "senses": [
+          {
+            "id": "sense:extra:87-B:0",
+            "pos": "adj.",
+            "text": "潮汐的",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:87-B:1",
+            "pos": "adj.",
+            "text": "受潮汐影响的",
+            "grade": 1,
+            "primary": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:88",
+    "number": 88,
+    "word": "current",
+    "senses": [
+      {
+        "id": "sense:88:0",
+        "pos": "adj.",
+        "text": "当前的",
+        "grade": 0,
+        "primary": true
+      },
+      {
+        "id": "sense:88:1",
+        "pos": "adj.",
+        "text": "现行的",
+        "grade": 0,
+        "primary": false
+      },
+      {
+        "id": "sense:88:2",
+        "pos": "n.",
+        "text": "水流",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:88:3",
+        "pos": "n.",
+        "text": "气流",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:88:4",
+        "pos": "n.",
+        "text": "电流",
+        "grade": 1,
+        "primary": true
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:88-A",
+        "number": "88-A",
+        "word": "currently",
+        "senses": [
+          {
+            "id": "sense:extra:88-A:0",
+            "pos": "adv.",
+            "text": "目前",
+            "grade": 0,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:88-A:1",
+            "pos": "adv.",
+            "text": "当前",
+            "grade": 0,
+            "primary": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:89",
+    "number": 89,
+    "word": "brook",
+    "senses": [
+      {
+        "id": "sense:89:0",
+        "pos": "n.",
+        "text": "小溪",
+        "grade": 2,
+        "primary": true
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:90",
+    "number": 90,
+    "word": "stream",
+    "senses": [
+      {
+        "id": "sense:90:0",
+        "pos": "n.",
+        "text": "小溪",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:90:1",
+        "pos": "n.",
+        "text": "水流",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:90:3",
+        "pos": "vi./vt.",
+        "text": "流动",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:90:2",
+        "pos": "n.",
+        "text": "一连串",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:90:4",
+        "pos": "vt.",
+        "text": "流媒体播放",
+        "grade": 1,
+        "primary": true
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:90-A",
+        "number": "90-A",
+        "word": "streaming",
+        "senses": [
+          {
+            "id": "sense:extra:90-A:0",
+            "pos": "n.",
+            "text": "流媒体播放",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:90-A:1",
+            "pos": "n.",
+            "text": "流式传输",
+            "grade": 1,
+            "primary": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:91",
+    "number": 91,
+    "word": "source",
+    "senses": [
+      {
+        "id": "sense:91:0",
+        "pos": "n.",
+        "text": "来源",
+        "grade": 0,
+        "primary": true
+      },
+      {
+        "id": "sense:91:1",
+        "pos": "n.",
+        "text": "源头",
+        "grade": 0,
+        "primary": false
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:91-A",
+        "number": "91-A",
+        "word": "outsource",
+        "senses": [
+          {
+            "id": "sense:extra:91-A:0",
+            "pos": "v.",
+            "text": "外包(工作、服务等)",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:92",
+    "number": 92,
+    "word": "shallow",
+    "senses": [
+      {
+        "id": "sense:92:0",
+        "pos": "adj.",
+        "text": "浅的(水深)",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:92:1",
+        "pos": "adj.",
+        "text": "肤浅的",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:92:2",
+        "pos": "adj.",
+        "text": "(呼吸)浅的",
+        "grade": 1,
+        "primary": true
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:93",
+    "number": 93,
+    "word": "superficial",
+    "senses": [
+      {
+        "id": "sense:93:0",
+        "pos": "adj.",
+        "text": "肤浅的",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:93:1",
+        "pos": "adj.",
+        "text": "表面的",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:93:2",
+        "pos": "adj.",
+        "text": "表面上的",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:94",
+    "number": 94,
+    "word": "flat",
+    "senses": [
+      {
+        "id": "sense:94:0",
+        "pos": "adj.",
+        "text": "平坦的",
+        "grade": 0,
+        "primary": true
+      },
+      {
+        "id": "sense:94:2",
+        "pos": "adj.",
+        "text": "瘪的",
+        "grade": 0,
+        "primary": true
+      },
+      {
+        "id": "sense:94:3",
+        "pos": "n.",
+        "text": "公寓(英式)",
+        "grade": 0,
+        "primary": true
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:94-A",
+        "number": "94-A",
+        "word": "flatten",
+        "senses": [
+          {
+            "id": "sense:extra:94-A:0",
+            "pos": "v.",
+            "text": "(使)变平",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:94-A:1",
+            "pos": "v.",
+            "text": "弄平",
+            "grade": 1,
+            "primary": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:95",
+    "number": 95,
+    "word": "smooth",
+    "senses": [
+      {
+        "id": "sense:95:0",
+        "pos": "adj.",
+        "text": "光滑的",
+        "grade": 0,
+        "primary": true
+      },
+      {
+        "id": "sense:95:1",
+        "pos": "adj.",
+        "text": "顺利的",
+        "grade": 0,
+        "primary": true
+      },
+      {
+        "id": "sense:95:2",
+        "pos": "adj.",
+        "text": "平稳的",
+        "grade": 0,
+        "primary": false
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:95-A",
+        "number": "95-A",
+        "word": "smooth sth over",
+        "senses": [
+          {
+            "id": "sense:extra:95-A:0",
+            "pos": "",
+            "text": "缓和",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:95-A:1",
+            "pos": "",
+            "text": "调解(困难、分歧等)",
+            "grade": 1,
+            "primary": false
+          }
+        ]
+      },
+      {
+        "id": "extra:95-B",
+        "number": "95-B",
+        "word": "smoothly",
+        "senses": [
+          {
+            "id": "sense:extra:95-B:0",
+            "pos": "adv.",
+            "text": "顺利地",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:95-B:1",
+            "pos": "adv.",
+            "text": "平稳地",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:96",
+    "number": 96,
+    "word": "rough",
+    "senses": [
+      {
+        "id": "sense:96:0",
+        "pos": "adj.",
+        "text": "粗糙的",
+        "grade": 0,
+        "primary": true
+      },
+      {
+        "id": "sense:96:1",
+        "pos": "adj.",
+        "text": "大致的",
+        "grade": 0,
+        "primary": true
+      },
+      {
+        "id": "sense:96:2",
+        "pos": "adj.",
+        "text": "艰难的",
+        "grade": 0,
+        "primary": true
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:96-A",
+        "number": "96-A",
+        "word": "roughly",
+        "senses": [
+          {
+            "id": "sense:extra:96-A:0",
+            "pos": "adv.",
+            "text": "大约",
+            "grade": 0,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:96-A:1",
+            "pos": "adv.",
+            "text": "粗略地",
+            "grade": 0,
+            "primary": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:97",
+    "number": 97,
+    "word": "sandy",
+    "senses": [
+      {
+        "id": "sense:97:0",
+        "pos": "adj.",
+        "text": "多沙的",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:97:1",
+        "pos": "adj.",
+        "text": "沙质的",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:97-A",
+        "number": "97-A",
+        "word": "sand",
+        "senses": [
+          {
+            "id": "sense:extra:97-A:0",
+            "pos": "n.",
+            "text": "沙",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:97-A:1",
+            "pos": "n.",
+            "text": "沙子",
+            "grade": 1,
+            "primary": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:98",
+    "number": 98,
+    "word": "stony",
+    "senses": [
+      {
+        "id": "sense:98:0",
+        "pos": "adj.",
+        "text": "多石的",
+        "grade": 2,
+        "primary": true
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:98-A",
+        "number": "98-A",
+        "word": "stone",
+        "senses": [
+          {
+            "id": "sense:extra:98-A:0",
+            "pos": "n.",
+            "text": "石头",
+            "grade": 0,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:98-A:1",
+            "pos": "n.",
+            "text": "石料",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:99",
+    "number": 99,
+    "word": "vertical",
+    "senses": [
+      {
+        "id": "sense:99:0",
+        "pos": "adj.",
+        "text": "垂直的",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:99:1",
+        "pos": "adj.",
+        "text": "纵向的",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:100",
+    "number": 100,
+    "word": "steep",
+    "senses": [
+      {
+        "id": "sense:100:0",
+        "pos": "adj.",
+        "text": "陡峭的",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:100:1",
+        "pos": "adj.",
+        "text": "急剧的",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:100:2",
+        "pos": "adj.",
+        "text": "(价格)过高的",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:100-A",
+        "number": "100-A",
+        "word": "steeply",
+        "senses": [
+          {
+            "id": "sense:extra:100-A:0",
+            "pos": "adv.",
+            "text": "急剧地",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:100-A:1",
+            "pos": "adv.",
+            "text": "陡峭地",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:101",
+    "number": 101,
+    "word": "parallel",
+    "senses": [
+      {
+        "id": "sense:101:0",
+        "pos": "adj.",
+        "text": "平行的",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:101:1",
+        "pos": "adj.",
+        "text": "相似的",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:101:3",
+        "pos": "n.",
+        "text": "相似之处",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:101:4",
+        "pos": "vt.",
+        "text": "与...相似",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:101:2",
+        "pos": "adj.",
+        "text": "同时发生的",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:101:5",
+        "pos": "vt.",
+        "text": "与...同时发生",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:101-A",
+        "number": "101-A",
+        "word": "in parallel (with sth)",
+        "senses": [
+          {
+            "id": "sense:extra:101-A:0",
+            "pos": "",
+            "text": "同时",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:101-A:1",
+            "pos": "",
+            "text": "并行(与...一起)",
+            "grade": 1,
+            "primary": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:102",
+    "number": 102,
+    "word": "narrow",
+    "senses": [
+      {
+        "id": "sense:102:0",
+        "pos": "adj.",
+        "text": "狭窄的",
+        "grade": 0,
+        "primary": true
+      },
+      {
+        "id": "sense:102:3",
+        "pos": "vt./vi.",
+        "text": "(使)变窄",
+        "grade": 0,
+        "primary": false
+      },
+      {
+        "id": "sense:102:1",
+        "pos": "adj.",
+        "text": "有限的",
+        "grade": 0,
+        "primary": true
+      },
+      {
+        "id": "sense:102:4",
+        "pos": "vt./vi.",
+        "text": "缩小",
+        "grade": 0,
+        "primary": false
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:102-A",
+        "number": "102-A",
+        "word": "narrow sth down (to ...)",
+        "senses": [
+          {
+            "id": "sense:extra:102-A:0",
+            "pos": "",
+            "text": "缩小选择范围(至...)",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:103",
+    "number": 103,
+    "word": "Oceania",
+    "senses": [
+      {
+        "id": "sense:103:0",
+        "pos": "n.",
+        "text": "大洋洲",
+        "grade": 1,
+        "primary": true
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:104",
+    "number": 104,
+    "word": "mainland",
+    "senses": [
+      {
+        "id": "sense:104:0",
+        "pos": "n.",
+        "text": "大陆",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:104:1",
+        "pos": "adj.",
+        "text": "大陆的",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:105",
+    "number": 105,
+    "word": "peninsula",
+    "senses": [
+      {
+        "id": "sense:105:0",
+        "pos": "n.",
+        "text": "半岛",
+        "grade": 1,
+        "primary": true
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:106",
+    "number": 106,
+    "word": "climate",
+    "senses": [
+      {
+        "id": "sense:106:0",
+        "pos": "n.",
+        "text": "气候",
+        "grade": 0,
+        "primary": true
+      },
+      {
+        "id": "sense:106:2",
+        "pos": "n.",
+        "text": "社会氛围",
+        "grade": 0,
+        "primary": true
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:106-A",
+        "number": "106-A",
+        "word": "climatic",
+        "senses": [
+          {
+            "id": "sense:extra:106-A:0",
+            "pos": "adj.",
+            "text": "气候的",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:107",
+    "number": 107,
+    "word": "weather",
+    "senses": [
+      {
+        "id": "sense:107:0",
+        "pos": "n.",
+        "text": "天气",
+        "grade": 0,
+        "primary": true
+      },
+      {
+        "id": "sense:107:1",
+        "pos": "n.",
+        "text": "天气预报",
+        "grade": 0,
+        "primary": false
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:107-A",
+        "number": "107-A",
+        "word": "under the weather",
+        "senses": [
+          {
+            "id": "sense:extra:107-A:0",
+            "pos": "",
+            "text": "身体不适",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:107-A:1",
+            "pos": "",
+            "text": "不舒服(非正式)",
+            "grade": 1,
+            "primary": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:108",
+    "number": 108,
+    "word": "meteorology",
+    "senses": [
+      {
+        "id": "sense:108:0",
+        "pos": "n.",
+        "text": "气象学",
+        "grade": 2,
+        "primary": true
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:109",
+    "number": 109,
+    "word": "mild",
+    "senses": [
+      {
+        "id": "sense:109:0",
+        "pos": "adj.",
+        "text": "温和的",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:109:1",
+        "pos": "adj.",
+        "text": "轻微的",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:109:2",
+        "pos": "adj.",
+        "text": "淡的",
+        "grade": 1,
+        "primary": true
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:110",
+    "number": 110,
+    "word": "heating",
+    "senses": [
+      {
+        "id": "sense:110:0",
+        "pos": "n.",
+        "text": "供暖",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:110:1",
+        "pos": "n.",
+        "text": "供暖系统",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:110-A",
+        "number": "110-A",
+        "word": "heat",
+        "senses": [
+          {
+            "id": "sense:extra:110-A:0",
+            "pos": "n.",
+            "text": "热",
+            "grade": 0,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:110-A:2",
+            "pos": "v.",
+            "text": "加热",
+            "grade": 0,
+            "primary": false
+          },
+          {
+            "id": "sense:extra:110-A:3",
+            "pos": "v.",
+            "text": "变热",
+            "grade": 0,
+            "primary": false
+          },
+          {
+            "id": "sense:extra:110-A:1",
+            "pos": "n.",
+            "text": "热量（热能）",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      },
+      {
+        "id": "extra:110-B",
+        "number": "110-B",
+        "word": "heater",
+        "senses": [
+          {
+            "id": "sense:extra:110-B:0",
+            "pos": "n.",
+            "text": "加热器",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:110-B:1",
+            "pos": "n.",
+            "text": "取暖器",
+            "grade": 1,
+            "primary": false
+          }
+        ]
+      },
+      {
+        "id": "extra:110-C",
+        "number": "110-C",
+        "word": "heatwave",
+        "senses": [
+          {
+            "id": "sense:extra:110-C:0",
+            "pos": "n.",
+            "text": "热浪(持续的酷热天气)",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:111",
+    "number": 111,
+    "word": "moderate",
+    "senses": [
+      {
+        "id": "sense:111:0",
+        "pos": "adj.",
+        "text": "适度的",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:111:1",
+        "pos": "adj.",
+        "text": "温和的",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:111:2",
+        "pos": "vt./vi.",
+        "text": "缓和",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:111:3",
+        "pos": "vt./vi.",
+        "text": "调节（使适度）",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:112",
+    "number": 112,
+    "word": "warm",
+    "senses": [
+      {
+        "id": "sense:112:0",
+        "pos": "adj.",
+        "text": "温暖的",
+        "grade": 0,
+        "primary": true
+      },
+      {
+        "id": "sense:112:2",
+        "pos": "vt./vi.",
+        "text": "(使)变暖",
+        "grade": 0,
+        "primary": false
+      },
+      {
+        "id": "sense:112:1",
+        "pos": "adj.",
+        "text": "热情友好的",
+        "grade": 0,
+        "primary": true
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:112-A",
+        "number": "112-A",
+        "word": "warm up",
+        "senses": [
+          {
+            "id": "sense:extra:112-A:0",
+            "pos": "",
+            "text": "热身",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:112-A:1",
+            "pos": "",
+            "text": "(使)预热",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      },
+      {
+        "id": "extra:112-B",
+        "number": "112-B",
+        "word": "warmth",
+        "senses": [
+          {
+            "id": "sense:extra:112-B:0",
+            "pos": "n.",
+            "text": "温暖",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:112-B:1",
+            "pos": "n.",
+            "text": "热情",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:112-B:2",
+            "pos": "n.",
+            "text": "亲切",
+            "grade": 1,
+            "primary": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:113",
+    "number": 113,
+    "word": "thermal",
+    "senses": [
+      {
+        "id": "sense:113:0",
+        "pos": "adj.",
+        "text": "热的（与热有关）",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:113:1",
+        "pos": "adj.",
+        "text": "热量的",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:113:2",
+        "pos": "adj.",
+        "text": "保暖的",
+        "grade": 1,
+        "primary": true
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:114",
+    "number": 114,
+    "word": "tropic",
+    "senses": [
+      {
+        "id": "sense:114:0",
+        "pos": "n.",
+        "text": "回归线",
+        "grade": 1,
+        "primary": true
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:114-A",
+        "number": "114-A",
+        "word": "the tropics",
+        "senses": [
+          {
+            "id": "sense:extra:114-A:0",
+            "pos": "n.",
+            "text": "热带地区(用复数)",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      },
+      {
+        "id": "extra:114-B",
+        "number": "114-B",
+        "word": "tropical",
+        "senses": [
+          {
+            "id": "sense:extra:114-B:0",
+            "pos": "adj.",
+            "text": "热带的",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:115",
+    "number": 115,
+    "word": "arid",
+    "senses": [
+      {
+        "id": "sense:115:0",
+        "pos": "adj.",
+        "text": "干旱的",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:115:1",
+        "pos": "adj.",
+        "text": "枯燥乏味的",
+        "grade": 1,
+        "primary": true
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:116",
+    "number": 116,
+    "word": "moist",
+    "senses": [
+      {
+        "id": "sense:116:0",
+        "pos": "adj.",
+        "text": "微湿的",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:116:1",
+        "pos": "adj.",
+        "text": "湿润的",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:116-A",
+        "number": "116-A",
+        "word": "moisture",
+        "senses": [
+          {
+            "id": "sense:extra:116-A:0",
+            "pos": "n.",
+            "text": "水分",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:116-A:1",
+            "pos": "n.",
+            "text": "湿气",
+            "grade": 1,
+            "primary": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:117",
+    "number": 117,
+    "word": "damp",
+    "senses": [
+      {
+        "id": "sense:117:0",
+        "pos": "adj.",
+        "text": "潮湿的",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:117:1",
+        "pos": "n.",
+        "text": "潮湿",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:117:2",
+        "pos": "n.",
+        "text": "湿气",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:118",
+    "number": 118,
+    "word": "humid",
+    "senses": [
+      {
+        "id": "sense:118:0",
+        "pos": "adj.",
+        "text": "(空气或气候)潮湿的",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:118:1",
+        "pos": "adj.",
+        "text": "湿热的",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:118-A",
+        "number": "118-A",
+        "word": "humidity",
+        "senses": [
+          {
+            "id": "sense:extra:118-A:0",
+            "pos": "n.",
+            "text": "湿度",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:119",
+    "number": 119,
+    "word": "snowy",
+    "senses": [
+      {
+        "id": "sense:119:0",
+        "pos": "adj.",
+        "text": "下雪的",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:119:1",
+        "pos": "adj.",
+        "text": "被雪覆盖的",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:119-A",
+        "number": "119-A",
+        "word": "snow",
+        "senses": [
+          {
+            "id": "sense:extra:119-A:0",
+            "pos": "n.",
+            "text": "雪",
+            "grade": 0,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:119-A:1",
+            "pos": "vi.",
+            "text": "下雪",
+            "grade": 0,
+            "primary": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:120",
+    "number": 120,
+    "word": "frost",
+    "senses": [
+      {
+        "id": "sense:120:0",
+        "pos": "n.",
+        "text": "霜",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:120:1",
+        "pos": "n.",
+        "text": "霜冻",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:120:2",
+        "pos": "vt./vi.",
+        "text": "(使)结霜",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:121",
+    "number": 121,
+    "word": "hail",
+    "senses": [
+      {
+        "id": "sense:121:0",
+        "pos": "vt.",
+        "text": "招手叫车",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:121:2",
+        "pos": "vt.",
+        "text": "称赞",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:121:4",
+        "pos": "n.",
+        "text": "冰雹",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:121:3",
+        "pos": "vi.",
+        "text": "下冰雹",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:121-A",
+        "number": "121-A",
+        "word": "hail from somewhere",
+        "senses": [
+          {
+            "id": "sense:extra:121-A:0",
+            "pos": "",
+            "text": "来自某地",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      },
+      {
+        "id": "extra:121-B",
+        "number": "121-B",
+        "word": "hail sb/sth as ...",
+        "senses": [
+          {
+            "id": "sense:extra:121-B:0",
+            "pos": "",
+            "text": "称赞...为...",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:121-B:1",
+            "pos": "",
+            "text": "把...誉为...",
+            "grade": 1,
+            "primary": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:122",
+    "number": 122,
+    "word": "thaw",
+    "senses": [
+      {
+        "id": "sense:122:0",
+        "pos": "vi./vt.",
+        "text": "(使)融化",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:122:1",
+        "pos": "vi./vt.",
+        "text": "解冻",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:122:3",
+        "pos": "n.",
+        "text": "解冻",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:122:4",
+        "pos": "n.",
+        "text": "(关系的)缓和",
+        "grade": 1,
+        "primary": true
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:123",
+    "number": 123,
+    "word": "chill",
+    "senses": [
+      {
+        "id": "sense:123:0",
+        "pos": "n.",
+        "text": "寒意",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:123:3",
+        "pos": "vt./vi.",
+        "text": "(使)冷却",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:123:4",
+        "pos": "vi.",
+        "text": "放松(非正式，可用chill out)",
+        "grade": 1,
+        "primary": true
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:123-A",
+        "number": "123-A",
+        "word": "chilly",
+        "senses": [
+          {
+            "id": "sense:extra:123-A:0",
+            "pos": "adj.",
+            "text": "寒冷的",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:123-A:1",
+            "pos": "adj.",
+            "text": "冷淡的",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:124",
+    "number": 124,
+    "word": "freeze",
+    "senses": [
+      {
+        "id": "sense:124:0",
+        "pos": "vi./vt.",
+        "text": "(使)结冰",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:124:1",
+        "pos": "vi./vt.",
+        "text": "冷冻",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:124:2",
+        "pos": "vi./vt.",
+        "text": "冻结",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:124:3",
+        "pos": "vi.",
+        "text": "(因恐惧等)惊呆",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:124:4",
+        "pos": "vi.",
+        "text": "不动",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:124-A",
+        "number": "124-A",
+        "word": "froze",
+        "senses": [
+          {
+            "id": "sense:extra:124-A:0",
+            "pos": "v.",
+            "text": "freeze的过去式",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      },
+      {
+        "id": "extra:124-B",
+        "number": "124-B",
+        "word": "frozen",
+        "senses": [
+          {
+            "id": "sense:extra:124-B:1",
+            "pos": "adj.",
+            "text": "冷冻的",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:124-B:2",
+            "pos": "adj.",
+            "text": "结冰的",
+            "grade": 1,
+            "primary": false
+          },
+          {
+            "id": "sense:extra:124-B:0",
+            "pos": "v.",
+            "text": "freeze的过去分词",
+            "grade": 1,
+            "primary": false
+          }
+        ]
+      },
+      {
+        "id": "extra:124-C",
+        "number": "124-C",
+        "word": "freezing",
+        "senses": [
+          {
+            "id": "sense:extra:124-C:0",
+            "pos": "adj.",
+            "text": "极冷的",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:124-C:1",
+            "pos": "adj.",
+            "text": "冰冷的",
+            "grade": 1,
+            "primary": false
+          }
+        ]
+      },
+      {
+        "id": "extra:124-D",
+        "number": "124-D",
+        "word": "freezer",
+        "senses": [
+          {
+            "id": "sense:extra:124-D:0",
+            "pos": "n.",
+            "text": "冰柜",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:124-D:1",
+            "pos": "n.",
+            "text": "冷冻柜",
+            "grade": 1,
+            "primary": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:125",
+    "number": 125,
+    "word": "frigid",
+    "senses": [
+      {
+        "id": "sense:125:0",
+        "pos": "adj.",
+        "text": "严寒的",
+        "grade": 2,
+        "primary": true
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:126",
+    "number": 126,
+    "word": "tremble",
+    "senses": [
+      {
+        "id": "sense:126:0",
+        "pos": "vi.",
+        "text": "颤抖",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:126:1",
+        "pos": "vi.",
+        "text": "发抖",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:126:2",
+        "pos": "vi.",
+        "text": "轻晃",
+        "grade": 1,
+        "primary": true
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:127",
+    "number": 127,
+    "word": "shiver",
+    "senses": [
+      {
+        "id": "sense:127:0",
+        "pos": "vi.",
+        "text": "发抖",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:127:1",
+        "pos": "vi.",
+        "text": "打寒战",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:127:2",
+        "pos": "n.",
+        "text": "颤抖",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:127:3",
+        "pos": "n.",
+        "text": "寒战",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:128",
+    "number": 128,
+    "word": "thunder",
+    "senses": [
+      {
+        "id": "sense:128:0",
+        "pos": "n.",
+        "text": "雷",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:128:1",
+        "pos": "n.",
+        "text": "雷声",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:128:3",
+        "pos": "vi.",
+        "text": "打雷",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:128:2",
+        "pos": "n.",
+        "text": "轰隆声",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:128:4",
+        "pos": "vi.",
+        "text": "轰隆作响",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:128-A",
+        "number": "128-A",
+        "word": "thunderstorm",
+        "senses": [
+          {
+            "id": "sense:extra:128-A:0",
+            "pos": "n.",
+            "text": "雷暴",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:128-A:1",
+            "pos": "n.",
+            "text": "雷雨",
+            "grade": 1,
+            "primary": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:129",
+    "number": 129,
+    "word": "lightning",
+    "senses": [
+      {
+        "id": "sense:129:0",
+        "pos": "n.",
+        "text": "闪电",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:129:1",
+        "pos": "adj.",
+        "text": "闪电般的（只作定语）",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:129:2",
+        "pos": "adj.",
+        "text": "极快的（只作定语）",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:130",
+    "number": 130,
+    "word": "stormy",
+    "senses": [
+      {
+        "id": "sense:130:0",
+        "pos": "adj.",
+        "text": "暴风雨的",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:130:1",
+        "pos": "adj.",
+        "text": "激烈争吵的",
+        "grade": 1,
+        "primary": true
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:130-A",
+        "number": "130-A",
+        "word": "storm",
+        "senses": [
+          {
+            "id": "sense:extra:130-A:0",
+            "pos": "n.",
+            "text": "暴风雨",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:130-A:1",
+            "pos": "n.",
+            "text": "风暴",
+            "grade": 1,
+            "primary": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:131",
+    "number": 131,
+    "word": "downpour",
+    "senses": [
+      {
+        "id": "sense:131:0",
+        "pos": "n.",
+        "text": "暴雨",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:131:1",
+        "pos": "n.",
+        "text": "倾盆大雨",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:132",
+    "number": 132,
+    "word": "rainfall",
+    "senses": [
+      {
+        "id": "sense:132:0",
+        "pos": "n.",
+        "text": "降雨量",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:132:1",
+        "pos": "n.",
+        "text": "降雨",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:132-A",
+        "number": "132-A",
+        "word": "rain",
+        "senses": [
+          {
+            "id": "sense:extra:132-A:0",
+            "pos": "n.",
+            "text": "雨",
+            "grade": 0,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:132-A:1",
+            "pos": "vi.",
+            "text": "下雨",
+            "grade": 0,
+            "primary": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:133",
+    "number": 133,
+    "word": "sprinkle",
+    "senses": [
+      {
+        "id": "sense:133:0",
+        "pos": "vt.",
+        "text": "洒",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:133:1",
+        "pos": "vt.",
+        "text": "撒",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:133:4",
+        "pos": "n.",
+        "text": "少量（洒落或散布的）",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:133:3",
+        "pos": "vi.",
+        "text": "下小雨",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:133:5",
+        "pos": "n.",
+        "text": "零星小雨",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:134",
+    "number": 134,
+    "word": "rainbow",
+    "senses": [
+      {
+        "id": "sense:134:0",
+        "pos": "n.",
+        "text": "彩虹",
+        "grade": 1,
+        "primary": true
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:135",
+    "number": 135,
+    "word": "shower",
+    "senses": [
+      {
+        "id": "sense:135:0",
+        "pos": "n.",
+        "text": "淋浴",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:135:1",
+        "pos": "n.",
+        "text": "淋浴器",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:135:3",
+        "pos": "vi.",
+        "text": "淋浴",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:135:2",
+        "pos": "n.",
+        "text": "阵雨",
+        "grade": 1,
+        "primary": true
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:136",
+    "number": 136,
+    "word": "Celsius",
+    "senses": [
+      {
+        "id": "sense:136:0",
+        "pos": "adj.",
+        "text": "摄氏的",
+        "grade": 1,
+        "primary": true
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:136-A",
+        "number": "136-A",
+        "word": "degree(s) Celsius",
+        "senses": [
+          {
+            "id": "sense:extra:136-A:0",
+            "pos": "n.",
+            "text": "摄氏度（温度单位）",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:137",
+    "number": 137,
+    "word": "temperature",
+    "senses": [
+      {
+        "id": "sense:137:0",
+        "pos": "n.",
+        "text": "温度",
+        "grade": 0,
+        "primary": true
+      },
+      {
+        "id": "sense:137:1",
+        "pos": "n.",
+        "text": "气温",
+        "grade": 0,
+        "primary": true
+      },
+      {
+        "id": "sense:137:2",
+        "pos": "n.",
+        "text": "体温",
+        "grade": 0,
+        "primary": true
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:137-A",
+        "number": "137-A",
+        "word": "have / run a temperature",
+        "senses": [
+          {
+            "id": "sense:extra:137-A:0",
+            "pos": "",
+            "text": "发烧",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:137-A:1",
+            "pos": "",
+            "text": "发热",
+            "grade": 1,
+            "primary": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:138",
+    "number": 138,
+    "word": "forecast",
+    "senses": [
+      {
+        "id": "sense:138:0",
+        "pos": "n.",
+        "text": "预测",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:138:1",
+        "pos": "n.",
+        "text": "预报",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:138:2",
+        "pos": "vt.",
+        "text": "预测",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:138:3",
+        "pos": "vt.",
+        "text": "预报",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:139",
+    "number": 139,
+    "word": "peak",
+    "senses": [
+      {
+        "id": "sense:139:0",
+        "pos": "n.",
+        "text": "最高点",
+        "grade": 0,
+        "primary": true
+      },
+      {
+        "id": "sense:139:2",
+        "pos": "vi.",
+        "text": "达到最高点",
+        "grade": 0,
+        "primary": false
+      },
+      {
+        "id": "sense:139:3",
+        "pos": "adj.",
+        "text": "高峰期的",
+        "grade": 0,
+        "primary": false
+      },
+      {
+        "id": "sense:139:1",
+        "pos": "n.",
+        "text": "山峰",
+        "grade": 0,
+        "primary": true
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:139-A",
+        "number": "139-A",
+        "word": "off-peak",
+        "senses": [
+          {
+            "id": "sense:extra:139-A:0",
+            "pos": "adj.",
+            "text": "非高峰的",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:139-A:1",
+            "pos": "adv.",
+            "text": "在非高峰时段",
+            "grade": 1,
+            "primary": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:140",
+    "number": 140,
+    "word": "mount",
+    "senses": [
+      {
+        "id": "sense:140:0",
+        "pos": "vi.",
+        "text": "逐渐增加",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:140:1",
+        "pos": "vt.",
+        "text": "组织开展",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:140:3",
+        "pos": "vt.",
+        "text": "安装",
+        "grade": 1,
+        "primary": true
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:140-A",
+        "number": "140-A",
+        "word": "mounting",
+        "senses": [
+          {
+            "id": "sense:extra:140-A:0",
+            "pos": "adj.",
+            "text": "日益增加的",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:140-A:1",
+            "pos": "adj.",
+            "text": "越来越严重的",
+            "grade": 1,
+            "primary": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:141",
+    "number": 141,
+    "word": "mountain",
+    "senses": [
+      {
+        "id": "sense:141:0",
+        "pos": "n.",
+        "text": "山",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:141:1",
+        "pos": "n.",
+        "text": "山岳",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:141:2",
+        "pos": "n.",
+        "text": "大量（非正式）",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:141:3",
+        "pos": "n.",
+        "text": "大堆（非正式）",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:141-A",
+        "number": "141-A",
+        "word": "a mountain of ... / mountains of ...",
+        "senses": [
+          {
+            "id": "sense:extra:141-A:0",
+            "pos": "n.",
+            "text": "大量（非正式）",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:141-A:1",
+            "pos": "n.",
+            "text": "大堆（非正式）",
+            "grade": 1,
+            "primary": false
+          }
+        ]
+      },
+      {
+        "id": "extra:141-B",
+        "number": "141-B",
+        "word": "mountainous",
+        "senses": [
+          {
+            "id": "sense:extra:141-B:0",
+            "pos": "adj.",
+            "text": "多山的",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:142",
+    "number": 142,
+    "word": "range",
+    "senses": [
+      {
+        "id": "sense:142:0",
+        "pos": "n.",
+        "text": "范围",
+        "grade": 0,
+        "primary": true
+      },
+      {
+        "id": "sense:142:1",
+        "pos": "n.",
+        "text": "一系列",
+        "grade": 0,
+        "primary": false
+      },
+      {
+        "id": "sense:142:3",
+        "pos": "vi.",
+        "text": "(在范围内)变化",
+        "grade": 0,
+        "primary": false
+      },
+      {
+        "id": "sense:142:2",
+        "pos": "n.",
+        "text": "山脉",
+        "grade": 0,
+        "primary": true
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:142-A",
+        "number": "142-A",
+        "word": "range from ... to ...",
+        "senses": [
+          {
+            "id": "sense:extra:142-A:0",
+            "pos": "",
+            "text": "范围从...到...",
+            "grade": 0,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:142-A:1",
+            "pos": "",
+            "text": "包括从...到...",
+            "grade": 0,
+            "primary": false
+          }
+        ]
+      },
+      {
+        "id": "extra:142-B",
+        "number": "142-B",
+        "word": "a range of sth",
+        "senses": [
+          {
+            "id": "sense:extra:142-B:0",
+            "pos": "",
+            "text": "一系列",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:142-B:1",
+            "pos": "",
+            "text": "各种各样的...",
+            "grade": 1,
+            "primary": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:143",
+    "number": 143,
+    "word": "ridge",
+    "senses": [
+      {
+        "id": "sense:143:0",
+        "pos": "n.",
+        "text": "山脊",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:143:1",
+        "pos": "n.",
+        "text": "隆起处",
+        "grade": 1,
+        "primary": true
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:144",
+    "number": 144,
+    "word": "slope",
+    "senses": [
+      {
+        "id": "sense:144:0",
+        "pos": "n.",
+        "text": "斜坡",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:144:1",
+        "pos": "n.",
+        "text": "坡度",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:144:2",
+        "pos": "vi.",
+        "text": "倾斜",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:145",
+    "number": 145,
+    "word": "valley",
+    "senses": [
+      {
+        "id": "sense:145:0",
+        "pos": "n.",
+        "text": "山谷",
+        "grade": 1,
+        "primary": true
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:146",
+    "number": 146,
+    "word": "hillside",
+    "senses": [
+      {
+        "id": "sense:146:0",
+        "pos": "n.",
+        "text": "山坡",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:146:1",
+        "pos": "n.",
+        "text": "山腰（山坡处）",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:147",
+    "number": 147,
+    "word": "overlook",
+    "senses": [
+      {
+        "id": "sense:147:0",
+        "pos": "vt.",
+        "text": "忽略",
+        "grade": 0,
+        "primary": true
+      },
+      {
+        "id": "sense:147:1",
+        "pos": "vt.",
+        "text": "俯瞰",
+        "grade": 0,
+        "primary": true
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:148",
+    "number": 148,
+    "word": "southern",
+    "senses": [
+      {
+        "id": "sense:148:0",
+        "pos": "adj.",
+        "text": "南部的",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:148:1",
+        "pos": "adj.",
+        "text": "南方的",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:148-A",
+        "number": "148-A",
+        "word": "south",
+        "senses": [
+          {
+            "id": "sense:extra:148-A:0",
+            "pos": "n.",
+            "text": "南方",
+            "grade": 0,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:148-A:1",
+            "pos": "n.",
+            "text": "南部",
+            "grade": 0,
+            "primary": false
+          },
+          {
+            "id": "sense:extra:148-A:2",
+            "pos": "adv.",
+            "text": "向南",
+            "grade": 0,
+            "primary": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:149",
+    "number": 149,
+    "word": "southeast",
+    "senses": [
+      {
+        "id": "sense:149:0",
+        "pos": "n.",
+        "text": "东南方",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:149:1",
+        "pos": "n.",
+        "text": "东南部",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:149:2",
+        "pos": "adj.",
+        "text": "东南方的",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:149:3",
+        "pos": "adv.",
+        "text": "向东南",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:149:4",
+        "pos": "adv.",
+        "text": "在东南",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:150",
+    "number": 150,
+    "word": "southwest",
+    "senses": [
+      {
+        "id": "sense:150:0",
+        "pos": "n.",
+        "text": "西南方",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:150:1",
+        "pos": "n.",
+        "text": "西南部",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:150:2",
+        "pos": "adj.",
+        "text": "西南方的",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:150:3",
+        "pos": "adv.",
+        "text": "向西南",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:150:4",
+        "pos": "adv.",
+        "text": "在西南",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:151",
+    "number": 151,
+    "word": "northeast",
+    "senses": [
+      {
+        "id": "sense:151:0",
+        "pos": "n.",
+        "text": "东北方",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:151:1",
+        "pos": "n.",
+        "text": "东北部",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:151:2",
+        "pos": "adj.",
+        "text": "东北方的",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:151:3",
+        "pos": "adv.",
+        "text": "向东北",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:151:4",
+        "pos": "adv.",
+        "text": "在东北",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:152",
+    "number": 152,
+    "word": "northwest",
+    "senses": [
+      {
+        "id": "sense:152:0",
+        "pos": "n.",
+        "text": "西北方",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:152:1",
+        "pos": "n.",
+        "text": "西北部",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:152:2",
+        "pos": "adj.",
+        "text": "西北方的",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:152:3",
+        "pos": "adv.",
+        "text": "向西北",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:152:4",
+        "pos": "adv.",
+        "text": "在西北",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:153",
+    "number": 153,
+    "word": "eastern",
+    "senses": [
+      {
+        "id": "sense:153:0",
+        "pos": "adj.",
+        "text": "东部的",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:153:1",
+        "pos": "adj.",
+        "text": "东方的",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:153-A",
+        "number": "153-A",
+        "word": "east",
+        "senses": [
+          {
+            "id": "sense:extra:153-A:0",
+            "pos": "n.",
+            "text": "东方",
+            "grade": 0,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:153-A:1",
+            "pos": "n.",
+            "text": "东部",
+            "grade": 0,
+            "primary": false
+          },
+          {
+            "id": "sense:extra:153-A:2",
+            "pos": "adv.",
+            "text": "向东",
+            "grade": 0,
+            "primary": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:154",
+    "number": 154,
+    "word": "oriental",
+    "senses": [
+      {
+        "id": "sense:154:0",
+        "pos": "adj.",
+        "text": "东方的",
+        "grade": 2,
+        "primary": true
+      },
+      {
+        "id": "sense:154:1",
+        "pos": "adj.",
+        "text": "东亚的(旧称，慎用)",
+        "grade": 2,
+        "primary": false
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:155",
+    "number": 155,
+    "word": "inevitable",
+    "senses": [
+      {
+        "id": "sense:155:0",
+        "pos": "adj.",
+        "text": "不可避免的",
+        "grade": 0,
+        "primary": true
+      },
+      {
+        "id": "sense:155:1",
+        "pos": "adj.",
+        "text": "必然发生的",
+        "grade": 0,
+        "primary": false
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:155-A",
+        "number": "155-A",
+        "word": "inevitably",
+        "senses": [
+          {
+            "id": "sense:extra:155-A:0",
+            "pos": "adv.",
+            "text": "不可避免地",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:155-A:1",
+            "pos": "adv.",
+            "text": "必然地",
+            "grade": 1,
+            "primary": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:156",
+    "number": 156,
+    "word": "irreversible",
+    "senses": [
+      {
+        "id": "sense:156:0",
+        "pos": "adj.",
+        "text": "不可逆的",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:156:1",
+        "pos": "adj.",
+        "text": "无法挽回的",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:157",
+    "number": 157,
+    "word": "irregularly",
+    "senses": [
+      {
+        "id": "sense:157:0",
+        "pos": "adv.",
+        "text": "不规则地",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:157:1",
+        "pos": "adv.",
+        "text": "不定时地",
+        "grade": 1,
+        "primary": true
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:157-A",
+        "number": "157-A",
+        "word": "regular",
+        "senses": [
+          {
+            "id": "sense:extra:157-A:0",
+            "pos": "adj.",
+            "text": "定期的",
+            "grade": 0,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:157-A:1",
+            "pos": "adj.",
+            "text": "经常的",
+            "grade": 0,
+            "primary": false
+          },
+          {
+            "id": "sense:extra:157-A:2",
+            "pos": "adj.",
+            "text": "规则的",
+            "grade": 0,
+            "primary": true
+          }
+        ]
+      },
+      {
+        "id": "extra:157-B",
+        "number": "157-B",
+        "word": "regularly",
+        "senses": [
+          {
+            "id": "sense:extra:157-B:0",
+            "pos": "adv.",
+            "text": "定期地",
+            "grade": 0,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:157-B:1",
+            "pos": "adv.",
+            "text": "经常地",
+            "grade": 0,
+            "primary": false
+          }
+        ]
+      },
+      {
+        "id": "extra:157-C",
+        "number": "157-C",
+        "word": "irregular",
+        "senses": [
+          {
+            "id": "sense:extra:157-C:0",
+            "pos": "adj.",
+            "text": "不规则的",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:157-C:1",
+            "pos": "adj.",
+            "text": "不定时的",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:158",
+    "number": 158,
+    "word": "inappropriate",
+    "senses": [
+      {
+        "id": "sense:158:0",
+        "pos": "adj.",
+        "text": "不适当的",
+        "grade": 0,
+        "primary": true
+      },
+      {
+        "id": "sense:158:1",
+        "pos": "adj.",
+        "text": "不合适的",
+        "grade": 0,
+        "primary": false
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:158-A",
+        "number": "158-A",
+        "word": "appropriate",
+        "senses": [
+          {
+            "id": "sense:extra:158-A:0",
+            "pos": "adj.",
+            "text": "合适的",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:158-A:1",
+            "pos": "adj.",
+            "text": "适当的",
+            "grade": 1,
+            "primary": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:159",
+    "number": 159,
+    "word": "abnormal",
+    "senses": [
+      {
+        "id": "sense:159:0",
+        "pos": "adj.",
+        "text": "反常的",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:159:1",
+        "pos": "adj.",
+        "text": "异常的",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:159-A",
+        "number": "159-A",
+        "word": "normal",
+        "senses": [
+          {
+            "id": "sense:extra:159-A:0",
+            "pos": "adj.",
+            "text": "正常的",
+            "grade": 0,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:159-A:1",
+            "pos": "adj.",
+            "text": "通常的",
+            "grade": 0,
+            "primary": false
+          }
+        ]
+      },
+      {
+        "id": "extra:159-B",
+        "number": "159-B",
+        "word": "normally",
+        "senses": [
+          {
+            "id": "sense:extra:159-B:0",
+            "pos": "adv.",
+            "text": "通常",
+            "grade": 0,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:159-B:1",
+            "pos": "adv.",
+            "text": "正常地",
+            "grade": 0,
+            "primary": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:160",
+    "number": 160,
+    "word": "sediment",
+    "senses": [
+      {
+        "id": "sense:160:0",
+        "pos": "n.",
+        "text": "沉淀物",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:160:1",
+        "pos": "n.",
+        "text": "沉积物",
+        "grade": 1,
+        "primary": true
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:161",
+    "number": 161,
+    "word": "silt",
+    "senses": [
+      {
+        "id": "sense:161:0",
+        "pos": "n.",
+        "text": "淤泥",
+        "grade": 2,
+        "primary": true
+      },
+      {
+        "id": "sense:161:1",
+        "pos": "n.",
+        "text": "泥沙",
+        "grade": 2,
+        "primary": false
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:162",
+    "number": 162,
+    "word": "muddy",
+    "senses": [
+      {
+        "id": "sense:162:0",
+        "pos": "adj.",
+        "text": "泥泞的",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:162:1",
+        "pos": "adj.",
+        "text": "浑浊的",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:162-A",
+        "number": "162-A",
+        "word": "mud",
+        "senses": [
+          {
+            "id": "sense:extra:162-A:0",
+            "pos": "n.",
+            "text": "泥",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:162-A:1",
+            "pos": "n.",
+            "text": "泥浆",
+            "grade": 1,
+            "primary": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:163",
+    "number": 163,
+    "word": "clay",
+    "senses": [
+      {
+        "id": "sense:163:0",
+        "pos": "n.",
+        "text": "黏土",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:163:1",
+        "pos": "n.",
+        "text": "陶土",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:164",
+    "number": 164,
+    "word": "dirt",
+    "senses": [
+      {
+        "id": "sense:164:0",
+        "pos": "n.",
+        "text": "污物",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:164:1",
+        "pos": "n.",
+        "text": "灰尘",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:164:2",
+        "pos": "n.",
+        "text": "泥土",
+        "grade": 1,
+        "primary": true
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:164-A",
+        "number": "164-A",
+        "word": "dirty",
+        "senses": [
+          {
+            "id": "sense:extra:164-A:0",
+            "pos": "adj.",
+            "text": "脏的",
+            "grade": 0,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:164-A:1",
+            "pos": "v.",
+            "text": "弄脏",
+            "grade": 0,
+            "primary": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:165",
+    "number": 165,
+    "word": "rural",
+    "senses": [
+      {
+        "id": "sense:165:0",
+        "pos": "adj.",
+        "text": "农村的",
+        "grade": 0,
+        "primary": true
+      },
+      {
+        "id": "sense:165:1",
+        "pos": "adj.",
+        "text": "乡村的",
+        "grade": 0,
+        "primary": false
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:166",
+    "number": 166,
+    "word": "suburb",
+    "senses": [
+      {
+        "id": "sense:166:0",
+        "pos": "n.",
+        "text": "市郊",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:166:1",
+        "pos": "n.",
+        "text": "郊区",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:166-A",
+        "number": "166-A",
+        "word": "urban",
+        "senses": [
+          {
+            "id": "sense:extra:166-A:0",
+            "pos": "adj.",
+            "text": "城市的",
+            "grade": 0,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:166-A:1",
+            "pos": "adj.",
+            "text": "城镇的",
+            "grade": 0,
+            "primary": false
+          }
+        ]
+      },
+      {
+        "id": "extra:166-B",
+        "number": "166-B",
+        "word": "suburban",
+        "senses": [
+          {
+            "id": "sense:extra:166-B:0",
+            "pos": "adj.",
+            "text": "郊区的",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:167",
+    "number": 167,
+    "word": "outskirts",
+    "senses": [
+      {
+        "id": "sense:167:0",
+        "pos": "n.",
+        "text": "市郊",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:167:1",
+        "pos": "n.",
+        "text": "郊区(用复数)",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:167-A",
+        "number": "167-A",
+        "word": "on the outskirts of ...",
+        "senses": [
+          {
+            "id": "sense:extra:167-A:0",
+            "pos": "",
+            "text": "在...的郊区",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:168",
+    "number": 168,
+    "word": "remote",
+    "senses": [
+      {
+        "id": "sense:168:0",
+        "pos": "adj.",
+        "text": "偏远的",
+        "grade": 0,
+        "primary": true
+      },
+      {
+        "id": "sense:168:1",
+        "pos": "adj.",
+        "text": "远程的",
+        "grade": 0,
+        "primary": true
+      },
+      {
+        "id": "sense:168:3",
+        "pos": "n.",
+        "text": "遥控器",
+        "grade": 0,
+        "primary": false
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:168-A",
+        "number": "168-A",
+        "word": "remotely",
+        "senses": [
+          {
+            "id": "sense:extra:168-A:0",
+            "pos": "adv.",
+            "text": "远程地",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:169",
+    "number": 169,
+    "word": "desolate",
+    "senses": [
+      {
+        "id": "sense:169:0",
+        "pos": "adj.",
+        "text": "荒无人烟的",
+        "grade": 2,
+        "primary": true
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:170",
+    "number": 170,
+    "word": "distant",
+    "senses": [
+      {
+        "id": "sense:170:0",
+        "pos": "adj.",
+        "text": "遥远的",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:170:1",
+        "pos": "adj.",
+        "text": "疏远的",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:170:2",
+        "pos": "adj.",
+        "text": "远亲的",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:170-A",
+        "number": "170-A",
+        "word": "distance",
+        "senses": [
+          {
+            "id": "sense:extra:170-A:0",
+            "pos": "n.",
+            "text": "距离",
+            "grade": 0,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:170-A:1",
+            "pos": "n.",
+            "text": "间距",
+            "grade": 0,
+            "primary": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:171",
+    "number": 171,
+    "word": "adjacent",
+    "senses": [
+      {
+        "id": "sense:171:0",
+        "pos": "adj.",
+        "text": "相邻的",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:171:1",
+        "pos": "adj.",
+        "text": "邻近的",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:171-A",
+        "number": "171-A",
+        "word": "adjacent to ...",
+        "senses": [
+          {
+            "id": "sense:extra:171-A:0",
+            "pos": "",
+            "text": "与...相邻",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:171-A:1",
+            "pos": "",
+            "text": "毗连",
+            "grade": 1,
+            "primary": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:172",
+    "number": 172,
+    "word": "toxic",
+    "senses": [
+      {
+        "id": "sense:172:0",
+        "pos": "adj.",
+        "text": "有毒的",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:172:1",
+        "pos": "adj.",
+        "text": "极其有害的",
+        "grade": 1,
+        "primary": true
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:172-A",
+        "number": "172-A",
+        "word": "toxin",
+        "senses": [
+          {
+            "id": "sense:extra:172-A:0",
+            "pos": "n.",
+            "text": "毒素",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:173",
+    "number": 173,
+    "word": "pollution",
+    "senses": [
+      {
+        "id": "sense:173:0",
+        "pos": "n.",
+        "text": "污染(通常不可数)",
+        "grade": 0,
+        "primary": true
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:173-A",
+        "number": "173-A",
+        "word": "pollute",
+        "senses": [
+          {
+            "id": "sense:extra:173-A:0",
+            "pos": "v.",
+            "text": "污染",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:174",
+    "number": 174,
+    "word": "pollutant",
+    "senses": [
+      {
+        "id": "sense:174:0",
+        "pos": "n.",
+        "text": "污染物",
+        "grade": 1,
+        "primary": true
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:175",
+    "number": 175,
+    "word": "contaminate",
+    "senses": [
+      {
+        "id": "sense:175:0",
+        "pos": "vt.",
+        "text": "污染",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:175:1",
+        "pos": "vt.",
+        "text": "弄脏（指污染）",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:175-A",
+        "number": "175-A",
+        "word": "contamination",
+        "senses": [
+          {
+            "id": "sense:extra:175-A:0",
+            "pos": "n.",
+            "text": "(有害物质造成的)污染",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:176",
+    "number": 176,
+    "word": "geology",
+    "senses": [
+      {
+        "id": "sense:176:0",
+        "pos": "n.",
+        "text": "地质学",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:176:1",
+        "pos": "n.",
+        "text": "地质状况",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:176-A",
+        "number": "176-A",
+        "word": "geological",
+        "senses": [
+          {
+            "id": "sense:extra:176-A:0",
+            "pos": "adj.",
+            "text": "地质的",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:177",
+    "number": 177,
+    "word": "border",
+    "senses": [
+      {
+        "id": "sense:177:0",
+        "pos": "n.",
+        "text": "边界",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:177:1",
+        "pos": "n.",
+        "text": "国界",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:177:4",
+        "pos": "vt.",
+        "text": "与...接壤",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:177:2",
+        "pos": "n.",
+        "text": "边缘",
+        "grade": 1,
+        "primary": true
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:177-A",
+        "number": "177-A",
+        "word": "border on sth",
+        "senses": [
+          {
+            "id": "sense:extra:177-A:0",
+            "pos": "",
+            "text": "近乎",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:177-A:1",
+            "pos": "",
+            "text": "几乎达到(某种程度)",
+            "grade": 1,
+            "primary": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:178",
+    "number": 178,
+    "word": "margin",
+    "senses": [
+      {
+        "id": "sense:178:0",
+        "pos": "n.",
+        "text": "差额",
+        "grade": 0,
+        "primary": true
+      },
+      {
+        "id": "sense:178:1",
+        "pos": "n.",
+        "text": "余地",
+        "grade": 0,
+        "primary": true
+      },
+      {
+        "id": "sense:178:3",
+        "pos": "n.",
+        "text": "利润(率)",
+        "grade": 0,
+        "primary": true
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:178-A",
+        "number": "178-A",
+        "word": "marginal",
+        "senses": [
+          {
+            "id": "sense:extra:178-A:0",
+            "pos": "adj.",
+            "text": "微小的",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:178-A:1",
+            "pos": "adj.",
+            "text": "边缘的",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      },
+      {
+        "id": "extra:178-B",
+        "number": "178-B",
+        "word": "marginally",
+        "senses": [
+          {
+            "id": "sense:extra:178-B:0",
+            "pos": "adv.",
+            "text": "略微",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:178-B:1",
+            "pos": "adv.",
+            "text": "少量地",
+            "grade": 1,
+            "primary": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:179",
+    "number": 179,
+    "word": "fringe",
+    "senses": [
+      {
+        "id": "sense:179:0",
+        "pos": "n.",
+        "text": "刘海(英式)",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:179:1",
+        "pos": "n.",
+        "text": "边缘",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:179:3",
+        "pos": "adj.",
+        "text": "边缘的",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:179:4",
+        "pos": "adj.",
+        "text": "非主流的",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:179-A",
+        "number": "179-A",
+        "word": "fringe benefits",
+        "senses": [
+          {
+            "id": "sense:extra:179-A:0",
+            "pos": "n.",
+            "text": "工资以外的员工福利",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:180",
+    "number": 180,
+    "word": "plate",
+    "senses": [
+      {
+        "id": "sense:180:0",
+        "pos": "n.",
+        "text": "盘子",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:180:1",
+        "pos": "n.",
+        "text": "金属板",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:180:2",
+        "pos": "n.",
+        "text": "板块",
+        "grade": 1,
+        "primary": true
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:181",
+    "number": 181,
+    "word": "debris",
+    "senses": [
+      {
+        "id": "sense:181:0",
+        "pos": "n.",
+        "text": "残骸",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:181:1",
+        "pos": "n.",
+        "text": "碎片",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:181:2",
+        "pos": "n.",
+        "text": "垃圾",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:182",
+    "number": 182,
+    "word": "crack",
+    "senses": [
+      {
+        "id": "sense:182:0",
+        "pos": "n.",
+        "text": "裂缝",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:182:2",
+        "pos": "vi./vt.",
+        "text": "(使)裂开",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:182:3",
+        "pos": "vi./vt.",
+        "text": "破裂",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:182:5",
+        "pos": "vt.",
+        "text": "解决",
+        "grade": 1,
+        "primary": true
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:182-A",
+        "number": "182-A",
+        "word": "crack down on sth",
+        "senses": [
+          {
+            "id": "sense:extra:182-A:0",
+            "pos": "",
+            "text": "严厉打击",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:182-A:1",
+            "pos": "",
+            "text": "严厉整治",
+            "grade": 1,
+            "primary": false
+          }
+        ]
+      },
+      {
+        "id": "extra:182-B",
+        "number": "182-B",
+        "word": "crackdown",
+        "senses": [
+          {
+            "id": "sense:extra:182-B:0",
+            "pos": "n.",
+            "text": "严厉打击",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:182-B:1",
+            "pos": "n.",
+            "text": "严厉整治",
+            "grade": 1,
+            "primary": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:183",
+    "number": 183,
+    "word": "gap",
+    "senses": [
+      {
+        "id": "sense:183:0",
+        "pos": "n.",
+        "text": "差距",
+        "grade": 0,
+        "primary": true
+      },
+      {
+        "id": "sense:183:1",
+        "pos": "n.",
+        "text": "缺口",
+        "grade": 0,
+        "primary": true
+      },
+      {
+        "id": "sense:183:2",
+        "pos": "n.",
+        "text": "间隔",
+        "grade": 0,
+        "primary": true
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:183-A",
+        "number": "183-A",
+        "word": "gap year",
+        "senses": [
+          {
+            "id": "sense:extra:183-A:0",
+            "pos": "n.",
+            "text": "间隔年(通常指升大学前的一年)",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:184",
+    "number": 184,
+    "word": "splendid",
+    "senses": [
+      {
+        "id": "sense:184:0",
+        "pos": "adj.",
+        "text": "极好的",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:184:1",
+        "pos": "adj.",
+        "text": "壮丽的",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:185",
+    "number": 185,
+    "word": "grand",
+    "senses": [
+      {
+        "id": "sense:185:0",
+        "pos": "adj.",
+        "text": "宏伟的",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:185:1",
+        "pos": "adj.",
+        "text": "极好的",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:186",
+    "number": 186,
+    "word": "magnificent",
+    "senses": [
+      {
+        "id": "sense:186:0",
+        "pos": "adj.",
+        "text": "壮丽的",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:186:1",
+        "pos": "adj.",
+        "text": "令人赞叹的",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:187",
+    "number": 187,
+    "word": "super",
+    "senses": [
+      {
+        "id": "sense:187:0",
+        "pos": "adj.",
+        "text": "极好的",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:187:1",
+        "pos": "adv.",
+        "text": "非常",
+        "grade": 1,
+        "primary": false
+      },
+      {
+        "id": "sense:187:2",
+        "pos": "adv.",
+        "text": "特别(非正式)",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:188",
+    "number": 188,
+    "word": "interesting",
+    "senses": [
+      {
+        "id": "sense:188:0",
+        "pos": "adj.",
+        "text": "有趣的",
+        "grade": 0,
+        "primary": true
+      },
+      {
+        "id": "sense:188:1",
+        "pos": "adj.",
+        "text": "引人入胜的",
+        "grade": 0,
+        "primary": false
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:188-A",
+        "number": "188-A",
+        "word": "interest",
+        "senses": [
+          {
+            "id": "sense:extra:188-A:0",
+            "pos": "n.",
+            "text": "兴趣",
+            "grade": 0,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:188-A:3",
+            "pos": "v.",
+            "text": "使感兴趣",
+            "grade": 0,
+            "primary": false
+          },
+          {
+            "id": "sense:extra:188-A:1",
+            "pos": "n.",
+            "text": "利益",
+            "grade": 0,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:188-A:2",
+            "pos": "n.",
+            "text": "利息",
+            "grade": 0,
+            "primary": true
+          }
+        ]
+      },
+      {
+        "id": "extra:188-B",
+        "number": "188-B",
+        "word": "interested",
+        "senses": [
+          {
+            "id": "sense:extra:188-B:0",
+            "pos": "adj.",
+            "text": "感兴趣的(通常接in)",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:189",
+    "number": 189,
+    "word": "dramatic",
+    "senses": [
+      {
+        "id": "sense:189:0",
+        "pos": "adj.",
+        "text": "急剧的",
+        "grade": 0,
+        "primary": true
+      },
+      {
+        "id": "sense:189:1",
+        "pos": "adj.",
+        "text": "引人注目的",
+        "grade": 0,
+        "primary": false
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:189-A",
+        "number": "189-A",
+        "word": "dramatically",
+        "senses": [
+          {
+            "id": "sense:extra:189-A:0",
+            "pos": "adv.",
+            "text": "急剧地",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:189-A:1",
+            "pos": "adv.",
+            "text": "显著地",
+            "grade": 1,
+            "primary": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:190",
+    "number": 190,
+    "word": "wilderness",
+    "senses": [
+      {
+        "id": "sense:190:0",
+        "pos": "n.",
+        "text": "荒野",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:190:1",
+        "pos": "n.",
+        "text": "未开发地区",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:190-A",
+        "number": "190-A",
+        "word": "wildlife",
+        "senses": [
+          {
+            "id": "sense:extra:190-A:0",
+            "pos": "n.",
+            "text": "野生动物(统称，通常不可数)",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      },
+      {
+        "id": "extra:190-B",
+        "number": "190-B",
+        "word": "wild",
+        "senses": [
+          {
+            "id": "sense:extra:190-B:0",
+            "pos": "adj.",
+            "text": "野生的",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:190-B:1",
+            "pos": "adj.",
+            "text": "荒野的",
+            "grade": 1,
+            "primary": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:191",
+    "number": 191,
+    "word": "desert",
+    "senses": [
+      {
+        "id": "sense:191:0",
+        "pos": "n.",
+        "text": "沙漠(重音在前)",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:191:1",
+        "pos": "vt.",
+        "text": "抛弃",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:191:2",
+        "pos": "vt.",
+        "text": "离弃(重音在后)",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:191-A",
+        "number": "191-A",
+        "word": "deserted",
+        "senses": [
+          {
+            "id": "sense:extra:191-A:0",
+            "pos": "adj.",
+            "text": "空无一人的",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:191-A:1",
+            "pos": "adj.",
+            "text": "被遗弃的",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      },
+      {
+        "id": "extra:191-B",
+        "number": "191-B",
+        "word": "desertification",
+        "senses": [
+          {
+            "id": "sense:extra:191-B:0",
+            "pos": "n.",
+            "text": "荒漠化",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:191-B:1",
+            "pos": "n.",
+            "text": "沙漠化",
+            "grade": 1,
+            "primary": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:192",
+    "number": 192,
+    "word": "deforest",
+    "senses": [
+      {
+        "id": "sense:192:0",
+        "pos": "vt.",
+        "text": "砍伐...的森林",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:192:1",
+        "pos": "vt.",
+        "text": "毁林",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:192-A",
+        "number": "192-A",
+        "word": "forest",
+        "senses": [
+          {
+            "id": "sense:extra:192-A:0",
+            "pos": "n.",
+            "text": "森林",
+            "grade": 0,
+            "primary": true
+          }
+        ]
+      },
+      {
+        "id": "extra:192-B",
+        "number": "192-B",
+        "word": "deforestation",
+        "senses": [
+          {
+            "id": "sense:extra:192-B:0",
+            "pos": "n.",
+            "text": "毁林",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:192-B:1",
+            "pos": "n.",
+            "text": "砍伐森林",
+            "grade": 1,
+            "primary": false
+          }
+        ]
+      },
+      {
+        "id": "extra:192-C",
+        "number": "192-C",
+        "word": "reforestation",
+        "senses": [
+          {
+            "id": "sense:extra:192-C:0",
+            "pos": "n.",
+            "text": "重新造林",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:193",
+    "number": 193,
+    "word": "barren",
+    "senses": [
+      {
+        "id": "sense:193:0",
+        "pos": "adj.",
+        "text": "贫瘠的",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:193:1",
+        "pos": "adj.",
+        "text": "荒芜的",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:194",
+    "number": 194,
+    "word": "fertile",
+    "senses": [
+      {
+        "id": "sense:194:0",
+        "pos": "adj.",
+        "text": "肥沃的",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:194:1",
+        "pos": "adj.",
+        "text": "能生育的",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:194:2",
+        "pos": "adj.",
+        "text": "有创造力的",
+        "grade": 1,
+        "primary": true
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:194-A",
+        "number": "194-A",
+        "word": "fertility",
+        "senses": [
+          {
+            "id": "sense:extra:194-A:0",
+            "pos": "n.",
+            "text": "土壤肥力",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:194-A:1",
+            "pos": "n.",
+            "text": "生育能力",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      },
+      {
+        "id": "extra:194-B",
+        "number": "194-B",
+        "word": "fertility rate",
+        "senses": [
+          {
+            "id": "sense:extra:194-B:0",
+            "pos": "n.",
+            "text": "生育率",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:195",
+    "number": 195,
+    "word": "fertilise",
+    "senses": [
+      {
+        "id": "sense:195:0",
+        "pos": "vt.",
+        "text": "施肥",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:195:1",
+        "pos": "vt.",
+        "text": "使受精",
+        "grade": 1,
+        "primary": true
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:195-A",
+        "number": "195-A",
+        "word": "fertiliser / fertilizer",
+        "senses": [
+          {
+            "id": "sense:extra:195-A:0",
+            "pos": "n.",
+            "text": "肥料",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:196",
+    "number": 196,
+    "word": "solar",
+    "senses": [
+      {
+        "id": "sense:196:0",
+        "pos": "adj.",
+        "text": "太阳的",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:196:1",
+        "pos": "adj.",
+        "text": "太阳能的",
+        "grade": 1,
+        "primary": true
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:197",
+    "number": 197,
+    "word": "lunar",
+    "senses": [
+      {
+        "id": "sense:197:0",
+        "pos": "adj.",
+        "text": "月球的",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:197:1",
+        "pos": "adj.",
+        "text": "月亮的",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": [
+      {
+        "id": "extra:197-A",
+        "number": "197-A",
+        "word": "lunar calendar",
+        "senses": [
+          {
+            "id": "sense:extra:197-A:0",
+            "pos": "n.",
+            "text": "阴历（不同于阴阳历）",
+            "grade": 1,
+            "primary": true
+          },
+          {
+            "id": "sense:extra:197-A:1",
+            "pos": "n.",
+            "text": "太阴历",
+            "grade": 1,
+            "primary": false
+          }
+        ]
+      },
+      {
+        "id": "extra:197-B",
+        "number": "197-B",
+        "word": "Lunar New Year",
+        "senses": [
+          {
+            "id": "sense:extra:197-B:0",
+            "pos": "n.",
+            "text": "农历新年",
+            "grade": 1,
+            "primary": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "word:198",
+    "number": 198,
+    "word": "calendar",
+    "senses": [
+      {
+        "id": "sense:198:0",
+        "pos": "n.",
+        "text": "日历",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:198:1",
+        "pos": "n.",
+        "text": "历法",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:198:2",
+        "pos": "n.",
+        "text": "日程表",
+        "grade": 1,
+        "primary": true
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:199",
+    "number": 199,
+    "word": "sunrise",
+    "senses": [
+      {
+        "id": "sense:199:0",
+        "pos": "n.",
+        "text": "日出",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:199:1",
+        "pos": "n.",
+        "text": "日出时分",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": []
+  },
+  {
+    "id": "word:200",
+    "number": 200,
+    "word": "sunset",
+    "senses": [
+      {
+        "id": "sense:200:0",
+        "pos": "n.",
+        "text": "日落",
+        "grade": 1,
+        "primary": true
+      },
+      {
+        "id": "sense:200:1",
+        "pos": "n.",
+        "text": "日落时分",
+        "grade": 1,
+        "primary": false
+      }
+    ],
+    "extras": []
   }
 ]

@@ -37,7 +37,7 @@ export function homeView(onNavigate) {
   }
   const note = document.createElement('p');
   note.className = 'home-note';
-  note.textContent = '当前可体验阅读 · 原编号 001—040';
+  note.textContent = '当前可体验阅读 · 原编号 001—200 · 10篇文章';
   main.append(intro, grid, note);
   return main;
 }
