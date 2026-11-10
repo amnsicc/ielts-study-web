@@ -200,6 +200,22 @@ button:disabled { cursor:default; opacity:.55; }
 .question-meaning summary { cursor:pointer; }
 .remote-draft { overflow:auto; max-height:180px; padding:12px; font:12px/1.6 system-ui; }
 .draft-recovery { max-height:90px; overflow:auto; }
+.practice-toolbar { display:flex; flex-wrap:wrap; align-items:center; gap:6px; padding:8px 12px; border-bottom:1px solid var(--line); flex:none; }
+.practice-round { color:var(--muted); font-size:12px; margin-right:auto; }
+.practice-status { margin:0; padding:6px 12px; font-size:12px; line-height:1.6; color:var(--muted); flex:none; }
+.practice-actions,.practice-recovery { display:flex; flex-wrap:wrap; gap:6px; padding:6px 12px; flex:none; }
+.practice-summary { padding:8px 14px; border-bottom:1px solid var(--line); background:#f3f8f7; font-size:13px; flex:none; }
+.practice-summary p { margin:4px 0; line-height:1.6; }
+.practice-scope { font-size:11px; color:var(--muted); }
+.answer-feedback { margin-top:10px; padding-top:6px; border-top:1px solid var(--line); font-size:12px; line-height:1.7; color:var(--muted); overflow-wrap:anywhere; }
+.answer-feedback p { margin:4px 0; }
+.answer-feedback summary { cursor:pointer; color:var(--accent); }
+.practice-history-dialog { width:min(680px,92vw); max-height:82dvh; padding:22px; }
+.practice-history-dialog h2 { font-size:21px; margin:0 0 12px; }
+.practice-history-body { overflow-wrap:anywhere; font-size:13px; line-height:1.7; }
+.history-round { border-top:1px solid var(--line); margin-top:16px; }
+.history-round summary { cursor:pointer; padding:6px 0; }
+.practice-remote { max-height:150px; overflow:auto; padding:8px 14px; font-size:11px; }
 .listening-left .word-toolbar #record-status { font-size:11px; margin:0 0 0 auto; }
 .listening-answers .panel-toolbar .draft-status { padding:0; margin-left:auto; font-size:11px; }
 .listening-answers .draft-actions { padding-top:8px; }

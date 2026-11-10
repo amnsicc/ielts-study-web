@@ -1,0 +1,21 @@
+{
+  "formatVersion": 1,
+  "sources": [
+    {
+      "path": "D:\\codex_project\\雅思备考\\ielts-study-web\\data\\listening-materials.json",
+      "sha256": "b01f795f069f0b90aa8a8f1539096019dd312c28c78cc3c90e1a1a471fd6b8d0"
+    },
+    {
+      "path": "D:\\codex_project\\雅思备考\\tmp\\pdfs\\reading-listening-1-200-20261027\\listening-round-01-001-010-answer-key.json",
+      "sha256": "88a06e8caef837e09907f0de2036772b30b8f9436fe4ccd561accb212cbccc16"
+    },
+    {
+      "path": "D:\\codex_project\\雅思备考\\tmp\\pdfs\\reading-listening-1-200-20261027\\listening-round-01-001-010-male-us-answer-key.json",
+      "sha256": "c91c09e515a96e5e857d7d09b7326d0cd08290803ac79a188bcec17bcbe96f42"
+    },
+    {
+      "path": "D:\\codex_project\\雅思备考\\tmp\\pdfs\\reading-listening-1-200-20261027\\listening-round-01-answer-key.json",
+      "sha256": "514b97cdc862443b21120a8fae55d70d0b61bda4307f244e2458706e3ff60701"
+    }
+  ]
+}

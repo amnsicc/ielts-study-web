@@ -1,0 +1,748 @@
+{
+  "formatVersion": 1,
+  "definitions": [
+    {
+      "materialId": "listening:short",
+      "materialVersion": "b8bede4d8247af2abc3014a43098bcd292783244e67a53278e15a482f909ecc1",
+      "answerVersion": "f01f6e7cda39735e77452e3f9860bbdeb2c2a798394f191ebee760c5fb06fc30",
+      "ruleVersion": "filled-events-v1",
+      "targets": [
+        {
+          "id": "word:1",
+          "number": 1,
+          "word": "atmosphere",
+          "pos": "n.",
+          "meaning": "气氛",
+          "correctNumbers": [
+            1
+          ],
+          "occurrences": [
+            {
+              "number": 1,
+              "actualForm": "atmosphere",
+              "sentence": "The aim is to create a relaxed atmosphere, so please let the children suggest answers before you explain anything."
+            }
+          ]
+        },
+        {
+          "id": "word:4",
+          "number": 4,
+          "word": "oxygen",
+          "pos": "n.",
+          "meaning": "氧气",
+          "correctNumbers": [
+            4
+          ],
+          "occurrences": [
+            {
+              "number": 4,
+              "actualForm": "oxygen",
+              "sentence": "The first contains oxygen."
+            }
+          ]
+        },
+        {
+          "id": "word:5",
+          "number": 5,
+          "word": "oxide",
+          "pos": "n.",
+          "meaning": "氧化物",
+          "correctNumbers": [
+            6
+          ],
+          "occurrences": [
+            {
+              "number": 6,
+              "actualForm": "oxide",
+              "sentence": "Explain that a reaction has produced an oxide."
+            }
+          ]
+        },
+        {
+          "id": "word:6",
+          "number": 6,
+          "word": "carbon dioxide",
+          "pos": "n.",
+          "meaning": "二氧化碳",
+          "correctNumbers": [
+            7
+          ],
+          "occurrences": [
+            {
+              "number": 7,
+              "actualForm": "carbon dioxide",
+              "sentence": "Before the group leaves, show the room's carbon dioxide monitor."
+            }
+          ]
+        },
+        {
+          "id": "word:7",
+          "number": 7,
+          "word": "hydrogen",
+          "pos": "n.",
+          "meaning": "氢",
+          "correctNumbers": [
+            5
+          ],
+          "occurrences": [
+            {
+              "number": 5,
+              "actualForm": "hydrogen",
+              "sentence": "The other is labelled hydrogen."
+            }
+          ]
+        },
+        {
+          "id": "word:8",
+          "number": 8,
+          "word": "core",
+          "pos": "n.",
+          "meaning": "核心",
+          "correctNumbers": [
+            3
+          ],
+          "occurrences": [
+            {
+              "number": 3,
+              "actualForm": "core",
+              "sentence": "At the core of this session is a simple idea: evidence can tell us about something we can't see for ourselves."
+            }
+          ]
+        },
+        {
+          "id": "word:9",
+          "number": 9,
+          "word": "crust",
+          "pos": "n.",
+          "meaning": "地壳",
+          "correctNumbers": [
+            2
+          ],
+          "occurrences": [
+            {
+              "number": 2,
+              "actualForm": "crust",
+              "sentence": "Point to the crust, the outermost layer, and explain that we usually learn about things below it indirectly."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "materialId": "listening:long",
+      "materialVersion": "4c8501a3840c85baf740e2e8bf88afe8e016809f412639000e8f124f5b79827b",
+      "answerVersion": "2bdf3eb1987aa16cda7cfd64bba3a1316eeedc3bf71aed7c456c1c0411753663",
+      "ruleVersion": "filled-events-v1",
+      "targets": [
+        {
+          "id": "word:1",
+          "number": 1,
+          "word": "atmosphere",
+          "pos": "n.",
+          "meaning": "气氛",
+          "correctNumbers": [
+            2
+          ],
+          "occurrences": [
+            {
+              "number": 2,
+              "actualForm": "atmosphere",
+              "sentence": "They also wanted an atmosphere in which beginners could ask questions without feeling that they should already know the answers."
+            }
+          ]
+        },
+        {
+          "id": "word:4",
+          "number": 4,
+          "word": "oxygen",
+          "pos": "n.",
+          "meaning": "氧气",
+          "correctNumbers": [
+            16,
+            19
+          ],
+          "occurrences": [
+            {
+              "number": 16,
+              "actualForm": "oxygen",
+              "sentence": "One group investigated why exposed iron changes colour, looking at how it reacts with oxygen to form an oxide."
+            },
+            {
+              "number": 19,
+              "actualForm": "oxygen",
+              "sentence": "A separate demonstration used electricity to separate water into hydrogen and oxygen."
+            }
+          ]
+        },
+        {
+          "id": "word:5",
+          "number": 5,
+          "word": "oxide",
+          "pos": "n.",
+          "meaning": "氧化物",
+          "correctNumbers": [
+            17
+          ],
+          "occurrences": [
+            {
+              "number": 17,
+              "actualForm": "oxide",
+              "sentence": "One group investigated why exposed iron changes colour, looking at how it reacts with oxygen to form an oxide."
+            }
+          ]
+        },
+        {
+          "id": "word:6",
+          "number": 6,
+          "word": "carbon dioxide",
+          "pos": "n.",
+          "meaning": "二氧化碳",
+          "correctNumbers": [
+            21
+          ],
+          "occurrences": [
+            {
+              "number": 21,
+              "actualForm": "carbon dioxide",
+              "sentence": "The group then moved to a greenhouse, where they examined records of plant growth and carbon dioxide levels."
+            }
+          ]
+        },
+        {
+          "id": "word:7",
+          "number": 7,
+          "word": "hydrogen",
+          "pos": "n.",
+          "meaning": "氢",
+          "correctNumbers": [
+            18
+          ],
+          "occurrences": [
+            {
+              "number": 18,
+              "actualForm": "hydrogen",
+              "sentence": "A separate demonstration used electricity to separate water into hydrogen and oxygen."
+            }
+          ]
+        },
+        {
+          "id": "word:8",
+          "number": 8,
+          "word": "core",
+          "pos": "n.",
+          "meaning": "核心",
+          "correctNumbers": [
+            1,
+            39
+          ],
+          "occurrences": [
+            {
+              "number": 1,
+              "actualForm": "core",
+              "sentence": "But after speaking to residents, they realised that something else belonged at the core of the project: learning how to interpret evidence."
+            },
+            {
+              "number": 39,
+              "actualForm": "core",
+              "sentence": "That remained at the core of the project, and it was the standard against which the organisers judged every activity they included."
+            }
+          ]
+        },
+        {
+          "id": "word:9",
+          "number": 9,
+          "word": "crust",
+          "pos": "n.",
+          "meaning": "地壳",
+          "correctNumbers": [
+            29
+          ],
+          "occurrences": [
+            {
+              "number": 29,
+              "actualForm": "crust",
+              "sentence": "Information about volcanoes could help explain how parts of the Earth's crust had changed, but visitors also wanted to know what the information meant for their immediate safety."
+            }
+          ]
+        },
+        {
+          "id": "word:11",
+          "number": 11,
+          "word": "longitude",
+          "pos": "n.",
+          "meaning": "经度",
+          "correctNumbers": [
+            4
+          ],
+          "occurrences": [
+            {
+              "number": 4,
+              "actualForm": "longitude",
+              "sentence": "Students watched clouds developing near the horizon, then recorded their position using longitude and latitude."
+            }
+          ]
+        },
+        {
+          "id": "word:12",
+          "number": 12,
+          "word": "latitude",
+          "pos": "n.",
+          "meaning": "纬度",
+          "correctNumbers": [
+            5
+          ],
+          "occurrences": [
+            {
+              "number": 5,
+              "actualForm": "latitude",
+              "sentence": "Students watched clouds developing near the horizon, then recorded their position using longitude and latitude."
+            }
+          ]
+        },
+        {
+          "id": "word:13",
+          "number": 13,
+          "word": "horizon",
+          "pos": "n.",
+          "meaning": "地平线",
+          "correctNumbers": [
+            3
+          ],
+          "occurrences": [
+            {
+              "number": 3,
+              "actualForm": "horizon",
+              "sentence": "Students watched clouds developing near the horizon, then recorded their position using longitude and latitude."
+            }
+          ]
+        },
+        {
+          "id": "word:14",
+          "number": 14,
+          "word": "altitude",
+          "pos": "n.",
+          "meaning": "海拔",
+          "correctNumbers": [
+            6
+          ],
+          "occurrences": [
+            {
+              "number": 6,
+              "actualForm": "altitude",
+              "sentence": "They also noted their altitude, since observations made high above the sea might differ from those at the water's edge."
+            }
+          ]
+        },
+        {
+          "id": "word:15",
+          "number": 15,
+          "word": "disaster",
+          "pos": "n.",
+          "meaning": "灾难",
+          "correctNumbers": [
+            32,
+            38
+          ],
+          "occurrences": [
+            {
+              "number": 32,
+              "actualForm": "disasters",
+              "sentence": "Case studies of previous disasters showed that the effects of a destructive event depended partly on decisions made before it happened."
+            },
+            {
+              "number": 38,
+              "actualForm": "disaster",
+              "sentence": "Preventing a disaster was not something a short field course could promise."
+            }
+          ]
+        },
+        {
+          "id": "word:17",
+          "number": 17,
+          "word": "catastrophic",
+          "pos": "adj.",
+          "meaning": "灾难性的",
+          "correctNumbers": [
+            36
+          ],
+          "occurrences": [
+            {
+              "number": 36,
+              "actualForm": "catastrophic",
+              "sentence": "The consequences could be catastrophic even when the original physical event affected only a limited area."
+            }
+          ]
+        },
+        {
+          "id": "word:19",
+          "number": 19,
+          "word": "endanger",
+          "pos": "vt.",
+          "meaning": "危及",
+          "correctNumbers": [
+            34
+          ],
+          "occurrences": [
+            {
+              "number": 34,
+              "actualForm": "endangered",
+              "sentence": "In one example, a delayed warning had endangered residents who could otherwise have left the area."
+            }
+          ]
+        },
+        {
+          "id": "word:20",
+          "number": 20,
+          "word": "jeopardise",
+          "pos": "vt.",
+          "meaning": "危及",
+          "correctNumbers": [
+            35
+          ],
+          "occurrences": [
+            {
+              "number": 35,
+              "actualForm": "jeopardise",
+              "sentence": "In another, damage to a single access road threatened to jeopardise an entire evacuation."
+            }
+          ]
+        },
+        {
+          "id": "word:21",
+          "number": 21,
+          "word": "destructive",
+          "pos": "adj.",
+          "meaning": "破坏性的",
+          "correctNumbers": [
+            33
+          ],
+          "occurrences": [
+            {
+              "number": 33,
+              "actualForm": "destructive",
+              "sentence": "Case studies of previous disasters showed that the effects of a destructive event depended partly on decisions made before it happened."
+            }
+          ]
+        },
+        {
+          "id": "word:22",
+          "number": 22,
+          "word": "El Niño",
+          "pos": "n.",
+          "meaning": "厄尔尼诺现象",
+          "correctNumbers": [
+            26
+          ],
+          "occurrences": [
+            {
+              "number": 26,
+              "actualForm": "El Niño",
+              "sentence": "They also looked at how El Niño could influence conditions far beyond the area where it developed."
+            }
+          ]
+        },
+        {
+          "id": "word:23",
+          "number": 23,
+          "word": "greenhouse",
+          "pos": "n.",
+          "meaning": "温室",
+          "correctNumbers": [
+            20
+          ],
+          "occurrences": [
+            {
+              "number": 20,
+              "actualForm": "greenhouse",
+              "sentence": "The group then moved to a greenhouse, where they examined records of plant growth and carbon dioxide levels."
+            }
+          ]
+        },
+        {
+          "id": "word:24",
+          "number": 24,
+          "word": "phenomenon",
+          "pos": "n.",
+          "meaning": "现象",
+          "correctNumbers": [
+            27,
+            37
+          ],
+          "occurrences": [
+            {
+              "number": 27,
+              "actualForm": "phenomena",
+              "sentence": "These phenomena operated over different areas and timescales, so simply collecting dramatic pictures of them would provide a poor basis for planning a local course."
+            },
+            {
+              "number": 37,
+              "actualForm": "phenomenon",
+              "sentence": "Each group explained one phenomenon, identified the evidence behind its explanation, and described the limits of its conclusions."
+            }
+          ]
+        },
+        {
+          "id": "word:25",
+          "number": 25,
+          "word": "pebble",
+          "pos": "n.",
+          "meaning": "鹅卵石",
+          "correctNumbers": [
+            13
+          ],
+          "occurrences": [
+            {
+              "number": 13,
+              "actualForm": "pebble",
+              "sentence": "They considered how several minerals could occur together in one rock, and why the appearance of a smooth pebble did not reveal its complete history."
+            }
+          ]
+        },
+        {
+          "id": "word:26",
+          "number": 26,
+          "word": "magnet",
+          "pos": "n.",
+          "meaning": "磁铁",
+          "correctNumbers": [
+            14
+          ],
+          "occurrences": [
+            {
+              "number": 14,
+              "actualForm": "magnet",
+              "sentence": "A magnet, for instance, could help them examine one property of a sample."
+            }
+          ]
+        },
+        {
+          "id": "word:27",
+          "number": 27,
+          "word": "ore",
+          "pos": "n.",
+          "meaning": "矿石",
+          "correctNumbers": [
+            15
+          ],
+          "occurrences": [
+            {
+              "number": 15,
+              "actualForm": "ore",
+              "sentence": "It could not tell them whether extracting metal from an ore would be commercially worthwhile."
+            }
+          ]
+        },
+        {
+          "id": "word:28",
+          "number": 28,
+          "word": "mineral",
+          "pos": "n.",
+          "meaning": "矿物",
+          "correctNumbers": [
+            12
+          ],
+          "occurrences": [
+            {
+              "number": 12,
+              "actualForm": "minerals",
+              "sentence": "They considered how several minerals could occur together in one rock, and why the appearance of a smooth pebble did not reveal its complete history."
+            }
+          ]
+        },
+        {
+          "id": "word:29",
+          "number": 29,
+          "word": "marble",
+          "pos": "n.",
+          "meaning": "大理石",
+          "correctNumbers": [
+            11
+          ],
+          "occurrences": [
+            {
+              "number": 11,
+              "actualForm": "marble",
+              "sentence": "Students compared granite with marble, identifying differences that a photograph might conceal."
+            }
+          ]
+        },
+        {
+          "id": "word:31",
+          "number": 31,
+          "word": "granite",
+          "pos": "n.",
+          "meaning": "花岗岩",
+          "correctNumbers": [
+            10
+          ],
+          "occurrences": [
+            {
+              "number": 10,
+              "actualForm": "granite",
+              "sentence": "Students compared granite with marble, identifying differences that a photograph might conceal."
+            }
+          ]
+        },
+        {
+          "id": "word:32",
+          "number": 32,
+          "word": "gust",
+          "pos": "n.",
+          "meaning": "阵风",
+          "correctNumbers": [
+            8
+          ],
+          "occurrences": [
+            {
+              "number": 8,
+              "actualForm": "gust",
+              "sentence": "An instrument on an exposed platform might register a sudden gust while people below noticed hardly any movement."
+            }
+          ]
+        },
+        {
+          "id": "word:33",
+          "number": 33,
+          "word": "breeze",
+          "pos": "n.",
+          "meaning": "微风",
+          "correctNumbers": [
+            7
+          ],
+          "occurrences": [
+            {
+              "number": 7,
+              "actualForm": "breeze",
+              "sentence": "A report of a gentle breeze would mean little if the reader didn't know where it had been observed."
+            }
+          ]
+        },
+        {
+          "id": "word:34",
+          "number": 34,
+          "word": "monsoon",
+          "pos": "n.",
+          "meaning": "季风",
+          "correctNumbers": [
+            22
+          ],
+          "occurrences": [
+            {
+              "number": 22,
+              "actualForm": "monsoon",
+              "sentence": "The organisers needed to know when the seasonal monsoon would bring moist air from the sea, but a familiar seasonal pattern did not guarantee identical conditions every year."
+            }
+          ]
+        },
+        {
+          "id": "word:35",
+          "number": 35,
+          "word": "gale",
+          "pos": "n.",
+          "meaning": "大风",
+          "correctNumbers": [
+            9
+          ],
+          "occurrences": [
+            {
+              "number": 9,
+              "actualForm": "gale",
+              "sentence": "During a gale, that difference could become especially important."
+            }
+          ]
+        },
+        {
+          "id": "word:36",
+          "number": 36,
+          "word": "hurricane",
+          "pos": "n.",
+          "meaning": "飓风",
+          "correctNumbers": [
+            23
+          ],
+          "occurrences": [
+            {
+              "number": 23,
+              "actualForm": "hurricanes",
+              "sentence": "Students examined reports of hurricanes in one region and typhoons in another, discovering that different names could refer to the same broad type of storm."
+            }
+          ]
+        },
+        {
+          "id": "word:37",
+          "number": 37,
+          "word": "tornado",
+          "pos": "n.",
+          "meaning": "龙卷风",
+          "correctNumbers": [
+            25
+          ],
+          "occurrences": [
+            {
+              "number": 25,
+              "actualForm": "tornado",
+              "sentence": "By contrast, a tornado involved a different weather system."
+            }
+          ]
+        },
+        {
+          "id": "word:38",
+          "number": 38,
+          "word": "typhoon",
+          "pos": "n.",
+          "meaning": "台风",
+          "correctNumbers": [
+            24
+          ],
+          "occurrences": [
+            {
+              "number": 24,
+              "actualForm": "typhoons",
+              "sentence": "Students examined reports of hurricanes in one region and typhoons in another, discovering that different names could refer to the same broad type of storm."
+            }
+          ]
+        },
+        {
+          "id": "word:39",
+          "number": 39,
+          "word": "volcano",
+          "pos": "n.",
+          "meaning": "火山",
+          "correctNumbers": [
+            28,
+            30
+          ],
+          "occurrences": [
+            {
+              "number": 28,
+              "actualForm": "volcanoes",
+              "sentence": "Information about volcanoes could help explain how parts of the Earth's crust had changed, but visitors also wanted to know what the information meant for their immediate safety."
+            },
+            {
+              "number": 30,
+              "actualForm": "volcano",
+              "sentence": "One participant argued that, because the nearest volcano had not erupted for decades, there was little reason to discuss it."
+            }
+          ]
+        },
+        {
+          "id": "word:40",
+          "number": 40,
+          "word": "erupt",
+          "pos": "vi.",
+          "meaning": "（火山）喷发",
+          "correctNumbers": [
+            31
+          ],
+          "occurrences": [
+            {
+              "number": 31,
+              "actualForm": "erupted",
+              "sentence": "One participant argued that, because the nearest volcano had not erupted for decades, there was little reason to discuss it."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

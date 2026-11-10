@@ -4,10 +4,11 @@ import {fileURLToPath} from 'node:url';
 import path from 'node:path';
 import {openStudyRecords} from './records/store.mjs';
 import {openListeningDrafts} from './listening/drafts-store.mjs';
+import {openListeningPractice} from './listening/practice-store.mjs';
 
 const root=path.resolve(fileURLToPath(new URL('../',import.meta.url)));
 const types={'.html':'text/html','.css':'text/css','.mjs':'text/javascript','.json':'application/json'};
-export async function startStudyServer({port=4178,host='127.0.0.1',directory=path.join(root,'.local-data'),store,draftStore}) {
+export async function startStudyServer({port=4178,host='127.0.0.1',directory=path.join(root,'.local-data'),store,draftStore,practiceFactory=openListeningPractice}) {
   if(host!=='127.0.0.1')throw new Error('仅允许本机127.0.0.1。');
   const catalog=JSON.parse(await readFile(path.join(root,'data/catalog.json'),'utf8'));
   const materials=JSON.parse(await readFile(path.join(root,'data/materials.json'),'utf8'));
@@ -22,6 +23,9 @@ export async function startStudyServer({port=4178,host='127.0.0.1',directory=pat
   let drafts;
   try{drafts=draftStore||await openListeningDrafts({directory,materials:listeningMaterials});}
   catch(error){await records.close();throw error;}
+  let practice;
+  try{const {definitions}=JSON.parse(await readFile(path.join(root,'data/listening-answers.json'),'utf8'));practice=await practiceFactory({directory,materials:listeningMaterials,definitions,legacy:drafts});}
+  catch(error){await drafts.close();await records.close();throw error;}
   let url;
   const server=createServer(async(req,res)=>{
     res.setHeader('Cache-Control','no-store');res.setHeader('X-Content-Type-Options','nosniff');
@@ -30,23 +34,26 @@ export async function startStudyServer({port=4178,host='127.0.0.1',directory=pat
       const name=decodeURIComponent(new URL(req.url,'http://127.0.0.1').pathname);
       if(name.startsWith('/api/')) {
         if(req.headers.host!==new URL(url).host || (req.headers.origin && req.headers.origin!==url) || req.headers['sec-fetch-site']==='cross-site') {json(403,{error:'拒绝跨源记录请求。'});return;}
-        if(req.method==='GET' && name==='/api/listening/drafts'){json(200,await drafts.read());return;}
-        if(req.method==='GET' && name==='/api/listening/drafts/export'){res.setHeader('Content-Disposition','attachment; filename="ielts-listening-drafts.json"');json(200,await drafts.export());return;}
+        if(req.method==='GET' && name==='/api/listening/drafts'){json(200,await practice.readDrafts());return;}
+        if(req.method==='GET' && name==='/api/listening/drafts/export'){res.setHeader('Content-Disposition','attachment; filename="ielts-listening-drafts.json"');json(200,{...await drafts.export(),view:await practice.readDrafts(),practice:await practice.export()});return;}
+        if(req.method==='GET' && name==='/api/listening/practice'){json(200,await practice.read());return;}
+        if(req.method==='GET' && name==='/api/listening/practice/export'){res.setHeader('Content-Disposition','attachment; filename="ielts-listening-practice.json"');json(200,await practice.export());return;}
         if(req.method==='GET' && name==='/api/records'){json(200,await records.read());return;}
         if(req.method==='GET' && name==='/api/records/export') {
           res.setHeader('Content-Disposition','attachment; filename="ielts-study-records.json"');
           json(200,await records.export());return;
         }
-        if(req.method==='POST' && ['/api/records/operations','/api/listening/drafts/operations'].includes(name)) {
+        if(req.method==='POST' && ['/api/records/operations','/api/listening/drafts/operations','/api/listening/practice/operations'].includes(name)) {
           if(req.headers.origin!==url || req.headers['content-type']?.split(';')[0]!=='application/json') {json(403,{error:'写入需要同源JSON请求。'});return;}
           let text='';
           req.setEncoding('utf8');
           for await(const chunk of req){text+=chunk;if(Buffer.byteLength(text)> (name.includes('/drafts/')?262144:8192)){json(413,{error:'请求过大。'});return;}}
           let operation;
           try {operation=JSON.parse(text);}catch{json(400,{error:'无效JSON。'});return;}
-          if(name==='/api/listening/drafts/operations'){
+          if(name.startsWith('/api/listening/')){
             if(req.headers['x-data-store-id']!==(await drafts.read()).storeId){json(409,{error:'数据目录身份不匹配，待办保留，禁止跨目录重放。',code:'STORE_CHANGED'});return;}
-            try{json(200,await drafts.apply(operation));}catch(error){json(error.code==='DRAFT_CONFLICT'?409:400,{error:error.message,...(error.code?{code:error.code}:{})});}return;
+            try{json(200,name.includes('/practice/')?await practice.apply(operation):await practice.saveDraft(operation,req.headers['x-practice-round-id']));}
+            catch(error){json(error.code?.endsWith('CONFLICT')?409:400,{error:error.message,...(error.code?{code:error.code}:{}),...(error.issues?{issues:error.issues}:{})});}return;
           }
           const allowedEntries=operation?.module==='listening'?listeningIds:entryIds;
           const allowedMaterials=operation?.module==='listening'?listeningMaterialIds:materialIds;
@@ -73,7 +80,7 @@ export async function startStudyServer({port=4178,host='127.0.0.1',directory=pat
         res.setHeader('Content-Length',end-start+1);res.writeHead(status);res.end(req.method==='HEAD'?undefined:bytes.subarray(start,end+1));return;
       }
       const relative=name==='/'?'index.html':name.slice(1);
-      if(['src/records/store.mjs','src/server.mjs','src/listening/drafts-store.mjs'].includes(relative)){res.writeHead(404);res.end();return;}
+      if(['src/records/store.mjs','src/server.mjs','src/listening/drafts-store.mjs','src/listening/practice-store.mjs','src/listening/check.mjs'].includes(relative)){res.writeHead(404);res.end();return;}
       if(relative!=='index.html' && !relative.startsWith('src/') && !relative.startsWith('data/')){res.writeHead(404);res.end();return;}
       const target=path.resolve(root,relative);
       if(!target.startsWith(root+path.sep)||!types[path.extname(target)]){res.writeHead(404);res.end();return;}
@@ -81,7 +88,7 @@ export async function startStudyServer({port=4178,host='127.0.0.1',directory=pat
     }catch(error){json(503,{error:`记录或资源不可用：${error.message}`});}
   });
   try {await new Promise((resolve,reject)=>{server.once('error',reject);server.listen(port,host,resolve);});}
-  catch(error){await drafts.close();await records.close();throw error;}
+  catch(error){await practice.close();await drafts.close();await records.close();throw error;}
   url=`http://${host}:${server.address().port}`;
-  return {url,async close(){await new Promise((resolve,reject)=>server.close(error=>error?reject(error):resolve()));await drafts.close();await records.close();}};
+  return {url,async close(){await new Promise((resolve,reject)=>server.close(error=>error?reject(error):resolve()));await practice.close();await drafts.close();await records.close();}};
 }

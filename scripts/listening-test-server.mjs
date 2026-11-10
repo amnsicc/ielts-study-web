@@ -1,6 +1,7 @@
 // Isolated verification only; failure switches are never product HTTP endpoints.
 import {openStudyRecords} from '../src/records/store.mjs';
 import {openListeningDrafts} from '../src/listening/drafts-store.mjs';
+import {openListeningPractice} from '../src/listening/practice-store.mjs';
 import {startStudyServer} from '../src/server.mjs';
 import {readFile,access} from 'node:fs/promises';
 import path from 'node:path';
@@ -14,7 +15,10 @@ const drafts=await openListeningDrafts({directory,materials,append:async(h,text)
   if(await exists('draft-fail-before'))throw new Error('测试草稿写前失败');
   await h.writeFile(text);await h.sync();
 }});
-const server=await startStudyServer({port:Number(process.argv[3]||0),directory,store:records,draftStore:{...drafts,async apply(op){
+const server=await startStudyServer({port:Number(process.argv[3]||0),directory,store:records,practiceFactory:async options=>{
+ const p=await openListeningPractice({...options,append:async(h,text)=>{if(await exists('practice-fail-before'))throw new Error('测试核对写前失败');await h.writeFile(text);await h.sync();}});
+ return {...p,async apply(op){while(await exists('practice-hold'))await new Promise(r=>setTimeout(r,20));const result=await p.apply(op);if(await exists('practice-lose-response'))throw new Error('测试核对回执丢失');return result;},async read(){if(await exists('practice-read-fail'))throw new Error('测试练习读取失败');return p.read();}};
+},draftStore:{...drafts,async apply(op){
   while(await exists('draft-hold'))await new Promise(r=>setTimeout(r,20));
   const result=await drafts.apply(op);if(await exists('draft-lose-response'))throw new Error('测试草稿回执丢失');return result;
 },async read(){if(await exists('draft-read-fail'))throw new Error('测试草稿读取失败');return drafts.read();}}});
