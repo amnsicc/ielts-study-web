@@ -17,8 +17,10 @@ function modeSelect(id, label) {
 }
 const modeName = visibility => visibility.english ? (visibility.chinese ? 'both' : 'english') : (visibility.chinese ? 'chinese' : 'none');
 
-export function readingView(session, materials, records) {
-  const layout = node('main', 'reading-layout');
+export function readingView(session, materials, records, options = {}) {
+  const module = options.module || 'reading';
+  const listening = module === 'listening';
+  const layout = node(listening ? 'div' : 'main', 'reading-layout');
   let ratio = 0.46;
   const wordSection = node('section', 'study-panel word-panel');
   wordSection.setAttribute('aria-labelledby', 'words-heading');
@@ -33,18 +35,18 @@ export function readingView(session, materials, records) {
   const mixed = new Option('逐词设置', 'custom');
   mixed.disabled = true;
   globalSelect.append(mixed);
-  const reset = node('button', 'quiet-button reset-view', '重置阅读界面');
+  const reset = node('button', 'quiet-button reset-view', listening ? '重置听力界面' : '重置阅读界面');
   reset.type = 'button';
   wordToolbar.append(wordTitle, range, displayLabel, globalSelect, reset);
   const wordScroll = node('div', 'word-scroll');
   wordScroll.id = 'word-scroll';
   wordScroll.tabIndex = 0;
-  wordScroll.setAttribute('aria-label', '阅读词表，可上下滚动');
+  wordScroll.setAttribute('aria-label', listening ? '听力词表，可上下滚动' : '阅读词表，可上下滚动');
   wordSection.append(wordToolbar, wordScroll);
   const filters = node('div', 'filter-toolbar');
   const scope = node('select', 'display-select');
   scope.id = 'word-scope'; scope.setAttribute('aria-label', '词表范围');
-  scope.append(new Option('当前文章', 'current'), new Option('全部阅读词（001—200）', 'all'));
+  scope.append(new Option(listening ? '当前材料' : '当前文章', 'current'), new Option(listening ? '全部听力词（001—200）' : '全部阅读词（001—200）', 'all'));
   const grade = node('select', 'display-select');
   grade.id = 'word-grade'; grade.setAttribute('aria-label', '词表P档');
   for (const [value,title] of [['all','全部P档'],['0','P0'],['1','P1'],['2','P2']]) grade.append(new Option(title,value));
@@ -88,14 +90,14 @@ export function readingView(session, materials, records) {
   const articleSection = node('section', 'study-panel article-panel');
   articleSection.setAttribute('aria-labelledby', 'article-heading');
   const articleToolbar = node('div', 'panel-toolbar article-toolbar');
-  const articleTitle = node('h2', '', '文章');
+  const articleTitle = node('h2', '', listening ? '材料' : '文章');
   articleTitle.id = 'article-heading';
   const highlightLabel = node('label', 'highlight-label');
   const highlight = node('input');
   highlight.type = 'checkbox';
   highlight.id = 'target-highlight';
   highlightLabel.append(highlight, document.createTextNode('目标高亮'));
-  const label = node('label', 'material-label', '选择文章');
+  const label = node('label', 'material-label', listening ? '选择材料' : '选择文章');
   label.htmlFor = 'material-select';
   const select = node('select', 'material-select');
   select.id = 'material-select';
@@ -105,14 +107,14 @@ export function readingView(session, materials, records) {
   const articleScroll = node('div', 'article-scroll');
   articleScroll.id = 'article-scroll';
   articleScroll.tabIndex = 0;
-  articleScroll.setAttribute('aria-label', '阅读文章，可上下滚动');
+  articleScroll.setAttribute('aria-label', listening ? '听力原稿，可上下滚动' : '阅读文章，可上下滚动');
   articleToolbar.append(articleTitle, highlightLabel, label, select);
   articleSection.append(articleToolbar, articleScroll);
   const articleSearch = node('div', 'filter-toolbar');
   const articleQuery = node('input', 'search-input');
   articleQuery.id = 'article-query'; articleQuery.type = 'search';
-  articleQuery.placeholder = '搜索文章库'; articleQuery.setAttribute('aria-label', '搜索文章库');
-  const clearArticle = node('button', 'quiet-button', '清除文章搜索');
+  articleQuery.placeholder = listening ? '搜索听力材料' : '搜索文章库'; articleQuery.setAttribute('aria-label', listening ? '搜索听力材料' : '搜索文章库');
+  const clearArticle = node('button', 'quiet-button', listening ? '清除材料搜索' : '清除文章搜索');
   clearArticle.id = 'clear-article-query'; clearArticle.type = 'button';
   const articleResultsToggle = node('button', 'quiet-button');
   articleResultsToggle.id = 'article-results-toggle'; articleResultsToggle.type = 'button';
@@ -218,7 +220,7 @@ export function readingView(session, materials, records) {
   let editEntry,editTarget,editBaseline=null,editOriginal=0,editOperationId=null,refreshEdit=false;
   function loadEditValue(){
     editOriginal=session.getView().counts[editEntry]||0;editValue.value=String(editOriginal);
-    editBaseline=recordState.view.entryVersions?.reading?.[editEntry]||null;
+    editBaseline=recordState.view.entryVersions?.[module]?.[editEntry]||null;
     editOperationId=null;editStatus.textContent='';editRetry.hidden=true;editRefresh.hidden=true;editCancel.textContent='取消';
   }
   function openCountEdit(entry,target){
@@ -346,7 +348,7 @@ export function readingView(session, materials, records) {
     const table = node('table', 'word-table');
     const head = node('thead');
     const header = node('tr');
-    for (const text of ['原编号', '英文', '阅读释义', '单条显示']) {
+    for (const text of ['原编号', '英文', listening ? '听力释义' : '阅读释义', '单条显示']) {
       const cell = node('th', '', text);
       cell.scope = 'col';
       header.append(cell);
@@ -419,7 +421,7 @@ export function readingView(session, materials, records) {
     lastTarget = target;
     meaningTitle.textContent = occurrence.text;
     meaningText.textContent = `${occurrence.pos} ${occurrence.meaning}`;
-    meaningNote.textContent = occurrence.note || '按本篇原有选义表显示。其他阅读义项可在上方词表查看。';
+    meaningNote.textContent = occurrence.note || (listening ? '按本篇目标用义显示；其他听力义项见词表。' : '按本篇原有选义表显示。其他阅读义项可在上方词表查看。');
     dialog.showModal();
   }
 
@@ -473,11 +475,12 @@ export function readingView(session, materials, records) {
     paintArticle();
     wordScroll.scrollTop = 0;
     articleScroll.scrollTop = 0;
+    options.materialChanged?.(session.getView().material);
   }
   select.addEventListener('change', () => { session.selectMaterial(select.value); paintMaterial();records.mutate({type:'open',materialId:select.value}); });
   globalSelect.addEventListener('change', () => { session.setVisibility('all', globalSelect.value); syncWords(); });
   highlight.addEventListener('change', () => { session.setTargetHighlight(highlight.checked); syncHighlight(); });
-  reset.addEventListener('click', () => { session.resetView(); articleQuery.value=''; articleResultsOpen=true; resize(0.46); paintMaterial(); });
+  reset.addEventListener('click', () => { session.resetView(); articleQuery.value=''; articleResultsOpen=true; resize(0.46); paintMaterial(); options.reset?.(); });
 
   function resize(value) {
     ratio = Math.max(0.25, Math.min(0.72, value));

@@ -40,7 +40,7 @@ try {
   writeFileSync(path.join(output, 'home-snapshot.json'), JSON.stringify(home, null, 2));
   assert.equal(evaluate(`document.querySelectorAll('.module-grid button').length`), 4);
   capture('01-home.png');
-  for (const [id, name] of [['listening', '听力'], ['writing', '写作'], ['speaking', '口语']]) {
+  for (const [id, name] of [['writing', '写作'], ['speaking', '口语']]) {
     command('click', `.module-${id}`);
     command('wait', '--text', '这个模块尚未开放');
     assert.equal(evaluate(`document.querySelector('main h1').textContent`), name);

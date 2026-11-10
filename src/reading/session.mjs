@@ -2,7 +2,7 @@ const normalizeNumber = value => {
   const match = String(value).match(/^0*(\d+)(-[a-z]+)?$/i);
   return match ? `${Number(match[1])}${(match[2] || '').toUpperCase()}` : null;
 };
-export function createReadingSession(catalog, materials) {
+export function createReadingSession(catalog, materials, module = 'reading') {
   let current = materials[0];
   let scope = 'current';
   let filters = { grade: 'all', query: '' };
@@ -28,7 +28,7 @@ export function createReadingSession(catalog, materials) {
   let highlightTargets = true;
   return {
     setRecords(value){
-      if(!value || !value.counts?.reading || !Number.isSafeInteger(value.revision))throw new Error('记录视图无效。');
+      if(!value || !value.counts?.[module] || !Number.isSafeInteger(value.revision))throw new Error('记录视图无效。');
       if(!records || value.revision>=records.revision) records=structuredClone(value);
     },
     setCountFilter(value){
@@ -117,16 +117,16 @@ export function createReadingSession(catalog, materials) {
         .filter(group => scope === 'all' || current.targetGroupIds.includes(group.id))
         .filter(group => filters.grade === 'all' || [group,...(group.extras || [])].some(entry => entry.senses.some(s => String(s.grade) === filters.grade)))
         .filter(group => !filters.query.trim() || [group,...(group.extras || [])].some(matchesEntry))
-        .filter(group => !countFilter || [group,...(group.extras || [])].some(entry=>comparisons[countFilter.operator](records.counts.reading[entry.id]||0,countFilter.threshold)))
+        .filter(group => !countFilter || [group,...(group.extras || [])].some(entry=>comparisons[countFilter.operator](records.counts[module][entry.id]||0,countFilter.threshold)))
         .sort((a, b) => a.number - b.number);
       return {
         scope,
         filters: { ...filters },
         countFilter:countFilter&&{...countFilter},
         recordsReady:records!==null,
-        counts:records ? {...records.counts.reading}:null,
-        undoable:records ? {...records.undoable.reading}:null,
-        history:records ? structuredClone(records.history.reading):null,
+        counts:records ? {...records.counts[module]}:null,
+        undoable:records ? {...records.undoable[module]}:null,
+        history:records ? structuredClone(records.history[module]):null,
         globalMode,
         expandedIds: [...expanded],
         highlightTargets,

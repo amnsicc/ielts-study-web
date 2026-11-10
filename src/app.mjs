@@ -2,6 +2,7 @@ import { homeView } from './home.mjs';
 import { readingView } from './reading/view.mjs';
 import { createReadingSession } from './reading/session.mjs';
 import { createRecordsClient } from './records/client.mjs';
+import { listeningView } from './listening/view.mjs';
 
 const app = document.querySelector('#app');
 try {
@@ -11,6 +12,9 @@ try {
     return response.json();
   }));
   const session = createReadingSession(catalog, materials);
+  const [listeningCatalog,listeningMaterials]=await Promise.all(['listening-catalog','listening-materials'].map(async name=>{
+    const response=await fetch(`/data/${name}.json`);if(!response.ok)throw new Error('听力资料读取失败');return response.json();
+  }));
   const records = createRecordsClient();
   void records.refresh();
   const header = document.createElement('header');
@@ -33,15 +37,17 @@ try {
   content.className = 'app-content';
   app.replaceChildren(header, content);
   let reading;
+  let listening;
   let readingScroll = [0, 0];
   function route() {
     const name = location.hash.replace(/^#\/?/, '') || 'home';
+    if(listening?.isConnected&&name!=='listening')listening.leave();
     if (reading?.isConnected && name !== 'reading') {
       reading.querySelector('dialog[open]')?.close();
       readingScroll = [...reading.querySelectorAll('#word-scroll, #article-scroll')].map(element => element.scrollTop);
     }
     back.hidden = name === 'home';
-    breadcrumb.textContent = name === 'reading' ? '/ 阅读' : '';
+    breadcrumb.textContent = name === 'reading' ? '/ 阅读' : name==='listening'?'/ 听力':'';
     if (name === 'home') {
       content.replaceChildren(homeView(id => {
         if(id==='reading')records.mutate({type:'open',materialId:session.getView().material.id});
@@ -51,6 +57,9 @@ try {
       reading ??= readingView(session, materials, records);
       content.replaceChildren(reading);
       [...reading.querySelectorAll('#word-scroll, #article-scroll')].forEach((element, index) => { element.scrollTop = readingScroll[index]; });
+    } else if(name==='listening'){
+      listening??=listeningView(listeningCatalog,listeningMaterials);
+      content.replaceChildren(listening);
     } else {
       const panel = document.createElement('main');
       panel.className = 'unavailable';
@@ -65,7 +74,7 @@ try {
       panel.append(title, explanation, link);
       content.replaceChildren(panel);
     }
-    document.title = name === 'reading' ? '阅读 · 雅思学习区' : '雅思学习区';
+    document.title = name === 'reading' ? '阅读 · 雅思学习区' : name==='listening'?'听力 · 雅思学习区':'雅思学习区';
   }
   window.addEventListener('hashchange', route);
   route();

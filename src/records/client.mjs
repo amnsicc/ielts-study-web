@@ -1,4 +1,4 @@
-export function createRecordsClient() {
+export function createRecordsClient(module = 'reading') {
   let view=null,busy=false,error='',pending=[];
   let completedOperationId=null,failedOperationId=null,failureCode='';
   const listeners=new Set();
@@ -28,7 +28,7 @@ export function createRecordsClient() {
   return {
     subscribe(listener){listeners.add(listener);listener(state());return ()=>listeners.delete(listener);},
     refresh,
-    mutate(operation){const next={operationId:crypto.randomUUID(),module:'reading',...operation};pending.push(next);void run();return next.operationId;},
+    mutate(operation){const next={operationId:crypto.randomUUID(),module,...operation};pending.push(next);void run();return next.operationId;},
     retry(){if(pending.length)void run();else void refresh();},
     async download(){
       if(busy||pending.length||error||!view)throw new Error('请先完成记录读取或保存重试。');

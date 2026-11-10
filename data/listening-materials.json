@@ -1,0 +1,861 @@
+[
+  {
+    "id": "listening:short",
+    "version": "b8bede4d8247af2abc3014a43098bcd292783244e67a53278e15a482f909ecc1",
+    "title": "学校活动简报（美音短篇）",
+    "label": "短篇",
+    "start": 1,
+    "end": 10,
+    "targetGroupIds": [
+      "word:1",
+      "word:4",
+      "word:5",
+      "word:6",
+      "word:7",
+      "word:8",
+      "word:9"
+    ],
+    "targets": [
+      {
+        "id": "word:1",
+        "number": 1,
+        "word": "atmosphere",
+        "pos": "n.",
+        "meaning": "气氛"
+      },
+      {
+        "id": "word:4",
+        "number": 4,
+        "word": "oxygen",
+        "pos": "n.",
+        "meaning": "氧气"
+      },
+      {
+        "id": "word:5",
+        "number": 5,
+        "word": "oxide",
+        "pos": "n.",
+        "meaning": "氧化物"
+      },
+      {
+        "id": "word:6",
+        "number": 6,
+        "word": "carbon dioxide",
+        "pos": "n.",
+        "meaning": "二氧化碳"
+      },
+      {
+        "id": "word:7",
+        "number": 7,
+        "word": "hydrogen",
+        "pos": "n.",
+        "meaning": "氢"
+      },
+      {
+        "id": "word:8",
+        "number": 8,
+        "word": "core",
+        "pos": "n.",
+        "meaning": "核心"
+      },
+      {
+        "id": "word:9",
+        "number": 9,
+        "word": "crust",
+        "pos": "n.",
+        "meaning": "地壳"
+      }
+    ],
+    "voices": [
+      {
+        "id": "en-US-JennyNeural",
+        "label": "美音女声",
+        "url": "/audio/listening-round-01-001-010.mp3",
+        "duration": 82.152,
+        "sha256": "128a967e08c895829efc24d5c1112d38b40585ce28e6ba2dc2f34ce25b4accee"
+      },
+      {
+        "id": "en-US-GuyNeural",
+        "label": "美音男声（比较版）",
+        "url": "/audio/listening-round-01-001-010-male-us.mp3",
+        "duration": 80.736,
+        "sha256": "cc0ca757258480d98994319cccd0832f2cfc99a2ca39d74d3c6d13e28d491c91"
+      }
+    ],
+    "paragraphs": [
+      "Before the school group arrives, I'd like to explain how we're going to run this morning's session. The aim is to create a relaxed atmosphere, so please let the children suggest answers before you explain anything. We want them to notice evidence, not feel they're being tested.",
+      "Start with the model of the Earth. Point to the crust, the outermost layer, and explain that we usually learn about things below it indirectly. At the core of this session is a simple idea: evidence can tell us about something we can't see for ourselves.",
+      "You can demonstrate that idea with the sealed gas containers on the same table. The first contains oxygen. Its appearance alone won't distinguish it from ordinary air, so explain that scientists use suitable tests instead. The other is labelled hydrogen. We aren't going to open either container; use the short video to show how scientists identify their contents.",
+      "Next, compare a clean piece of iron with a rusty one. Explain that a reaction has produced an oxide. This is a useful example of a change we can observe directly. Before the group leaves, show the room's carbon dioxide monitor. Ask why that reading might change as more people come inside. You don't need to give them every answer. Leave them with a question they can think about on the journey home."
+    ],
+    "occurrences": [
+      {
+        "id": "listening:short:target:1:0:0:131",
+        "groupId": "word:1",
+        "paragraphIndex": 0,
+        "start": 131,
+        "end": 141,
+        "text": "atmosphere",
+        "pos": "n.",
+        "meaning": "气氛"
+      },
+      {
+        "id": "listening:short:target:9:0:1:48",
+        "groupId": "word:9",
+        "paragraphIndex": 1,
+        "start": 48,
+        "end": 53,
+        "text": "crust",
+        "pos": "n.",
+        "meaning": "地壳"
+      },
+      {
+        "id": "listening:short:target:8:0:1:151",
+        "groupId": "word:8",
+        "paragraphIndex": 1,
+        "start": 151,
+        "end": 155,
+        "text": "core",
+        "pos": "n.",
+        "meaning": "核心"
+      },
+      {
+        "id": "listening:short:target:4:0:2:99",
+        "groupId": "word:4",
+        "paragraphIndex": 2,
+        "start": 99,
+        "end": 105,
+        "text": "oxygen",
+        "pos": "n.",
+        "meaning": "氧气"
+      },
+      {
+        "id": "listening:short:target:7:0:2:245",
+        "groupId": "word:7",
+        "paragraphIndex": 2,
+        "start": 245,
+        "end": 253,
+        "text": "hydrogen",
+        "pos": "n.",
+        "meaning": "氢"
+      },
+      {
+        "id": "listening:short:target:5:0:3:94",
+        "groupId": "word:5",
+        "paragraphIndex": 3,
+        "start": 94,
+        "end": 99,
+        "text": "oxide",
+        "pos": "n.",
+        "meaning": "氧化物"
+      },
+      {
+        "id": "listening:short:target:6:0:3:204",
+        "groupId": "word:6",
+        "paragraphIndex": 3,
+        "start": 204,
+        "end": 218,
+        "text": "carbon dioxide",
+        "pos": "n.",
+        "meaning": "二氧化碳"
+      }
+    ],
+    "extraTargets": []
+  },
+  {
+    "id": "listening:long",
+    "version": "4c8501a3840c85baf740e2e8bf88afe8e016809f412639000e8f124f5b79827b",
+    "title": "地理实地课程（已有英音长篇）",
+    "label": "长篇",
+    "start": 1,
+    "end": 40,
+    "targetGroupIds": [
+      "word:1",
+      "word:4",
+      "word:5",
+      "word:6",
+      "word:7",
+      "word:8",
+      "word:9",
+      "word:11",
+      "word:12",
+      "word:13",
+      "word:14",
+      "word:15",
+      "word:17",
+      "word:19",
+      "word:20",
+      "word:21",
+      "word:22",
+      "word:23",
+      "word:24",
+      "word:25",
+      "word:26",
+      "word:27",
+      "word:28",
+      "word:29",
+      "word:31",
+      "word:32",
+      "word:33",
+      "word:34",
+      "word:35",
+      "word:36",
+      "word:37",
+      "word:38",
+      "word:39",
+      "word:40"
+    ],
+    "targets": [
+      {
+        "id": "word:1",
+        "number": 1,
+        "word": "atmosphere",
+        "pos": "n.",
+        "meaning": "气氛"
+      },
+      {
+        "id": "word:4",
+        "number": 4,
+        "word": "oxygen",
+        "pos": "n.",
+        "meaning": "氧气"
+      },
+      {
+        "id": "word:5",
+        "number": 5,
+        "word": "oxide",
+        "pos": "n.",
+        "meaning": "氧化物"
+      },
+      {
+        "id": "word:6",
+        "number": 6,
+        "word": "carbon dioxide",
+        "pos": "n.",
+        "meaning": "二氧化碳"
+      },
+      {
+        "id": "word:7",
+        "number": 7,
+        "word": "hydrogen",
+        "pos": "n.",
+        "meaning": "氢"
+      },
+      {
+        "id": "word:8",
+        "number": 8,
+        "word": "core",
+        "pos": "n.",
+        "meaning": "核心"
+      },
+      {
+        "id": "word:9",
+        "number": 9,
+        "word": "crust",
+        "pos": "n.",
+        "meaning": "地壳"
+      },
+      {
+        "id": "word:11",
+        "number": 11,
+        "word": "longitude",
+        "pos": "n.",
+        "meaning": "经度"
+      },
+      {
+        "id": "word:12",
+        "number": 12,
+        "word": "latitude",
+        "pos": "n.",
+        "meaning": "纬度"
+      },
+      {
+        "id": "word:13",
+        "number": 13,
+        "word": "horizon",
+        "pos": "n.",
+        "meaning": "地平线"
+      },
+      {
+        "id": "word:14",
+        "number": 14,
+        "word": "altitude",
+        "pos": "n.",
+        "meaning": "海拔"
+      },
+      {
+        "id": "word:15",
+        "number": 15,
+        "word": "disaster",
+        "pos": "n.",
+        "meaning": "灾难"
+      },
+      {
+        "id": "word:17",
+        "number": 17,
+        "word": "catastrophic",
+        "pos": "adj.",
+        "meaning": "灾难性的"
+      },
+      {
+        "id": "word:19",
+        "number": 19,
+        "word": "endanger",
+        "pos": "vt.",
+        "meaning": "危及"
+      },
+      {
+        "id": "word:20",
+        "number": 20,
+        "word": "jeopardise",
+        "pos": "vt.",
+        "meaning": "危及"
+      },
+      {
+        "id": "word:21",
+        "number": 21,
+        "word": "destructive",
+        "pos": "adj.",
+        "meaning": "破坏性的"
+      },
+      {
+        "id": "word:22",
+        "number": 22,
+        "word": "El Niño",
+        "pos": "n.",
+        "meaning": "厄尔尼诺现象"
+      },
+      {
+        "id": "word:23",
+        "number": 23,
+        "word": "greenhouse",
+        "pos": "n.",
+        "meaning": "温室"
+      },
+      {
+        "id": "word:24",
+        "number": 24,
+        "word": "phenomenon",
+        "pos": "n.",
+        "meaning": "现象"
+      },
+      {
+        "id": "word:25",
+        "number": 25,
+        "word": "pebble",
+        "pos": "n.",
+        "meaning": "鹅卵石"
+      },
+      {
+        "id": "word:26",
+        "number": 26,
+        "word": "magnet",
+        "pos": "n.",
+        "meaning": "磁铁"
+      },
+      {
+        "id": "word:27",
+        "number": 27,
+        "word": "ore",
+        "pos": "n.",
+        "meaning": "矿石"
+      },
+      {
+        "id": "word:28",
+        "number": 28,
+        "word": "mineral",
+        "pos": "n.",
+        "meaning": "矿物"
+      },
+      {
+        "id": "word:29",
+        "number": 29,
+        "word": "marble",
+        "pos": "n.",
+        "meaning": "大理石"
+      },
+      {
+        "id": "word:31",
+        "number": 31,
+        "word": "granite",
+        "pos": "n.",
+        "meaning": "花岗岩"
+      },
+      {
+        "id": "word:32",
+        "number": 32,
+        "word": "gust",
+        "pos": "n.",
+        "meaning": "阵风"
+      },
+      {
+        "id": "word:33",
+        "number": 33,
+        "word": "breeze",
+        "pos": "n.",
+        "meaning": "微风"
+      },
+      {
+        "id": "word:34",
+        "number": 34,
+        "word": "monsoon",
+        "pos": "n.",
+        "meaning": "季风"
+      },
+      {
+        "id": "word:35",
+        "number": 35,
+        "word": "gale",
+        "pos": "n.",
+        "meaning": "大风"
+      },
+      {
+        "id": "word:36",
+        "number": 36,
+        "word": "hurricane",
+        "pos": "n.",
+        "meaning": "飓风"
+      },
+      {
+        "id": "word:37",
+        "number": 37,
+        "word": "tornado",
+        "pos": "n.",
+        "meaning": "龙卷风"
+      },
+      {
+        "id": "word:38",
+        "number": 38,
+        "word": "typhoon",
+        "pos": "n.",
+        "meaning": "台风"
+      },
+      {
+        "id": "word:39",
+        "number": 39,
+        "word": "volcano",
+        "pos": "n.",
+        "meaning": "火山"
+      },
+      {
+        "id": "word:40",
+        "number": 40,
+        "word": "erupt",
+        "pos": "vi.",
+        "meaning": "（火山）喷发"
+      }
+    ],
+    "voices": [
+      {
+        "id": "en-GB-SoniaNeural",
+        "label": "英音女声（原有录音）",
+        "url": "/audio/listening-round-01-001-040.mp3",
+        "duration": 293.736,
+        "sha256": "d2344ef8c9ab9f4ee44e7aaa9b1a22c9adf115b6ad7eff354787e22737b29562"
+      }
+    ],
+    "paragraphs": [
+      "Today I'd like to discuss how field courses can help students connect scientific measurements with decisions that affect local communities. I'll use the example of a proposed field school in a coastal volcanic region. Initially, its organisers concentrated on equipment and transport. But after speaking to residents, they realised that something else belonged at the core of the project: learning how to interpret evidence. They also wanted an atmosphere in which beginners could ask questions without feeling that they should already know the answers.",
+      "The first exercise involved describing an observation so that someone else could repeat it. Students watched clouds developing near the horizon, then recorded their position using longitude and latitude. They also noted their altitude, since observations made high above the sea might differ from those at the water's edge. These details weren't simply administrative. A report of a gentle breeze would mean little if the reader didn't know where it had been observed. An instrument on an exposed platform might register a sudden gust while people below noticed hardly any movement. During a gale, that difference could become especially important.",
+      "The next activity examined the assumptions people make about familiar materials. Students compared granite with marble, identifying differences that a photograph might conceal. They considered how several minerals could occur together in one rock, and why the appearance of a smooth pebble did not reveal its complete history. The equipment was deliberately simple. A magnet, for instance, could help them examine one property of a sample. It could not tell them whether extracting metal from an ore would be commercially worthwhile. The lesson was about the limits of a test, as much as about its usefulness.",
+      "An indoor session developed this approach further. One group investigated why exposed iron changes colour, looking at how it reacts with oxygen to form an oxide. A separate demonstration used electricity to separate water into hydrogen and oxygen. Rather than asking students just to memorise names, the tutor asked what evidence supported each explanation. The group then moved to a greenhouse, where they examined records of plant growth and carbon dioxide levels. They had to consider other influences, including light and water, before attributing a difference in growth to a single cause.",
+      "Weather planning raised a similar issue on a much larger scale. The organisers needed to know when the seasonal monsoon would bring moist air from the sea, but a familiar seasonal pattern did not guarantee identical conditions every year. Students examined reports of hurricanes in one region and typhoons in another, discovering that different names could refer to the same broad type of storm. By contrast, a tornado involved a different weather system. They also looked at how El Niño could influence conditions far beyond the area where it developed. These phenomena operated over different areas and timescales, so simply collecting dramatic pictures of them would provide a poor basis for planning a local course.",
+      "That distinction became particularly important when the group considered the area's geological history. Information about volcanoes could help explain how parts of the Earth's crust had changed, but visitors also wanted to know what the information meant for their immediate safety. One participant argued that, because the nearest volcano had not erupted for decades, there was little reason to discuss it. The tutor challenged that conclusion. A long period without an event was relevant evidence, but its meaning depended on the wider record. It could not, on its own, establish what would happen next.",
+      "The final stage focused on communication. Case studies of previous disasters showed that the effects of a destructive event depended partly on decisions made before it happened. In one example, a delayed warning had endangered residents who could otherwise have left the area. In another, damage to a single access road threatened to jeopardise an entire evacuation. The consequences could be catastrophic even when the original physical event affected only a limited area. Students therefore had to explain not only what they knew, but also what remained uncertain and who needed the information.",
+      "The revised course ended with a public presentation rather than a conventional written test. Each group explained one phenomenon, identified the evidence behind its explanation, and described the limits of its conclusions. Residents could question the proposed activities and suggest practical changes. Preventing a disaster was not something a short field course could promise. What it could offer was a more careful way of connecting observations with action. That remained at the core of the project, and it was the standard against which the organisers judged every activity they included."
+    ],
+    "occurrences": [
+      {
+        "id": "listening:long:target:8:0:0:368",
+        "groupId": "word:8",
+        "paragraphIndex": 0,
+        "start": 368,
+        "end": 372,
+        "text": "core",
+        "pos": "n.",
+        "meaning": "核心"
+      },
+      {
+        "id": "listening:long:target:1:0:0:445",
+        "groupId": "word:1",
+        "paragraphIndex": 0,
+        "start": 445,
+        "end": 455,
+        "text": "atmosphere",
+        "pos": "n.",
+        "meaning": "气氛"
+      },
+      {
+        "id": "listening:long:target:13:0:1:136",
+        "groupId": "word:13",
+        "paragraphIndex": 1,
+        "start": 136,
+        "end": 143,
+        "text": "horizon",
+        "pos": "n.",
+        "meaning": "地平线"
+      },
+      {
+        "id": "listening:long:target:11:0:1:180",
+        "groupId": "word:11",
+        "paragraphIndex": 1,
+        "start": 180,
+        "end": 189,
+        "text": "longitude",
+        "pos": "n.",
+        "meaning": "经度"
+      },
+      {
+        "id": "listening:long:target:12:0:1:194",
+        "groupId": "word:12",
+        "paragraphIndex": 1,
+        "start": 194,
+        "end": 202,
+        "text": "latitude",
+        "pos": "n.",
+        "meaning": "纬度"
+      },
+      {
+        "id": "listening:long:target:14:0:1:226",
+        "groupId": "word:14",
+        "paragraphIndex": 1,
+        "start": 226,
+        "end": 234,
+        "text": "altitude",
+        "pos": "n.",
+        "meaning": "海拔"
+      },
+      {
+        "id": "listening:long:target:33:0:1:390",
+        "groupId": "word:33",
+        "paragraphIndex": 1,
+        "start": 390,
+        "end": 396,
+        "text": "breeze",
+        "pos": "n.",
+        "meaning": "微风"
+      },
+      {
+        "id": "listening:long:target:32:0:1:530",
+        "groupId": "word:32",
+        "paragraphIndex": 1,
+        "start": 530,
+        "end": 534,
+        "text": "gust",
+        "pos": "n.",
+        "meaning": "阵风"
+      },
+      {
+        "id": "listening:long:target:35:0:1:592",
+        "groupId": "word:35",
+        "paragraphIndex": 1,
+        "start": 592,
+        "end": 596,
+        "text": "gale",
+        "pos": "n.",
+        "meaning": "大风"
+      },
+      {
+        "id": "listening:long:target:31:0:2:99",
+        "groupId": "word:31",
+        "paragraphIndex": 2,
+        "start": 99,
+        "end": 106,
+        "text": "granite",
+        "pos": "n.",
+        "meaning": "花岗岩"
+      },
+      {
+        "id": "listening:long:target:29:0:2:112",
+        "groupId": "word:29",
+        "paragraphIndex": 2,
+        "start": 112,
+        "end": 118,
+        "text": "marble",
+        "pos": "n.",
+        "meaning": "大理石"
+      },
+      {
+        "id": "listening:long:target:28:0:2:205",
+        "groupId": "word:28",
+        "paragraphIndex": 2,
+        "start": 205,
+        "end": 213,
+        "text": "minerals",
+        "pos": "n.",
+        "meaning": "矿物"
+      },
+      {
+        "id": "listening:long:target:25:0:2:283",
+        "groupId": "word:25",
+        "paragraphIndex": 2,
+        "start": 283,
+        "end": 289,
+        "text": "pebble",
+        "pos": "n.",
+        "meaning": "鹅卵石"
+      },
+      {
+        "id": "listening:long:target:26:0:2:368",
+        "groupId": "word:26",
+        "paragraphIndex": 2,
+        "start": 368,
+        "end": 374,
+        "text": "magnet",
+        "pos": "n.",
+        "meaning": "磁铁"
+      },
+      {
+        "id": "listening:long:target:27:0:2:496",
+        "groupId": "word:27",
+        "paragraphIndex": 2,
+        "start": 496,
+        "end": 499,
+        "text": "ore",
+        "pos": "n.",
+        "meaning": "矿石"
+      },
+      {
+        "id": "listening:long:target:4:0:3:137",
+        "groupId": "word:4",
+        "paragraphIndex": 3,
+        "start": 137,
+        "end": 143,
+        "text": "oxygen",
+        "pos": "n.",
+        "meaning": "氧气"
+      },
+      {
+        "id": "listening:long:target:5:0:3:155",
+        "groupId": "word:5",
+        "paragraphIndex": 3,
+        "start": 155,
+        "end": 160,
+        "text": "oxide",
+        "pos": "n.",
+        "meaning": "氧化物"
+      },
+      {
+        "id": "listening:long:target:7:0:3:227",
+        "groupId": "word:7",
+        "paragraphIndex": 3,
+        "start": 227,
+        "end": 235,
+        "text": "hydrogen",
+        "pos": "n.",
+        "meaning": "氢"
+      },
+      {
+        "id": "listening:long:target:4:0:3:240",
+        "groupId": "word:4",
+        "paragraphIndex": 3,
+        "start": 240,
+        "end": 246,
+        "text": "oxygen",
+        "pos": "n.",
+        "meaning": "氧气"
+      },
+      {
+        "id": "listening:long:target:23:0:3:384",
+        "groupId": "word:23",
+        "paragraphIndex": 3,
+        "start": 384,
+        "end": 394,
+        "text": "greenhouse",
+        "pos": "n.",
+        "meaning": "温室"
+      },
+      {
+        "id": "listening:long:target:6:0:3:444",
+        "groupId": "word:6",
+        "paragraphIndex": 3,
+        "start": 444,
+        "end": 458,
+        "text": "carbon dioxide",
+        "pos": "n.",
+        "meaning": "二氧化碳"
+      },
+      {
+        "id": "listening:long:target:34:0:4:112",
+        "groupId": "word:34",
+        "paragraphIndex": 4,
+        "start": 112,
+        "end": 119,
+        "text": "monsoon",
+        "pos": "n.",
+        "meaning": "季风"
+      },
+      {
+        "id": "listening:long:target:36:0:4:268",
+        "groupId": "word:36",
+        "paragraphIndex": 4,
+        "start": 268,
+        "end": 278,
+        "text": "hurricanes",
+        "pos": "n.",
+        "meaning": "飓风"
+      },
+      {
+        "id": "listening:long:target:38:0:4:297",
+        "groupId": "word:38",
+        "paragraphIndex": 4,
+        "start": 297,
+        "end": 305,
+        "text": "typhoons",
+        "pos": "n.",
+        "meaning": "台风"
+      },
+      {
+        "id": "listening:long:target:37:0:4:411",
+        "groupId": "word:37",
+        "paragraphIndex": 4,
+        "start": 411,
+        "end": 418,
+        "text": "tornado",
+        "pos": "n.",
+        "meaning": "龙卷风"
+      },
+      {
+        "id": "listening:long:target:22:0:4:480",
+        "groupId": "word:22",
+        "paragraphIndex": 4,
+        "start": 480,
+        "end": 487,
+        "text": "El Niño",
+        "pos": "n.",
+        "meaning": "厄尔尼诺现象"
+      },
+      {
+        "id": "listening:long:target:24:0:4:561",
+        "groupId": "word:24",
+        "paragraphIndex": 4,
+        "start": 561,
+        "end": 570,
+        "text": "phenomena",
+        "pos": "n.",
+        "meaning": "现象"
+      },
+      {
+        "id": "listening:long:target:39:0:5:122",
+        "groupId": "word:39",
+        "paragraphIndex": 5,
+        "start": 122,
+        "end": 131,
+        "text": "volcanoes",
+        "pos": "n.",
+        "meaning": "火山"
+      },
+      {
+        "id": "listening:long:target:9:0:5:176",
+        "groupId": "word:9",
+        "paragraphIndex": 5,
+        "start": 176,
+        "end": 181,
+        "text": "crust",
+        "pos": "n.",
+        "meaning": "地壳"
+      },
+      {
+        "id": "listening:long:target:39:0:5:332",
+        "groupId": "word:39",
+        "paragraphIndex": 5,
+        "start": 332,
+        "end": 339,
+        "text": "volcano",
+        "pos": "n.",
+        "meaning": "火山"
+      },
+      {
+        "id": "listening:long:target:40:0:5:348",
+        "groupId": "word:40",
+        "paragraphIndex": 5,
+        "start": 348,
+        "end": 355,
+        "text": "erupted",
+        "pos": "vi.",
+        "meaning": "（火山）喷发"
+      },
+      {
+        "id": "listening:long:target:15:0:6:67",
+        "groupId": "word:15",
+        "paragraphIndex": 6,
+        "start": 67,
+        "end": 76,
+        "text": "disasters",
+        "pos": "n.",
+        "meaning": "灾难"
+      },
+      {
+        "id": "listening:long:target:21:0:6:106",
+        "groupId": "word:21",
+        "paragraphIndex": 6,
+        "start": 106,
+        "end": 117,
+        "text": "destructive",
+        "pos": "adj.",
+        "meaning": "破坏性的"
+      },
+      {
+        "id": "listening:long:target:19:0:6:216",
+        "groupId": "word:19",
+        "paragraphIndex": 6,
+        "start": 216,
+        "end": 226,
+        "text": "endangered",
+        "pos": "vt.",
+        "meaning": "危及"
+      },
+      {
+        "id": "listening:long:target:20:0:6:334",
+        "groupId": "word:20",
+        "paragraphIndex": 6,
+        "start": 334,
+        "end": 344,
+        "text": "jeopardise",
+        "pos": "vt.",
+        "meaning": "危及"
+      },
+      {
+        "id": "listening:long:target:17:0:6:393",
+        "groupId": "word:17",
+        "paragraphIndex": 6,
+        "start": 393,
+        "end": 405,
+        "text": "catastrophic",
+        "pos": "adj.",
+        "meaning": "灾难性的"
+      },
+      {
+        "id": "listening:long:target:24:0:7:118",
+        "groupId": "word:24",
+        "paragraphIndex": 7,
+        "start": 118,
+        "end": 128,
+        "text": "phenomenon",
+        "pos": "n.",
+        "meaning": "现象"
+      },
+      {
+        "id": "listening:long:target:15:0:7:316",
+        "groupId": "word:15",
+        "paragraphIndex": 7,
+        "start": 316,
+        "end": 324,
+        "text": "disaster",
+        "pos": "n.",
+        "meaning": "灾难"
+      },
+      {
+        "id": "listening:long:target:8:0:7:483",
+        "groupId": "word:8",
+        "paragraphIndex": 7,
+        "start": 483,
+        "end": 487,
+        "text": "core",
+        "pos": "n.",
+        "meaning": "核心"
+      }
+    ],
+    "extraTargets": []
+  }
+]
