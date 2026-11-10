@@ -146,6 +146,10 @@ a { color: var(--accent); text-underline-offset: 4px; }
 .memory-controls { display:flex; flex-wrap:wrap; gap:4px; margin-top:6px; }
 .memory-controls .quiet-button { padding:4px 5px; font-size:11px; }
 .count-threshold { width:55px; min-width:0; padding:5px; border:1px solid #c1d0d5; border-radius:4px; font:12px system-ui; }
+.count-edit-dialog h2 { font-size:20px; margin:0 0 20px; }
+.count-edit-dialog label { display:block; margin-bottom:8px; }
+.count-edit-dialog input { display:block; width:100%; font-size:18px; }
+.edit-actions { display:flex; flex-wrap:wrap; gap:8px; margin-top:22px; }
 button:disabled { cursor:default; opacity:.55; }
 .entry-controls { width:136px; }
 @media(max-width:760px) { .entry-controls { width:100px; } .filter-toolbar { gap:5px; padding:5px 10px; } .record-bar { padding:4px 10px; } .record-bar .quiet-button { padding:4px 6px; } }

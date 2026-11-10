@@ -49,3 +49,16 @@ test('实际CLI输入stop正常关闭释放锁，同目录第二次启动成功'
     finally{clearTimeout(timer);}
   }
 });
+
+test('HTTP设总数并回传对象基准，旧窗口冲突返回可识别409且不覆盖',async()=>{
+  const {startStudyServer}=await import('../src/server.mjs');
+  const s=await startStudyServer({port:0,directory:await mkdtemp(path.join(os.tmpdir(),'ielts-edit-http-'))});
+  const post=body=>fetch(s.url+'/api/records/operations',{method:'POST',headers:{'content-type':'application/json',origin:s.url},body:JSON.stringify(body)});
+  try{
+    const op={operationId:'edit',type:'set_count',module:'reading',entryId:'word:1',count:10,expectedLastOperationId:null};
+    assert.equal((await post(op)).status,200);
+    const stale=await post({...op,operationId:'stale',count:3});
+    assert.equal(stale.status,409);assert.equal((await stale.json()).code,'COUNT_CONFLICT');
+    assert.equal((await (await fetch(s.url+'/api/records')).json()).counts.reading['word:1'],10);
+  }finally{await s.close();}
+});

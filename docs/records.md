@@ -1,5 +1,17 @@
 # D2b记录公开边界（实施前固定）
 
+## D2b-R1实施前约定
+
+新增apply({operationId,type:'set_count',module,entryId,count,expectedLastOperationId})。count为非负安全整数，expectedLastOperationId为该对象当前最近次数事件ID，无历史为null。read追加entryVersions分模块/entryId返回此ID；同对象并发改变时拒绝覆盖，错误code=COUNT_CONFLICT，原操作不写入。不同对象/材料打开不冲突；相同ID重放先按幂等核对，再校验并发条件。
+
+手动设置采用version=2事件，原forget/undo/open仍version=1；新程序同时读两版本，但v2仅允许set_count。export顶层有v2事件时version=2，否则保持1。旧程序遇到v2拒绝，禁止降级在新数据上写入。原v1事件不迁移、不重写。
+
+设数成为新基准，清掉此前该对象的可撤销增加；以后+1及其撤销只相对新基准。0不显示；取消/未改数不写事件。弹窗只以编号识别对象，预填当前已保存数，保存失败保留输入、原操作重试；冲突需刷新当前数再确认，不自动覆盖或把冲突操作塞住其他任务。
+
+设计沿用底色#F4F6F8、纸面#FFFFFF、正文#192C36、次字#536771、强调#176C63、边界#D8E1E5及原字体。紧凑原生dialog：编号、次数数字框、保存/取消、状态/重试。行末新增编辑入口，不添加新列/侧栏。ESC/取消回入口，保存中的窗口不因状态重绘丢输入。默认阈值0，比较仍不限；选篇/清筛选/重置恢复0，清关键词/页内返回保留值。
+
+自查：编号用于避免绕过遮挡；只增加完成真实操作的按钮；保存失败和冲突都给下一步，不用静默重设。497×811也检查弹窗和行内控件，仍是桌面缩窗。
+
 openStudyRecords({directory, clock?, append?})：directory为绝对隔离目录；clock和append仅在系统边界注入时钟/写入故障。返回read()、apply(operation)、export()、close()。read/export为异步，apply为串行异步。
 
 operation为{operationId,type,module,entryId? ,targetOperationId?,materialId?}。type取forget/undo/open；四模块为reading/listening/writing/speaking。undo绑定增加事件，并且只能撤销该对象最近未撤销的增加。operationId最长128位ASCII字母数字、冒号、点、短横线或下划线。同ID同内容幂等，同ID异内容拒绝。事件持久格式追加version=1、time（服务端ISO日期），其他字段严格校验。

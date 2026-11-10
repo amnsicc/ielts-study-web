@@ -5,7 +5,7 @@ try {
   if(!Number.isInteger(port)||port<1||port>65535)throw new Error('端口无效。');
   const server=await startStudyServer({port,host:process.argv.includes('--host')?value('--host'):'127.0.0.1',
     ...(process.argv.includes('--data-dir')?{directory:value('--data-dir')}: {})});
-  console.log(`雅思学习区 D2b: ${server.url}`);
+  console.log(`雅思学习区 D2b-R1: ${server.url}`);
   let closing=false;
   async function shutdown(){
     if(closing)return;closing=true;

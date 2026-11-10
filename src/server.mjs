@@ -34,7 +34,7 @@ export async function startStudyServer({port=4178,host='127.0.0.1',directory=pat
           try {operation=JSON.parse(text);}catch{json(400,{error:'无效JSON。'});return;}
           if(!operation||typeof operation!=='object'||!['reading','listening','writing','speaking'].includes(operation.module)||
             (operation.type==='open'?!materialIds.has(operation.materialId):!entryIds.has(operation.entryId))) {json(400,{error:'记录对象无效。'});return;}
-          try {json(200,await records.apply(operation));}catch(error){json(400,{error:error.message});}return;
+          try {json(200,await records.apply(operation));}catch(error){json(error.code==='COUNT_CONFLICT'?409:400,{error:error.message,...(error.code?{code:error.code}:{})});}return;
         }
         json(404,{error:'接口不存在。'});return;
       }

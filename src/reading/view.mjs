@@ -59,7 +59,7 @@ export function readingView(session, materials, records) {
   const countOperator=node('select','display-select');countOperator.id='count-operator';
   countOperator.setAttribute('aria-label','没记住次数条件');
   for(const [value,title] of [['off','不限次数'],['>','次数 >'],['>=','次数 ≥'],['=','次数 ='],['<=','次数 ≤'],['<','次数 <']])countOperator.append(new Option(title,value));
-  const countThreshold=node('input','count-threshold');countThreshold.id='count-threshold';countThreshold.type='number';countThreshold.min='0';countThreshold.step='1';countThreshold.value='5';countThreshold.setAttribute('aria-label','次数阈值');
+  const countThreshold=node('input','count-threshold');countThreshold.id='count-threshold';countThreshold.type='number';countThreshold.min='0';countThreshold.step='1';countThreshold.value='0';countThreshold.setAttribute('aria-label','次数阈值');
   filters.append(countOperator,countThreshold);
   wordSection.insertBefore(filters, wordScroll);
   let wordResultsOpen = true;
@@ -202,6 +202,42 @@ export function readingView(session, materials, records) {
   });
   dialog.addEventListener('close', () => { if (lastTarget?.isConnected) lastTarget.focus({ preventScroll: true }); });
   layout.append(wordSection, separator, articleSection, dialog);
+  const editDialog=node('dialog','meaning-dialog count-edit-dialog');editDialog.id='count-edit-dialog';
+  editDialog.setAttribute('aria-labelledby','count-edit-title');
+  const editForm=node('form');
+  const editTitle=node('h2','','编辑次数');editTitle.id='count-edit-title';
+  const editLabel=node('label','control-label','没记住总次数');editLabel.htmlFor='count-edit-value';
+  const editValue=node('input','search-input');editValue.id='count-edit-value';editValue.type='number';editValue.min='0';editValue.max=String(Number.MAX_SAFE_INTEGER);editValue.step='1';editValue.required=true;
+  const editStatus=node('p','meaning-note');editStatus.id='count-edit-status';editStatus.setAttribute('role','status');
+  const editActions=node('div','edit-actions');
+  const editSave=node('button','quiet-button','保存次数');editSave.type='submit';editSave.id='save-count-edit';
+  const editCancel=node('button','quiet-button','取消');editCancel.type='button';editCancel.id='cancel-count-edit';
+  const editRetry=node('button','quiet-button','重试保存');editRetry.type='button';editRetry.id='retry-count-edit';editRetry.hidden=true;
+  const editRefresh=node('button','quiet-button','刷新当前次数');editRefresh.type='button';editRefresh.id='refresh-count-edit';editRefresh.hidden=true;
+  editActions.append(editSave,editCancel,editRetry,editRefresh);editForm.append(editTitle,editLabel,editValue,editStatus,editActions);editDialog.append(editForm);layout.append(editDialog);
+  let editEntry,editTarget,editBaseline=null,editOriginal=0,editOperationId=null,refreshEdit=false;
+  function loadEditValue(){
+    editOriginal=session.getView().counts[editEntry]||0;editValue.value=String(editOriginal);
+    editBaseline=recordState.view.entryVersions?.reading?.[editEntry]||null;
+    editOperationId=null;editStatus.textContent='';editRetry.hidden=true;editRefresh.hidden=true;editCancel.textContent='取消';
+  }
+  function openCountEdit(entry,target){
+    editEntry=entry.id;editTarget=target;editTitle.textContent=`编辑编号 ${String(entry.number).padStart(3,'0')} 的次数`;
+    loadEditValue();editSave.disabled=false;editValue.disabled=false;editCancel.disabled=false;editDialog.showModal();editValue.focus();editValue.select();
+  }
+  editCancel.addEventListener('click',()=>editDialog.close());
+  editDialog.addEventListener('cancel',event=>{if(recordState.busy && editOperationId)event.preventDefault();});
+  editDialog.addEventListener('close',()=>{if(editTarget?.isConnected)editTarget.focus({preventScroll:true});else wordQuery.focus({preventScroll:true});});
+  editForm.addEventListener('submit',event=>{
+    event.preventDefault();
+    const count=Number(editValue.value);
+    if(!editForm.reportValidity() || !Number.isSafeInteger(count)||count<0)return;
+    if(count===editOriginal){editDialog.close();return;}
+    editSave.disabled=true;editValue.disabled=true;editCancel.disabled=true;
+    editOperationId=records.mutate({type:'set_count',entryId:editEntry,count,expectedLastOperationId:editBaseline});
+  });
+  editRetry.addEventListener('click',()=>records.retry());
+  editRefresh.addEventListener('click',()=>{refreshEdit=true;void records.refresh();});
 
   function syncWords() {
     const view = session.getView();
@@ -231,6 +267,7 @@ export function readingView(session, materials, records) {
       const unavailable=!view.recordsReady||recordState.busy||!!recordState.error||recordState.pending>0;
       row.querySelector('[data-forget]').disabled=unavailable;
       row.querySelector('[data-undo]').disabled=unavailable||!view.undoable?.[row.dataset.entryId];
+      row.querySelector('[data-edit-count]').disabled=unavailable;
     }
     const used=view.history?.[view.material.id];
     history.textContent=!view.recordsReady?'学习记录尚未读取':used?`打开 ${used.opens} 次 · 最近 ${new Date(used.lastOpened).toLocaleString('zh-CN',{hour12:false})}`:'这篇尚无主动打开记录';
@@ -280,7 +317,9 @@ export function readingView(session, materials, records) {
     add.addEventListener('click',()=>records.mutate({type:'forget',entryId:entry.id}));
     const undo=node('button','quiet-button','撤销');undo.type='button';undo.dataset.undo=entry.id;undo.setAttribute('aria-label',`撤销编号${number}最近一次增加`);
     undo.addEventListener('click',()=>records.mutate({type:'undo',entryId:entry.id,targetOperationId:session.getView().undoable[entry.id]}));
-    memory.append(add,undo);controls.append(memory);
+    const edit=node('button','quiet-button','编辑次数');edit.type='button';edit.dataset.editCount=entry.id;edit.setAttribute('aria-label',`编辑编号${number}的次数`);
+    edit.addEventListener('click',()=>openCountEdit(entry,edit));
+    memory.append(add,undo,edit);controls.append(memory);
     row.append(meanings, controls);
     return row;
   }
@@ -326,7 +365,7 @@ export function readingView(session, materials, records) {
     empty.hidden = view.groups.length !== 0;
     empty.append(node('p','','没有匹配词组。可清除关键词或P档条件。'));
     const clearFilters = node('button','quiet-button','清除词表筛选'); clearFilters.type='button';
-    clearFilters.addEventListener('click',()=>{session.setFilters({grade:'all',query:''});session.setCountFilter(null);paintWords();});
+    clearFilters.addEventListener('click',()=>{session.setFilters({grade:'all',query:''});session.setCountFilter(null);countThreshold.value='0';paintWords();});
     empty.append(clearFilters);
     wordScroll.replaceChildren(recordBar, results, empty, table);
     syncWords();
@@ -342,7 +381,7 @@ export function readingView(session, materials, records) {
   scope.addEventListener('change',()=>{session.setScope(scope.value);paintWords();wordScroll.scrollTop=0;});
   grade.addEventListener('change',()=>{session.setFilters({grade:grade.value});paintWords();wordScroll.scrollTop=0;});
   function filterCounts(){
-    if(!countThreshold.validity.valid || countThreshold.value==='')return;
+    if(countOperator.value!=='off' && (!countThreshold.validity.valid || countThreshold.value===''))return;
     session.setCountFilter(countOperator.value==='off'?null:{operator:countOperator.value,threshold:Number(countThreshold.value)});
     paintWords();wordScroll.scrollTop=0;
   }
@@ -414,6 +453,8 @@ export function readingView(session, materials, records) {
 
   function paintMaterial() {
     if (dialog.open) dialog.close();
+    if(editDialog.open)editDialog.close();
+    countThreshold.value='0';
     select.value = session.getView().material.id;
     lastLocatedEntry=undefined; wordResultsOpen=true;
     paintWords();
@@ -468,6 +509,17 @@ export function readingView(session, materials, records) {
     if(oldGroups!==newGroups)paintWords();else syncWords();
     wordScroll.scrollTop=position;
     recordStatus.textContent=state.error?`未完成：${state.error}`:state.busy?(state.pending?'正在保存…':'正在读取记录…'):state.view?'记录已保存（本机）':'记录不可用';
+    if(editDialog.open){
+      if(editOperationId && state.completedOperationId===editOperationId){editDialog.close();}
+      else if(refreshEdit && !state.busy && !state.error){refreshEdit=false;loadEditValue();editValue.disabled=false;editSave.disabled=false;editValue.focus();}
+      else if(editOperationId){
+        editStatus.textContent=state.error||'正在保存次数…';
+        const conflict=state.failedOperationId===editOperationId&&state.failureCode==='COUNT_CONFLICT';
+        editRefresh.hidden=!conflict;editRefresh.disabled=state.busy;
+        editRetry.hidden=!state.error||conflict;editRetry.disabled=state.busy;
+        editCancel.disabled=state.busy;editCancel.textContent=state.error?'关闭窗口':'取消';
+      }
+    }
     retryRecords.hidden=!state.error;retryRecords.disabled=state.busy;
     refreshRecords.disabled=state.busy||state.pending>0;
     exportRecords.disabled=state.busy||state.pending>0||!!state.error||!state.view;
